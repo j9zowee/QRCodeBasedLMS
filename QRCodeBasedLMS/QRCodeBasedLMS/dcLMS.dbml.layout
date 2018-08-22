@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dcLMS">
+  <DataContextMoniker Name="/dcLMSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5f30a63c-a206-413e-b4dd-1994a00cecff" absoluteBounds="3.75, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcLMSDataContext/tblAttendance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c89eaa48-5237-454f-8c5d-43226c940862" absoluteBounds="3.765, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b5f881b5-ec62-438a-b0cd-35a5fe00b86a" absoluteBounds="6.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dcLMSDataContext/tblUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68d85a6e-147e-43ea-a572-c797843b39a7" absoluteBounds="6.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed6df507-0f96-45f0-927f-0039cab205ca" absoluteBounds="0.75, 1, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/dcLMSDataContext/tblBook" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31cbe5a2-64f3-4469-b1e7-f930f10e0179" absoluteBounds="0.765, 1.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c0fa9c9-6df2-4321-8f52-de0bb773ac1d" absoluteBounds="3.5, 1.75, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/dcLMSDataContext/tblBookCopy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fecb77aa-728e-4f18-82ac-c9ad816d8ab2" absoluteBounds="3.515, 2.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6767a6e2-9671-4a92-87d2-03df67dd1c29" absoluteBounds="6.75, 4.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/dcLMSDataContext/tblLibraryUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23e0ddce-9c1c-426f-9df0-359d1c9f1af3" absoluteBounds="6.765, 5.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.63544840494792); (3.5 : 2.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcLMSDataContext/tblBook/tblBook_tblBookCopy" />
+      <nodes>
+        <classShapeMoniker Id="ed6df507-0f96-45f0-927f-0039cab205ca" />
+        <classShapeMoniker Id="8c0fa9c9-6df2-4321-8f52-de0bb773ac1d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

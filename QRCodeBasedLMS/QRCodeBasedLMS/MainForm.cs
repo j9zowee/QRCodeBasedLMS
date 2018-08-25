@@ -23,14 +23,6 @@ namespace QRCodeBasedLMS
             bk.Show();
             this.Hide();
         }
-
-        private void addUpdateToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Borrower brw = new Borrower("");
-            brw.Show();
-            this.Hide();
-        }
-
         private void RegistrationToolStripMenu_Click(object sender, EventArgs e)
         {
             Registration reg = new Registration();
@@ -73,6 +65,28 @@ namespace QRCodeBasedLMS
         {
             LibraryUserMasterlist lum = new LibraryUserMasterlist();
             lum.Show();
+        }
+
+        private void borrowBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Borrow brw = new Borrow();
+            brw.Show();
+            this.Hide();
+        }
+
+        private void borrowersInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Borrower b = new Borrower("","");
+            b.Show();
+            this.Hide();
+
+        }
+
+        private void printLibraryCardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BorrowerInfoForLibraryCard b = new BorrowerInfoForLibraryCard();
+            b.Show();
+            this.Hide();
         }
     }
 }

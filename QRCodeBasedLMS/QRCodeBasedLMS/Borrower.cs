@@ -17,134 +17,83 @@ namespace QRCodeBasedLMS
     public partial class Borrower : Form
     {
         private string qrcode;
-        public Borrower(string qr)
+        private string z;
+        public Borrower(string qr, string x)
         {
             InitializeComponent();
             qrcode = qr;
+            z = x;
         }
         dcLMSDataContext db = new dcLMSDataContext();
         clsBorrower brwr = new clsBorrower();
-        private void txtBorrowerID_TextChanged(object sender, EventArgs e)
-        {
-            //generate qr code
-            MessagingToolkit.QRCode.Codec.QRCodeEncoder encode = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
-            encode.QRCodeScale = 6;
-            Bitmap bmp = encode.Encode(txt_BorrowerIDNum.Text);
-            pbBorrowerQR.Image = bmp;
-        }
+        
 
         private void Borrower_Load(object sender, EventArgs e)
         {
-            dgvBorrower.DataSource = db.sp_ViewBorrower();
+            
             cmb_SearchCategory.Text = "QR Code";
-            if(qrcode != "")
+            if(z == "borrower_brwr")
             {
-                dgvBorrower.DataSource = db.sp_SearchBorrower(cmb_SearchCategory.Text, qrcode);
-            }
-        }
-
-        private void btnAddOrUpdate_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txt_BorrowerIDNum.Text) || string.IsNullOrWhiteSpace(txt_SchoolIDNumber.Text) || string.IsNullOrWhiteSpace(txt_Firstname.Text) || string.IsNullOrWhiteSpace(txt_Lastname.Text) || string.IsNullOrWhiteSpace(txt_Section.Text) || string.IsNullOrWhiteSpace(txt_Address.Text) || string.IsNullOrWhiteSpace(txt_ContactNum.Text))
-            {
-                MessageBox.Show("Incomplete Information!\nPlease enter values in all of the textboxes.");
-            }
-            else
-            {
-                //assigning values to properties in the clsBorrower
-                string gender;
-                if (rb_Male.Checked)
+                if(qrcode != "")
                 {
-                    gender = "Male";
+                    txt_SchoolIDNumber.Text = qrcode;
                 }
                 else
                 {
-                    gender = "Female";
-                }
-                brwr.BorrowerIDNumber = txt_BorrowerIDNum.Text;
-                brwr.SchoolID = txt_SchoolIDNumber.Text;
-                brwr.Firstname = txt_Firstname.Text;
-                brwr.Lastname = txt_Lastname.Text;
-                brwr.Section = txt_Section.Text;
-                brwr.Gender = gender;
-                brwr.Address = txt_Address.Text;
-                brwr.ContactNumber = txt_ContactNum.Text;
-                if(btnAddOrUpdate.Text == "ADD")
-                {
-                    //adding borrowerr
-                    brwr.AddRecord();
-
-                    //saving qr code
-                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true })
-                    {
-                        if (sfd.ShowDialog() == DialogResult.OK)
-                        {
-                            pbBorrowerQR.Image.Save(sfd.FileName, ImageFormat.Jpeg);
-                        }
-                    }
-
-                    dgvBorrower.DataSource = db.sp_ViewBorrower();
-                    MessageBox.Show("Successfully Added!");
-                    ClearText();
-                }
-                else
-                {
-                    //updating borrower's information
-                    brwr.UpdateRecord();
-                    dgvBorrower.DataSource = db.sp_ViewBorrower();
-                    MessageBox.Show("Successfully Updated!");
-                    ClearText();
-                    btnAddOrUpdate.Text = "ADD";
+                    //dgvBorrower.DataSource = db.sp_SearchBorrower(cmb_SearchCategory.Text, qrcode);
                 }
                 
             }
+        }
 
+        private void btnUpdateorSave_Click(object sender, EventArgs e)
+        {
+            if (btnUpdateorSave.Text == "UPDATE")
+            {
+                btnUpdateorSave.Text = "Save";
+                txt_Lastname.Enabled = true;
+                txt_Firstname.Enabled = true;
+                rb_Male.Enabled = true;
+                rb_Female.Enabled = true;
+                txt_Address.Enabled = true;
+                txt_ContactNum.Enabled = true;
+            }
+            else
+            {
+                string gen;
+                if (rb_Male.Checked)
+                {
+                    gen = "Male";
+                }
+                else
+                {
+                    gen = "Female";
+                }
+                db.sp_UpdateLibraryUser(txt_SchoolIDNumber.Text, txt_Firstname.Text, txt_Lastname.Text, gen, txt_Address.Text, txt_ContactNum.Text, sy, true);
+                MessageBox.Show("Sucessfully Updated!");
+                btnUpdateorSave.Text = "Update";
+                txt_Lastname.Enabled = false;
+                txt_Firstname.Enabled = false;
+                rb_Male.Enabled = false;
+                rb_Female.Enabled = false;
+                txt_Address.Enabled = false;
+                txt_ContactNum.Enabled = false;
+            }
         }
         public void ClearText()
         {
-            txt_BorrowerIDNum.Text = "";
             txt_SchoolIDNumber.Text = "";
             txt_Firstname.Text = "";
             txt_Lastname.Text = "";
-            txt_Section.Text = "";
             txt_Address.Text = "";
             txt_ContactNum.Text = "";
             rb_Male.Checked = true;
         }
-
         
-        private void dgvBorrower_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //passing values from dgv to txtboxes
-            btnAddOrUpdate.Text = "UPDATE";
-            txt_BorrowerIDNum.Text = dgvBorrower.CurrentRow.Cells[0].Value.ToString();
-            txt_SchoolIDNumber.Text = dgvBorrower.CurrentRow.Cells[1].Value.ToString();
-            txt_Firstname.Text = dgvBorrower.CurrentRow.Cells[2].Value.ToString();
-            txt_Lastname.Text = dgvBorrower.CurrentRow.Cells[3].Value.ToString();
-            txt_Section.Text = dgvBorrower.CurrentRow.Cells[4].Value.ToString();
-            string gender = dgvBorrower.CurrentRow.Cells[5].Value.ToString();
-            if(gender == "Male")
-            {
-                rb_Male.Checked = true;
-            }
-            else
-            {
-                rb_Female.Checked = true;
-            }
-            txt_Address.Text = dgvBorrower.CurrentRow.Cells[6].Value.ToString();
-            txt_ContactNum.Text = dgvBorrower.CurrentRow.Cells[7].Value.ToString();
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ClearText();
-            btnAddOrUpdate.Text = "ADD";
-        }
-
         private void cmb_SearchCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             //search
-            if(cmb_SearchCategory.Text == "QR Code")
+            if(cmb_SearchCategory.Text == "Book QR Code")
             {
                 txt_Search.Visible = false;
                 Link_Scan.Visible = true;
@@ -173,9 +122,59 @@ namespace QRCodeBasedLMS
 
         private void Link_Scan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ScanQRCode scan = new ScanQRCode("borrower");
+            ScanQRCode scan = new ScanQRCode("borrower_bk");
             scan.Show();
             this.Close();
+        }
+
+        private void link_ScanBrwr_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ScanQRCode scan = new ScanQRCode("borrower_brwr");
+            scan.Show();
+            this.Close();
+        }
+        private string sy;
+        private void txt_SchoolIDNumber_TextChanged(object sender, EventArgs e)
+        {
+            var fname = (from s in db.tblLibraryUsers
+                         where s.lib_SchoolID == txt_SchoolIDNumber.Text
+                         select s.lib_Firstname).FirstOrDefault();
+            var lname = (from s in db.tblLibraryUsers
+                         where s.lib_SchoolID == txt_SchoolIDNumber.Text
+                         select s.lib_Lastname).FirstOrDefault();
+            var gender = (from s in db.tblLibraryUsers
+                          where s.lib_SchoolID == txt_SchoolIDNumber.Text
+                          select s.lib_Gender).FirstOrDefault();
+            var address = (from s in db.tblLibraryUsers
+                           where s.lib_SchoolID == txt_SchoolIDNumber.Text
+                           select s.lib_Address).FirstOrDefault();
+            var contact = (from s in db.tblLibraryUsers
+                           where s.lib_SchoolID == txt_SchoolIDNumber.Text
+                           select s.lib_ContactNumber).FirstOrDefault();
+            sy = (from s in db.tblLibraryUsers
+                  where s.lib_SchoolID == txt_SchoolIDNumber.Text
+                  select s.lib_SchoolYear).FirstOrDefault();
+
+            txt_Firstname.Text = fname;
+            txt_Lastname.Text = lname;
+            if (gender == "Male")
+            {
+                rb_Male.Checked = true;
+            }
+            else
+            {
+                rb_Female.Checked = true;
+            }
+            txt_Address.Text = address;
+            txt_ContactNum.Text = contact;
+            if (fname != null && lname != null)
+            {
+
+                MessagingToolkit.QRCode.Codec.QRCodeEncoder encode = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
+                encode.QRCodeScale = 6;
+                Bitmap bmp = encode.Encode(txt_SchoolIDNumber.Text);
+                pbBorrowerQR.Image = bmp;
+            }
         }
     }
 }

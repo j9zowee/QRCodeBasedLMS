@@ -69,9 +69,15 @@ namespace QRCodeBasedLMS
                         bk.Show();
                         this.Close();
                     }
-                    else if (gikan == "borrower")
+                    else if (gikan == "borrower_bk")
                     {
-                        Borrower br = new Borrower(decoded);
+                        Borrower br = new Borrower(decoded, "borrower_bk");
+                        br.Show();
+                        this.Close();
+                    }
+                    else if (gikan == "borrower_brwr")
+                    {
+                        Borrower br = new Borrower(decoded, "borrower_brwr");
                         br.Show();
                         this.Close();
                     }
@@ -85,6 +91,12 @@ namespace QRCodeBasedLMS
                     {
                         UnapprovedAccounts ua = new UnapprovedAccounts(decoded);
                         ua.Show();
+                        this.Close();
+                    }
+                    else if (gikan == "attendance")
+                    {
+                        AttendanceMonitoring am = new AttendanceMonitoring(decoded);
+                        am.Show();
                         this.Close();
                     }
                     else

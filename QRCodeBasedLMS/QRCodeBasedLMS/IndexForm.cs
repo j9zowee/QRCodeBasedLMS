@@ -38,7 +38,7 @@ namespace QRCodeBasedLMS
 
         private void link_Attendance_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AttendanceMonitoring am = new AttendanceMonitoring();
+            AttendanceMonitoring am = new AttendanceMonitoring("");
             am.Show();
             this.Hide();
         }

@@ -143,6 +143,7 @@
             this.Controls.Add(this.label2);
             this.Name = "LibraryUserMasterlist";
             this.Text = "LibraryUserMasterlist";
+            this.Load += new System.EventHandler(this.LibraryUserMasterlist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

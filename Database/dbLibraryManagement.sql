@@ -2,7 +2,7 @@ CREATE database dbLibraryManagement
 use dbLibraryManagement
 
 ----INDEPENDENT TABLES----
-create table tblUser(
+create table tblUserAccount(
 user_UserID int identity(1,1) primary key,
 user_UserNum varchar(50) not null,
 user_Firstname varchar(50) not null,
@@ -19,16 +19,12 @@ lib_UserID int identity(1,1) primary key,
 lib_SchoolID varchar(20) not null,
 lib_Firstname varchar(100)not null,
 lib_Lastname varchar(100)not null,
-lib_Gender varchar(10) not null,
-lib_Address varchar(100) not null,
-lib_ContactNumber varchar(50)not null,
+lib_Gender varchar(10),
+lib_Address varchar(100),
+lib_ContactNumber varchar(50),
 lib_UserType varchar(50) not null,
-lib_SchoolYear int)
-
-create table tblBorrower(
-brwr_BorrowerID int identity(1,1) primary key,
-brwr_BorrowerNum varchar(50),
-lib_UserID int foreign key references tblLibraryUser(lib_UserID))
+lib_SchoolYear varchar(50) not null,
+lib_WithCard bit)
 
 create table tblBook(
 book_BookID int identity(1,1) primary key,
@@ -63,7 +59,7 @@ nrm_Remarks varchar(200))
 create table tblBorrow(
 borrow_BorrowID int identity(1,1) primary key,
 borrow_BorrowNum varchar(50)not null,
-brwr_BorrowerID int foreign key references tblBorrower(brwr_BorrowerID),
+lib_UserID int foreign key references tblLibraryUser(lib_UserID),
 book_BookID int foreign key references tblBook(book_BookID),
 borrow_BorrowedDate date not null,
 borrow_DueDate date not null)

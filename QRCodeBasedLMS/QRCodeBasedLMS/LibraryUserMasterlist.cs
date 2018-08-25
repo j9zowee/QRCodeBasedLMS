@@ -51,7 +51,7 @@ namespace QRCodeBasedLMS
                     {
                         
                         db.sp_AddLibraryUser(dgvList.Rows[i].Cells[0].Value.ToString(), dgvList.Rows[i].Cells[1].Value.ToString(), dgvList.Rows[i].Cells[2].Value.ToString(),
-                            dgvList.Rows[i].Cells[3].Value.ToString(), dgvList.Rows[i].Cells[4].Value.ToString(), dgvList.Rows[i].Cells[5].Value.ToString(),cmbLibraryUser.Text,schoolyear);
+                            dgvList.Rows[i].Cells[3].Value.ToString(), dgvList.Rows[i].Cells[4].Value.ToString(), dgvList.Rows[i].Cells[5].Value.ToString(),cmbLibraryUser.Text,schoolyear, false);
                         
                     }
                     MessageBox.Show("Successfully Saved to the database!");
@@ -69,6 +69,11 @@ namespace QRCodeBasedLMS
         {
             int endyear = int.Parse(cmbStartYear.Text) + 1;
             txtEndYear.Text = endyear.ToString();
+        }
+
+        private void LibraryUserMasterlist_Load(object sender, EventArgs e)
+        {
+
         }
     } 
 }

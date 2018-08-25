@@ -1,16 +1,16 @@
-AUG 17, 2018(FRI)-
+AUG 17, 2018(FRI)- AUG 26,201(SUN)
 
 *search using qr code
 	-userinformation
 	-inactiveaccounts
 *created tblLibraryUser
 *revised tblBorrower
+*attendance monitoring
+	-with and without qrcode
+*
 ________________
 *have personnel and students table as borrowertype
 *specify school year in being a borrower
-
-*have a student table
-*have a personnel table
 ------------------------------
 
 
@@ -18,7 +18,7 @@ ________________
 *autogenerate IDnumbers
 *Nonreading materials
 *check for duplication of records
-*Attendance monitoring
+
 
 
 --------------------------

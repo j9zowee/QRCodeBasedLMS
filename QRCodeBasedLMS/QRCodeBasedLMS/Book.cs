@@ -21,6 +21,12 @@ namespace QRCodeBasedLMS
             qrcode = qr;
         }
 
+        //----------------------------------
+        //----------------------------------
+        // text changed and keypress
+        //----------------------------------
+        //----------------------------------
+
         dcLMSDataContext db = new dcLMSDataContext();
         clsBook bk = new clsBook();
         private void Book_Load(object sender, EventArgs e)
@@ -32,8 +38,8 @@ namespace QRCodeBasedLMS
             {
                 dgvBook.DataSource = db.sp_SearchBook(cmb_SearchCategory.Text, qrcode);
             }
-            
         }
+
         private void btnAddOrUpdate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_BookIDNum.Text) || string.IsNullOrWhiteSpace(txt_Title.Text) || string.IsNullOrWhiteSpace(txt_Pages.Text) || string.IsNullOrWhiteSpace(txt_Publisher.Text) || string.IsNullOrWhiteSpace(txt_CopyrightYear.Text))
@@ -111,6 +117,7 @@ namespace QRCodeBasedLMS
             lbl_NumCopies.Visible = true;
             lbl_NumCopies.Text = "Total No. of Copies : " +db.sp_TotalBookCopy(txt_BookIDNum.Text).Count().ToString();
         }
+
         public void DisableTextboxes()
         {
             txt_BookIDNum.Enabled = false;
@@ -129,6 +136,7 @@ namespace QRCodeBasedLMS
             cmb_Status.Enabled = false;
             txt_Remarks.Enabled = false;
         }
+
         public void EnableTextboxes()
         {
             txt_BookIDNum.Enabled = true;
@@ -147,7 +155,8 @@ namespace QRCodeBasedLMS
             cmb_Status.Enabled = true;
             txt_Remarks.Enabled = true;
         }
-        private void txt_BookIDNum_TextChanged(object sender, EventArgs e)
+
+        private void txt_BookIDNum_OnValueChanged(object sender, EventArgs e)
         {
             MessagingToolkit.QRCode.Codec.QRCodeEncoder encode = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
             encode.QRCodeScale = 6;
@@ -173,30 +182,7 @@ namespace QRCodeBasedLMS
             btnAddOrUpdate.Text = "ADD";
         }
 
-        private void btn_Clear_Click(object sender, EventArgs e)
-        {
-            ClearText();
-            EnableTextboxes();
-            gb_Copy.Visible = true;
-            lbl_NumCopies.Visible = false;
-            dgvBook.DataSource = db.sp_ViewBook();
-        }
-
-        private void cmb_SearchCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(cmb_SearchCategory.Text == "QR Code")
-            {
-                Link_Scan.Visible = true;
-                txt_Search.Visible = false;
-            }
-            else
-            {
-                txt_Search.Visible = true;
-                Link_Scan.Visible = false;
-            }
-        }
-
-        private void txt_Search_TextChanged(object sender, EventArgs e)
+        private void txt_Search_OnValueChanged(object sender, EventArgs e)
         {
             dgvBook.DataSource = db.sp_SearchBook(cmb_SearchCategory.Text, txt_Search.Text);
         }
@@ -211,14 +197,14 @@ namespace QRCodeBasedLMS
 
         private void txt_CopyrightYear_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txt_CopyrightYear.MaxLength = 4;
+            //txt_CopyrightYear.MaxLength = 4;
+            SetMaximumLength(txt_CopyrightYear, 4);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
         }
-
-       
 
         private void txt_Pages_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -228,6 +214,30 @@ namespace QRCodeBasedLMS
             }
         }
 
+        private void Link_Scan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ScanQRCode scan = new ScanQRCode("book");
+            scan.Show();
+            this.Close();
+        }
+
+
+        private void link_SignIn_Click(object sender, EventArgs e)
+        {
+            ScanQRCode scan = new ScanQRCode("book");
+            scan.Show();
+            this.Close();
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            EnableTextboxes();
+            gb_Copy.Visible = true;
+            lbl_NumCopies.Visible = false;
+            dgvBook.DataSource = db.sp_ViewBook();
+        }
+
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             MainForm MF = new MainForm();
@@ -235,13 +245,37 @@ namespace QRCodeBasedLMS
             this.Hide();
         }
 
-        
 
-        private void Link_Scan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+
+        // function in setting maximum length in copyright year
+        // since bunifu dont support direct maxlength control
+        private void SetMaximumLength(Bunifu.Framework.UI.BunifuMetroTextbox metroTextbox, int maximumLength)
         {
-            ScanQRCode scan = new ScanQRCode("book");
-            scan.Show();
-            this.Close();
+            foreach (Control ctl in metroTextbox.Controls)
+            {
+                if (ctl.GetType() == typeof(TextBox))
+                {
+                    var txt = (TextBox)ctl;
+                    txt.MaxLength = maximumLength;
+
+                    // Set other properties & events here...
+                }
+            }
+        }
+
+        private void cmb_SelectedCategory_onItemSelected(object sender, EventArgs e)
+        {
+            if (cmb_SearchCategory.selectedValue == "QR Code")
+            {
+                Link_Scan.Visible = true;
+                txt_Search.Visible = false;
+            }
+            else
+            {
+                txt_Search.Visible = true;
+                Link_Scan.Visible = false;
+            }
         }
 
         

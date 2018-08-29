@@ -28,98 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Book));
             this.pb_QRBook = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txt_Title = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_BookIDNum = new System.Windows.Forms.TextBox();
             this.dgvBook = new System.Windows.Forms.DataGridView();
-            this.btn_Clear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_AccessionNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_CallNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_Author = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_Edition = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_Volume = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_Pages = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txt_Publisher = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txt_CopyrightYear = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.cmb_Status = new System.Windows.Forms.ComboBox();
-            this.txt_Remarks = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.cmb_SearchCategory = new System.Windows.Forms.ComboBox();
-            this.txt_Search = new System.Windows.Forms.TextBox();
             this.Link_Scan = new System.Windows.Forms.LinkLabel();
-            this.btnAddOrUpdate = new System.Windows.Forms.Button();
-            this.btn_Exit = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.txt_ISBN = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dtp_DateReceived = new System.Windows.Forms.DateTimePicker();
             this.gb_Copy = new System.Windows.Forms.GroupBox();
+            this.txt_AccessionNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.cmb_Status = new Bunifu.Framework.UI.BunifuDropdown();
             this.lbl_NumCopies = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.cmbBookType = new System.Windows.Forms.ComboBox();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnAddOrUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_Clear = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_Exit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.cmbBookType = new Bunifu.Framework.UI.BunifuDropdown();
+            this.txt_BookIDNum = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_ISBN = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txt_CallNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_Author = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txt_Publisher = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txt_CopyrightYear = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txt_Edition = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txt_Volume = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txt_Pages = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_Remarks = new System.Windows.Forms.TextBox();
+            this.cmb_SearchCategory = new Bunifu.Framework.UI.BunifuDropdown();
+            this.txt_Search = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QRBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.gb_Copy.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pb_QRBook
             // 
+            this.pb_QRBook.BackColor = System.Drawing.SystemColors.Control;
             this.pb_QRBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_QRBook.Location = new System.Drawing.Point(12, 12);
+            this.pb_QRBook.Location = new System.Drawing.Point(1, 1);
             this.pb_QRBook.Name = "pb_QRBook";
             this.pb_QRBook.Size = new System.Drawing.Size(130, 130);
             this.pb_QRBook.TabIndex = 11;
             this.pb_QRBook.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(168, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 16);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Book ID Number :";
-            // 
             // txt_Title
             // 
-            this.txt_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Title.Location = new System.Drawing.Point(218, 115);
+            this.txt_Title.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_Title.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Title.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Title.ForeColor = System.Drawing.Color.Black;
+            this.txt_Title.Location = new System.Drawing.Point(1, 1);
             this.txt_Title.Multiline = true;
             this.txt_Title.Name = "txt_Title";
-            this.txt_Title.Size = new System.Drawing.Size(189, 50);
+            this.txt_Title.Size = new System.Drawing.Size(187, 42);
             this.txt_Title.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(169, 119);
+            this.label3.Location = new System.Drawing.Point(156, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "*Title :";
-            // 
-            // txt_BookIDNum
-            // 
-            this.txt_BookIDNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_BookIDNum.Location = new System.Drawing.Point(287, 9);
-            this.txt_BookIDNum.Name = "txt_BookIDNum";
-            this.txt_BookIDNum.Size = new System.Drawing.Size(119, 22);
-            this.txt_BookIDNum.TabIndex = 1;
-            this.txt_BookIDNum.TextChanged += new System.EventHandler(this.txt_BookIDNum_TextChanged);
             // 
             // dgvBook
             // 
@@ -127,23 +122,13 @@
             this.dgvBook.AllowUserToDeleteRows = false;
             this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBook.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBook.Location = new System.Drawing.Point(12, 249);
+            this.dgvBook.Location = new System.Drawing.Point(57, 271);
             this.dgvBook.MultiSelect = false;
             this.dgvBook.Name = "dgvBook";
             this.dgvBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBook.Size = new System.Drawing.Size(884, 269);
             this.dgvBook.TabIndex = 22;
             this.dgvBook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBook_CellClick);
-            // 
-            // btn_Clear
-            // 
-            this.btn_Clear.Location = new System.Drawing.Point(604, 202);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(93, 41);
-            this.btn_Clear.TabIndex = 17;
-            this.btn_Clear.Text = "CLEAR";
-            this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // label1
             // 
@@ -155,181 +140,91 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "*Accession Num:";
             // 
-            // txt_AccessionNumber
-            // 
-            this.txt_AccessionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_AccessionNumber.Location = new System.Drawing.Point(116, 20);
-            this.txt_AccessionNumber.Name = "txt_AccessionNumber";
-            this.txt_AccessionNumber.Size = new System.Drawing.Size(77, 22);
-            this.txt_AccessionNumber.TabIndex = 13;
-            this.txt_AccessionNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_AccessionNumber_KeyPress);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(168, 90);
+            this.label4.Location = new System.Drawing.Point(156, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 16);
             this.label4.TabIndex = 27;
             this.label4.Text = "Call Number : ";
             // 
-            // txt_CallNumber
-            // 
-            this.txt_CallNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CallNumber.Location = new System.Drawing.Point(265, 87);
-            this.txt_CallNumber.Name = "txt_CallNumber";
-            this.txt_CallNumber.Size = new System.Drawing.Size(141, 22);
-            this.txt_CallNumber.TabIndex = 4;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(169, 178);
+            this.label5.Location = new System.Drawing.Point(156, 196);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 29;
             this.label5.Text = "Author :";
             // 
-            // txt_Author
-            // 
-            this.txt_Author.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Author.Location = new System.Drawing.Point(227, 172);
-            this.txt_Author.Name = "txt_Author";
-            this.txt_Author.Size = new System.Drawing.Size(180, 22);
-            this.txt_Author.TabIndex = 6;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(421, 63);
+            this.label6.Location = new System.Drawing.Point(472, 82);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 16);
             this.label6.TabIndex = 31;
             this.label6.Text = "Edition : ";
             // 
-            // txt_Edition
-            // 
-            this.txt_Edition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Edition.Location = new System.Drawing.Point(479, 60);
-            this.txt_Edition.Name = "txt_Edition";
-            this.txt_Edition.Size = new System.Drawing.Size(179, 22);
-            this.txt_Edition.TabIndex = 9;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(421, 94);
+            this.label7.Location = new System.Drawing.Point(472, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 16);
             this.label7.TabIndex = 33;
             this.label7.Text = "Volume :";
             // 
-            // txt_Volume
-            // 
-            this.txt_Volume.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Volume.Location = new System.Drawing.Point(479, 91);
-            this.txt_Volume.Name = "txt_Volume";
-            this.txt_Volume.Size = new System.Drawing.Size(179, 22);
-            this.txt_Volume.TabIndex = 10;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(421, 122);
+            this.label8.Location = new System.Drawing.Point(472, 145);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 16);
             this.label8.TabIndex = 35;
             this.label8.Text = "*Pages :";
             // 
-            // txt_Pages
-            // 
-            this.txt_Pages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Pages.Location = new System.Drawing.Point(479, 119);
-            this.txt_Pages.Name = "txt_Pages";
-            this.txt_Pages.Size = new System.Drawing.Size(179, 22);
-            this.txt_Pages.TabIndex = 11;
-            this.txt_Pages.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Pages_KeyPress);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(420, 9);
+            this.label9.Location = new System.Drawing.Point(472, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 16);
             this.label9.TabIndex = 37;
             this.label9.Text = "*Publisher :";
             // 
-            // txt_Publisher
-            // 
-            this.txt_Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Publisher.Location = new System.Drawing.Point(496, 6);
-            this.txt_Publisher.Name = "txt_Publisher";
-            this.txt_Publisher.Size = new System.Drawing.Size(162, 22);
-            this.txt_Publisher.TabIndex = 7;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(420, 37);
+            this.label10.Location = new System.Drawing.Point(472, 50);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 16);
             this.label10.TabIndex = 39;
             this.label10.Text = "*Copyright Year :";
             // 
-            // txt_CopyrightYear
-            // 
-            this.txt_CopyrightYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CopyrightYear.Location = new System.Drawing.Point(529, 34);
-            this.txt_CopyrightYear.MaxLength = 4;
-            this.txt_CopyrightYear.Name = "txt_CopyrightYear";
-            this.txt_CopyrightYear.Size = new System.Drawing.Size(128, 22);
-            this.txt_CopyrightYear.TabIndex = 8;
-            this.txt_CopyrightYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CopyrightYear_KeyPress);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(7, 81);
+            this.label11.Location = new System.Drawing.Point(6, 79);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 16);
             this.label11.TabIndex = 41;
             this.label11.Text = "*Status :";
             // 
-            // cmb_Status
-            // 
-            this.cmb_Status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Status.FormattingEnabled = true;
-            this.cmb_Status.ItemHeight = 16;
-            this.cmb_Status.Items.AddRange(new object[] {
-            "On Shelf",
-            "Damaged"});
-            this.cmb_Status.Location = new System.Drawing.Point(65, 80);
-            this.cmb_Status.Name = "cmb_Status";
-            this.cmb_Status.Size = new System.Drawing.Size(128, 24);
-            this.cmb_Status.TabIndex = 11;
-            // 
-            // txt_Remarks
-            // 
-            this.txt_Remarks.Location = new System.Drawing.Point(488, 147);
-            this.txt_Remarks.Multiline = true;
-            this.txt_Remarks.Name = "txt_Remarks";
-            this.txt_Remarks.Size = new System.Drawing.Size(170, 47);
-            this.txt_Remarks.TabIndex = 12;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(422, 151);
+            this.label12.Location = new System.Drawing.Point(472, 174);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 16);
             this.label12.TabIndex = 43;
@@ -338,40 +233,16 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 225);
+            this.label14.Location = new System.Drawing.Point(9, 248);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 13);
             this.label14.TabIndex = 47;
             this.label14.Text = "Search by: ";
             // 
-            // cmb_SearchCategory
-            // 
-            this.cmb_SearchCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_SearchCategory.FormattingEnabled = true;
-            this.cmb_SearchCategory.ItemHeight = 13;
-            this.cmb_SearchCategory.Items.AddRange(new object[] {
-            "QR Code",
-            "Title"});
-            this.cmb_SearchCategory.Location = new System.Drawing.Point(75, 222);
-            this.cmb_SearchCategory.Name = "cmb_SearchCategory";
-            this.cmb_SearchCategory.Size = new System.Drawing.Size(121, 21);
-            this.cmb_SearchCategory.TabIndex = 15;
-            this.cmb_SearchCategory.SelectedIndexChanged += new System.EventHandler(this.cmb_SearchCategory_SelectedIndexChanged);
-            // 
-            // txt_Search
-            // 
-            this.txt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Search.Location = new System.Drawing.Point(202, 220);
-            this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(119, 22);
-            this.txt_Search.TabIndex = 21;
-            this.txt_Search.Visible = false;
-            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
-            // 
             // Link_Scan
             // 
             this.Link_Scan.AutoSize = true;
-            this.Link_Scan.Location = new System.Drawing.Point(202, 227);
+            this.Link_Scan.Location = new System.Drawing.Point(232, 248);
             this.Link_Scan.Name = "Link_Scan";
             this.Link_Scan.Size = new System.Drawing.Size(79, 13);
             this.Link_Scan.TabIndex = 20;
@@ -380,49 +251,21 @@
             this.Link_Scan.Visible = false;
             this.Link_Scan.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Link_Scan_LinkClicked);
             // 
-            // btnAddOrUpdate
-            // 
-            this.btnAddOrUpdate.Location = new System.Drawing.Point(505, 202);
-            this.btnAddOrUpdate.Name = "btnAddOrUpdate";
-            this.btnAddOrUpdate.Size = new System.Drawing.Size(93, 41);
-            this.btnAddOrUpdate.TabIndex = 16;
-            this.btnAddOrUpdate.Text = "ADD";
-            this.btnAddOrUpdate.UseVisualStyleBackColor = true;
-            this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdate_Click);
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.Location = new System.Drawing.Point(703, 202);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(93, 41);
-            this.btn_Exit.TabIndex = 18;
-            this.btn_Exit.Text = "EXIT";
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(168, 63);
+            this.label13.Location = new System.Drawing.Point(156, 82);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 16);
             this.label13.TabIndex = 50;
             this.label13.Text = "*ISBN :";
             // 
-            // txt_ISBN
-            // 
-            this.txt_ISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ISBN.Location = new System.Drawing.Point(217, 60);
-            this.txt_ISBN.Name = "txt_ISBN";
-            this.txt_ISBN.Size = new System.Drawing.Size(189, 22);
-            this.txt_ISBN.TabIndex = 3;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(7, 54);
+            this.label15.Location = new System.Drawing.Point(6, 53);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(105, 16);
             this.label15.TabIndex = 51;
@@ -431,25 +274,62 @@
             // dtp_DateReceived
             // 
             this.dtp_DateReceived.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_DateReceived.Location = new System.Drawing.Point(113, 51);
+            this.dtp_DateReceived.Location = new System.Drawing.Point(119, 50);
             this.dtp_DateReceived.Name = "dtp_DateReceived";
-            this.dtp_DateReceived.Size = new System.Drawing.Size(80, 20);
+            this.dtp_DateReceived.Size = new System.Drawing.Size(137, 20);
             this.dtp_DateReceived.TabIndex = 14;
             // 
             // gb_Copy
             // 
             this.gb_Copy.Controls.Add(this.txt_AccessionNumber);
+            this.gb_Copy.Controls.Add(this.cmb_Status);
             this.gb_Copy.Controls.Add(this.dtp_DateReceived);
             this.gb_Copy.Controls.Add(this.label1);
             this.gb_Copy.Controls.Add(this.label15);
             this.gb_Copy.Controls.Add(this.label11);
-            this.gb_Copy.Controls.Add(this.cmb_Status);
-            this.gb_Copy.Location = new System.Drawing.Point(670, 12);
+            this.gb_Copy.Location = new System.Drawing.Point(781, 51);
             this.gb_Copy.Name = "gb_Copy";
-            this.gb_Copy.Size = new System.Drawing.Size(207, 110);
+            this.gb_Copy.Size = new System.Drawing.Size(263, 111);
             this.gb_Copy.TabIndex = 53;
             this.gb_Copy.TabStop = false;
             this.gb_Copy.Text = "1st Book Copy";
+            // 
+            // txt_AccessionNumber
+            // 
+            this.txt_AccessionNumber.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_AccessionNumber.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_AccessionNumber.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_AccessionNumber.BorderThickness = 1;
+            this.txt_AccessionNumber.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_AccessionNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_AccessionNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_AccessionNumber.isPassword = false;
+            this.txt_AccessionNumber.Location = new System.Drawing.Point(119, 20);
+            this.txt_AccessionNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_AccessionNumber.Name = "txt_AccessionNumber";
+            this.txt_AccessionNumber.Size = new System.Drawing.Size(137, 22);
+            this.txt_AccessionNumber.TabIndex = 71;
+            this.txt_AccessionNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_AccessionNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_AccessionNumber_KeyPress);
+            // 
+            // cmb_Status
+            // 
+            this.cmb_Status.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_Status.BorderRadius = 3;
+            this.cmb_Status.DisabledColor = System.Drawing.Color.Gray;
+            this.cmb_Status.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cmb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmb_Status.Items = new string[] {
+        "On Shelf",
+        "Damaged"};
+            this.cmb_Status.Location = new System.Drawing.Point(119, 77);
+            this.cmb_Status.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_Status.Name = "cmb_Status";
+            this.cmb_Status.NomalColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_Status.onHoverColor = System.Drawing.Color.RoyalBlue;
+            this.cmb_Status.selectedIndex = -1;
+            this.cmb_Status.Size = new System.Drawing.Size(137, 22);
+            this.cmb_Status.TabIndex = 71;
             // 
             // lbl_NumCopies
             // 
@@ -464,76 +344,448 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(169, 37);
+            this.label16.Location = new System.Drawing.Point(156, 47);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(86, 16);
             this.label16.TabIndex = 57;
             this.label16.Text = "*Book Type :";
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // btnAddOrUpdate
+            // 
+            this.btnAddOrUpdate.Activecolor = System.Drawing.Color.MidnightBlue;
+            this.btnAddOrUpdate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddOrUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddOrUpdate.BorderRadius = 7;
+            this.btnAddOrUpdate.ButtonText = "UPDATE";
+            this.btnAddOrUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddOrUpdate.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAddOrUpdate.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAddOrUpdate.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAddOrUpdate.Iconimage")));
+            this.btnAddOrUpdate.Iconimage_right = null;
+            this.btnAddOrUpdate.Iconimage_right_Selected = null;
+            this.btnAddOrUpdate.Iconimage_Selected = null;
+            this.btnAddOrUpdate.IconMarginLeft = 0;
+            this.btnAddOrUpdate.IconMarginRight = 0;
+            this.btnAddOrUpdate.IconRightVisible = false;
+            this.btnAddOrUpdate.IconRightZoom = 0D;
+            this.btnAddOrUpdate.IconVisible = false;
+            this.btnAddOrUpdate.IconZoom = 110D;
+            this.btnAddOrUpdate.IsTab = false;
+            this.btnAddOrUpdate.Location = new System.Drawing.Point(650, 224);
+            this.btnAddOrUpdate.Name = "btnAddOrUpdate";
+            this.btnAddOrUpdate.Normalcolor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddOrUpdate.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnAddOrUpdate.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAddOrUpdate.selected = false;
+            this.btnAddOrUpdate.Size = new System.Drawing.Size(93, 41);
+            this.btnAddOrUpdate.TabIndex = 58;
+            this.btnAddOrUpdate.Text = "UPDATE";
+            this.btnAddOrUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddOrUpdate.Textcolor = System.Drawing.Color.Black;
+            this.btnAddOrUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdate_Click);
+            // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Activecolor = System.Drawing.Color.MidnightBlue;
+            this.btn_Clear.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Clear.BorderRadius = 7;
+            this.btn_Clear.ButtonText = "CLEAR";
+            this.btn_Clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Clear.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Clear.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Clear.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Clear.Iconimage")));
+            this.btn_Clear.Iconimage_right = null;
+            this.btn_Clear.Iconimage_right_Selected = null;
+            this.btn_Clear.Iconimage_Selected = null;
+            this.btn_Clear.IconMarginLeft = 0;
+            this.btn_Clear.IconMarginRight = 0;
+            this.btn_Clear.IconRightVisible = false;
+            this.btn_Clear.IconRightZoom = 0D;
+            this.btn_Clear.IconVisible = false;
+            this.btn_Clear.IconZoom = 110D;
+            this.btn_Clear.IsTab = false;
+            this.btn_Clear.Location = new System.Drawing.Point(749, 224);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Normalcolor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Clear.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btn_Clear.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Clear.selected = false;
+            this.btn_Clear.Size = new System.Drawing.Size(93, 41);
+            this.btn_Clear.TabIndex = 59;
+            this.btn_Clear.Text = "CLEAR";
+            this.btn_Clear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Clear.Textcolor = System.Drawing.Color.Black;
+            this.btn_Clear.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.Activecolor = System.Drawing.Color.MidnightBlue;
+            this.btn_Exit.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Exit.BorderRadius = 7;
+            this.btn_Exit.ButtonText = "EXIT";
+            this.btn_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Exit.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Exit.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Exit.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.Iconimage")));
+            this.btn_Exit.Iconimage_right = null;
+            this.btn_Exit.Iconimage_right_Selected = null;
+            this.btn_Exit.Iconimage_Selected = null;
+            this.btn_Exit.IconMarginLeft = 0;
+            this.btn_Exit.IconMarginRight = 0;
+            this.btn_Exit.IconRightVisible = false;
+            this.btn_Exit.IconRightZoom = 0D;
+            this.btn_Exit.IconVisible = false;
+            this.btn_Exit.IconZoom = 110D;
+            this.btn_Exit.IsTab = false;
+            this.btn_Exit.Location = new System.Drawing.Point(848, 224);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Normalcolor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Exit.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btn_Exit.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Exit.selected = false;
+            this.btn_Exit.Size = new System.Drawing.Size(93, 41);
+            this.btn_Exit.TabIndex = 60;
+            this.btn_Exit.Text = "EXIT";
+            this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Exit.Textcolor = System.Drawing.Color.Black;
+            this.btn_Exit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
             // cmbBookType
             // 
-            this.cmbBookType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBookType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBookType.FormattingEnabled = true;
-            this.cmbBookType.Items.AddRange(new object[] {
-            "References",
-            "Filipiniana",
-            "General Reference",
-            "Fiction"});
-            this.cmbBookType.Location = new System.Drawing.Point(261, 33);
+            this.cmbBookType.BackColor = System.Drawing.Color.Transparent;
+            this.cmbBookType.BorderRadius = 3;
+            this.cmbBookType.DisabledColor = System.Drawing.Color.Gray;
+            this.cmbBookType.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cmbBookType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbBookType.Items = new string[] {
+        "References",
+        "Filipiniana",
+        "General Reference",
+        "Fiction"};
+            this.cmbBookType.Location = new System.Drawing.Point(276, 43);
+            this.cmbBookType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBookType.Name = "cmbBookType";
-            this.cmbBookType.Size = new System.Drawing.Size(145, 24);
-            this.cmbBookType.TabIndex = 2;
+            this.cmbBookType.NomalColor = System.Drawing.Color.CornflowerBlue;
+            this.cmbBookType.onHoverColor = System.Drawing.Color.RoyalBlue;
+            this.cmbBookType.selectedIndex = -1;
+            this.cmbBookType.Size = new System.Drawing.Size(189, 24);
+            this.cmbBookType.TabIndex = 61;
+            // 
+            // txt_BookIDNum
+            // 
+            this.txt_BookIDNum.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_BookIDNum.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_BookIDNum.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_BookIDNum.BorderThickness = 1;
+            this.txt_BookIDNum.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_BookIDNum.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_BookIDNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_BookIDNum.isPassword = false;
+            this.txt_BookIDNum.Location = new System.Drawing.Point(276, 12);
+            this.txt_BookIDNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_BookIDNum.Name = "txt_BookIDNum";
+            this.txt_BookIDNum.Size = new System.Drawing.Size(189, 22);
+            this.txt_BookIDNum.TabIndex = 22;
+            this.txt_BookIDNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_BookIDNum.OnValueChanged += new System.EventHandler(this.txt_BookIDNum_OnValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(156, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Book ID Number :";
+            // 
+            // txt_ISBN
+            // 
+            this.txt_ISBN.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_ISBN.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_ISBN.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_ISBN.BorderThickness = 1;
+            this.txt_ISBN.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_ISBN.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_ISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_ISBN.isPassword = false;
+            this.txt_ISBN.Location = new System.Drawing.Point(276, 76);
+            this.txt_ISBN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_ISBN.Name = "txt_ISBN";
+            this.txt_ISBN.Size = new System.Drawing.Size(189, 22);
+            this.txt_ISBN.TabIndex = 62;
+            this.txt_ISBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txt_CallNumber
+            // 
+            this.txt_CallNumber.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_CallNumber.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_CallNumber.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_CallNumber.BorderThickness = 1;
+            this.txt_CallNumber.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_CallNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_CallNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_CallNumber.isPassword = false;
+            this.txt_CallNumber.Location = new System.Drawing.Point(276, 108);
+            this.txt_CallNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_CallNumber.Name = "txt_CallNumber";
+            this.txt_CallNumber.Size = new System.Drawing.Size(189, 22);
+            this.txt_CallNumber.TabIndex = 63;
+            this.txt_CallNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.txt_Title);
+            this.panel1.Location = new System.Drawing.Point(276, 138);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(189, 44);
+            this.panel1.TabIndex = 64;
+            // 
+            // txt_Author
+            // 
+            this.txt_Author.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_Author.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_Author.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Author.BorderThickness = 1;
+            this.txt_Author.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_Author.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Author.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Author.isPassword = false;
+            this.txt_Author.Location = new System.Drawing.Point(276, 190);
+            this.txt_Author.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Author.Name = "txt_Author";
+            this.txt_Author.Size = new System.Drawing.Size(189, 22);
+            this.txt_Author.TabIndex = 65;
+            this.txt_Author.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txt_Publisher
+            // 
+            this.txt_Publisher.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_Publisher.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_Publisher.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Publisher.BorderThickness = 1;
+            this.txt_Publisher.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_Publisher.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Publisher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Publisher.isPassword = false;
+            this.txt_Publisher.Location = new System.Drawing.Point(578, 12);
+            this.txt_Publisher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Publisher.Name = "txt_Publisher";
+            this.txt_Publisher.Size = new System.Drawing.Size(189, 22);
+            this.txt_Publisher.TabIndex = 66;
+            this.txt_Publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txt_CopyrightYear
+            // 
+            this.txt_CopyrightYear.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_CopyrightYear.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_CopyrightYear.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_CopyrightYear.BorderThickness = 1;
+            this.txt_CopyrightYear.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_CopyrightYear.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_CopyrightYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_CopyrightYear.isPassword = false;
+            this.txt_CopyrightYear.Location = new System.Drawing.Point(578, 44);
+            this.txt_CopyrightYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_CopyrightYear.Name = "txt_CopyrightYear";
+            this.txt_CopyrightYear.Size = new System.Drawing.Size(189, 22);
+            this.txt_CopyrightYear.TabIndex = 67;
+            this.txt_CopyrightYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_CopyrightYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CopyrightYear_KeyPress);
+            // 
+            // txt_Edition
+            // 
+            this.txt_Edition.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_Edition.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_Edition.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Edition.BorderThickness = 1;
+            this.txt_Edition.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_Edition.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Edition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Edition.isPassword = false;
+            this.txt_Edition.Location = new System.Drawing.Point(578, 76);
+            this.txt_Edition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Edition.Name = "txt_Edition";
+            this.txt_Edition.Size = new System.Drawing.Size(189, 22);
+            this.txt_Edition.TabIndex = 68;
+            this.txt_Edition.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txt_Volume
+            // 
+            this.txt_Volume.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_Volume.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_Volume.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Volume.BorderThickness = 1;
+            this.txt_Volume.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_Volume.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Volume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Volume.isPassword = false;
+            this.txt_Volume.Location = new System.Drawing.Point(578, 108);
+            this.txt_Volume.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Volume.Name = "txt_Volume";
+            this.txt_Volume.Size = new System.Drawing.Size(189, 22);
+            this.txt_Volume.TabIndex = 69;
+            this.txt_Volume.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txt_Pages
+            // 
+            this.txt_Pages.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_Pages.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_Pages.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Pages.BorderThickness = 1;
+            this.txt_Pages.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_Pages.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Pages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Pages.isPassword = false;
+            this.txt_Pages.Location = new System.Drawing.Point(578, 140);
+            this.txt_Pages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Pages.Name = "txt_Pages";
+            this.txt_Pages.Size = new System.Drawing.Size(189, 22);
+            this.txt_Pages.TabIndex = 70;
+            this.txt_Pages.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_Pages.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Pages_KeyPress);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.Controls.Add(this.txt_Remarks);
+            this.panel2.Location = new System.Drawing.Point(578, 170);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(189, 44);
+            this.panel2.TabIndex = 65;
+            // 
+            // txt_Remarks
+            // 
+            this.txt_Remarks.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_Remarks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Remarks.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Remarks.ForeColor = System.Drawing.Color.Black;
+            this.txt_Remarks.Location = new System.Drawing.Point(1, 1);
+            this.txt_Remarks.Multiline = true;
+            this.txt_Remarks.Name = "txt_Remarks";
+            this.txt_Remarks.Size = new System.Drawing.Size(187, 42);
+            this.txt_Remarks.TabIndex = 12;
+            // 
+            // cmb_SearchCategory
+            // 
+            this.cmb_SearchCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_SearchCategory.BorderRadius = 3;
+            this.cmb_SearchCategory.DisabledColor = System.Drawing.Color.Gray;
+            this.cmb_SearchCategory.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cmb_SearchCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmb_SearchCategory.Items = new string[] {
+        "QR Code",
+        "Title"};
+            this.cmb_SearchCategory.Location = new System.Drawing.Point(78, 244);
+            this.cmb_SearchCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_SearchCategory.Name = "cmb_SearchCategory";
+            this.cmb_SearchCategory.NomalColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_SearchCategory.onHoverColor = System.Drawing.Color.RoyalBlue;
+            this.cmb_SearchCategory.selectedIndex = -1;
+            this.cmb_SearchCategory.Size = new System.Drawing.Size(121, 21);
+            this.cmb_SearchCategory.TabIndex = 72;
+            this.cmb_SearchCategory.onItemSelected += new System.EventHandler(this.cmb_SelectedCategory_onItemSelected);
+            // 
+            // txt_Search
+            // 
+            this.txt_Search.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txt_Search.BorderColorIdle = System.Drawing.Color.RoyalBlue;
+            this.txt_Search.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Search.BorderThickness = 1;
+            this.txt_Search.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_Search.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Search.isPassword = false;
+            this.txt_Search.Location = new System.Drawing.Point(211, 243);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Search.Name = "txt_Search";
+            this.txt_Search.Size = new System.Drawing.Size(119, 22);
+            this.txt_Search.TabIndex = 73;
+            this.txt_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_Search.OnValueChanged += new System.EventHandler(this.txt_Search_OnValueChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.Controls.Add(this.pb_QRBook);
+            this.panel3.Location = new System.Drawing.Point(11, 11);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(132, 132);
+            this.panel3.TabIndex = 65;
             // 
             // Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(908, 530);
+            this.ClientSize = new System.Drawing.Size(1056, 552);
+            this.Controls.Add(this.cmb_SearchCategory);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.txt_Pages);
+            this.Controls.Add(this.txt_Volume);
+            this.Controls.Add(this.txt_Edition);
+            this.Controls.Add(this.txt_CopyrightYear);
+            this.Controls.Add(this.txt_Publisher);
+            this.Controls.Add(this.txt_Author);
+            this.Controls.Add(this.txt_CallNumber);
+            this.Controls.Add(this.txt_ISBN);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_Exit);
+            this.Controls.Add(this.btnAddOrUpdate);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.cmbBookType);
             this.Controls.Add(this.lbl_NumCopies);
             this.Controls.Add(this.gb_Copy);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txt_ISBN);
-            this.Controls.Add(this.btn_Exit);
-            this.Controls.Add(this.btnAddOrUpdate);
             this.Controls.Add(this.Link_Scan);
-            this.Controls.Add(this.txt_Search);
-            this.Controls.Add(this.cmb_SearchCategory);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.txt_Remarks);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txt_CopyrightYear);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txt_Publisher);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txt_Pages);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txt_Volume);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_Edition);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txt_Author);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_CallNumber);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_Clear);
             this.Controls.Add(this.dgvBook);
-            this.Controls.Add(this.pb_QRBook);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_Title);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_BookIDNum);
-            this.MaximumSize = new System.Drawing.Size(924, 568);
+            this.Controls.Add(this.cmbBookType);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txt_Search);
+            this.Controls.Add(this.panel3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1200, 568);
             this.Name = "Book";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book";
             this.Load += new System.EventHandler(this.Book_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_QRBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             this.gb_Copy.ResumeLayout(false);
             this.gb_Copy.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,46 +793,55 @@
 
         #endregion
 
+        
+        
+
+
         private System.Windows.Forms.PictureBox pb_QRBook;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_Title;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_BookIDNum;
         private System.Windows.Forms.DataGridView dgvBook;
-        private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_AccessionNumber;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_CallNumber;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_Author;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_Edition;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_Volume;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txt_Pages;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_Publisher;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txt_CopyrightYear;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cmb_Status;
-        private System.Windows.Forms.TextBox txt_Remarks;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cmb_SearchCategory;
-        private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.LinkLabel Link_Scan;
-        private System.Windows.Forms.Button btnAddOrUpdate;
-        private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txt_ISBN;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DateTimePicker dtp_DateReceived;
         private System.Windows.Forms.GroupBox gb_Copy;
         private System.Windows.Forms.Label lbl_NumCopies;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cmbBookType;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.ImageList imageList1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnAddOrUpdate;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_Clear;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
+        private Bunifu.Framework.UI.BunifuDropdown cmbBookType;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_BookIDNum;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_ISBN;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_CallNumber;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_Author;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_Publisher;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_CopyrightYear;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_Edition;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_Volume;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_Pages;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txt_Remarks;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_AccessionNumber;
+        private Bunifu.Framework.UI.BunifuDropdown cmb_Status;
+        private Bunifu.Framework.UI.BunifuDropdown cmb_SearchCategory;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txt_Search;
+        private System.Windows.Forms.Panel panel3;
     }
 }

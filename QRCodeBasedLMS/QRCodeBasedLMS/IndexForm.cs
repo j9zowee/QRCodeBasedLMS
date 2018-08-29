@@ -42,5 +42,26 @@ namespace QRCodeBasedLMS
             am.Show();
             this.Hide();
         }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            MainForm mf = new MainForm();
+            mf.Show();
+            this.Hide();
+        }
+
+        private void link_SignIn_Click(object sender, EventArgs e)
+        {
+            MainForm mf = new MainForm();
+            mf.Show();
+            this.Hide();
+        }
+
+        private void link_Attendance_Click(object sender, EventArgs e)
+        {
+            AttendanceMonitoring am = new AttendanceMonitoring();
+            am.Show();
+            this.Hide();
+        }
     }
 }

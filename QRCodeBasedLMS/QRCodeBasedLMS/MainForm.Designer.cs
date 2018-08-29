@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ms_Mainform = new System.Windows.Forms.MenuStrip();
             this.mASTERFILESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,11 +48,14 @@
             this.tRANSACTIONSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ms_Mainform.SuspendLayout();
             this.SuspendLayout();
             // 
             // ms_Mainform
             // 
+            this.ms_Mainform.BackColor = System.Drawing.Color.Transparent;
+            this.ms_Mainform.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ms_Mainform.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms_Mainform.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mASTERFILESToolStripMenuItem,
@@ -200,14 +204,21 @@
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 730);
             this.Controls.Add(this.ms_Mainform);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.ms_Mainform;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.ms_Mainform.ResumeLayout(false);
             this.ms_Mainform.PerformLayout();
@@ -237,5 +248,6 @@
         private System.Windows.Forms.ToolStripMenuItem updateBookInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unapprovedUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem libraryUsersToolStripMenuItem;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

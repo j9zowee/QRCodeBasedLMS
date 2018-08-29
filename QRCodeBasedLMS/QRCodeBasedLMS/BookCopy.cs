@@ -31,7 +31,7 @@ namespace QRCodeBasedLMS
             cmb_Status.Text = "On Shelf";
         }
 
-        private void txt_BookIDNum_TextChanged(object sender, EventArgs e)
+        private void txt_BookIDNum_OnValueChanged(object sender, EventArgs e)
         {
             MessagingToolkit.QRCode.Codec.QRCodeEncoder encode = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
             encode.QRCodeScale = 6;
@@ -41,29 +41,30 @@ namespace QRCodeBasedLMS
 
         private void btnAddOrUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txt_AccessionNumber.Text))
-            {
-                MessageBox.Show("Incomplete Data!");
-            }
-            else
-            {
-                if(btnAddOrUpdate.Text == "ADD")
-                {
-                    db.sp_AddBookCopy(txt_BookIDNum.Text, int.Parse(txt_AccessionNumber.Text), DateTime.Parse(dtp_DateReceived.Text), cmb_Status.Text);
-                    dgvBook.DataSource = db.sp_ViewBookCopy(txt_BookIDNum.Text);
-                    MessageBox.Show("Successfully Added a Copy!");
-                    txt_AccessionNumber.Text = "";
-                }
-                else
-                {
-                    //db.sp_UpdateBookCopy(txt_BookIDNum.Text, int.Parse(txt_AccessionNumber.Text), DateTime.Parse(dtp_DateReceived.Text), cmb_Status.Text);
-                    //dgvBook.DataSource = db.sp_ViewBookCopy(txt_BookIDNum.Text);
-                    //MessageBox.Show("Successfully Updated a Copy!");
-                    //txt_AccessionNumber.Text = "";
-                    //btnAddOrUpdate.Text = "ADD";
-                }
+            MessageBox.Show("asd");
+            //if (string.IsNullOrWhiteSpace(txt_AccessionNumber.Text))
+            //{
+            //    MessageBox.Show("Incomplete Data!");
+            //}
+            //else
+            //{
+            //    if(btnAddOrUpdate.Text == "ADD")
+            //    {
+            //        db.sp_AddBookCopy(txt_BookIDNum.Text, int.Parse(txt_AccessionNumber.Text), DateTime.Parse(dtp_DateReceived.Text), cmb_Status.Text);
+            //        dgvBook.DataSource = db.sp_ViewBookCopy(txt_BookIDNum.Text);
+            //        MessageBox.Show("Successfully Added a Copy!");
+            //        txt_AccessionNumber.Text = "";
+            //    }
+            //    else
+            //    {
+            //        //db.sp_UpdateBookCopy(txt_BookIDNum.Text, int.Parse(txt_AccessionNumber.Text), DateTime.Parse(dtp_DateReceived.Text), cmb_Status.Text);
+            //        //dgvBook.DataSource = db.sp_ViewBookCopy(txt_BookIDNum.Text);
+            //        //MessageBox.Show("Successfully Updated a Copy!");
+            //        //txt_AccessionNumber.Text = "";
+            //        //btnAddOrUpdate.Text = "ADD";
+            //    }
                 
-            }
+            //}
             
         }
 
@@ -82,5 +83,7 @@ namespace QRCodeBasedLMS
             //dtp_DateReceived.Text = dgvBook.CurrentRow.Cells[2].Value.ToString();
             //cmb_Status.Text = dgvBook.CurrentRow.Cells[3].Value.ToString();
         }
+
+        
     }
 }

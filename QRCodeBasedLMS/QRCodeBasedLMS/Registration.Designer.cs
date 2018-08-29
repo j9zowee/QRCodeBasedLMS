@@ -243,6 +243,7 @@
             this.Controls.Add(this.txt_Firstname);
             this.Name = "Registration";
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.Registration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

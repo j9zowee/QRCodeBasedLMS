@@ -31,6 +31,8 @@ namespace QRCodeBasedLMS
         clsBook bk = new clsBook();
         private void Book_Load(object sender, EventArgs e)
         {
+            txt_BookIDNum.Text= bk.GenerateBookIDNum();
+            cmbBookType.Text = "References";
             dgvBook.DataSource = db.sp_ViewBook();
             cmb_SearchCategory.Text = "QR Code";
             cmb_Status.Text = "Available";
@@ -84,6 +86,8 @@ namespace QRCodeBasedLMS
                         MessageBox.Show("Sucessfully Added!");
                         ClearText();
                         EnableTextboxes();
+                        txt_BookIDNum.Text = bk.GenerateBookIDNum();
+                        cmbBookType.Text = "References";
                     }
                     else
                     {
@@ -103,16 +107,16 @@ namespace QRCodeBasedLMS
             gb_Copy.Visible = false;
             txt_BookIDNum.Text = dgvBook.CurrentRow.Cells[0].Value.ToString();
             cmbBookType.Text = dgvBook.CurrentRow.Cells[1].Value.ToString();
-            txt_ISBN.Text = dgvBook.CurrentRow.Cells[2].Value.ToString();
-            txt_CallNumber.Text = dgvBook.CurrentRow.Cells[3].Value.ToString();
-            txt_Title.Text = dgvBook.CurrentRow.Cells[4].Value.ToString();
-            txt_Author.Text = dgvBook.CurrentRow.Cells[5].Value.ToString();
-            txt_Publisher.Text = dgvBook.CurrentRow.Cells[6].Value.ToString();
-            txt_CopyrightYear.Text = dgvBook.CurrentRow.Cells[7].Value.ToString();
-            txt_Edition.Text = dgvBook.CurrentRow.Cells[8].Value.ToString();
-            txt_Volume.Text = dgvBook.CurrentRow.Cells[9].Value.ToString();
-            txt_Pages.Text = dgvBook.CurrentRow.Cells[10].Value.ToString();
-            txt_Remarks.Text = dgvBook.CurrentRow.Cells[11].Value.ToString();
+            txt_ISBN.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_ISBN).FirstOrDefault();
+            txt_CallNumber.Text = dgvBook.CurrentRow.Cells[2].Value.ToString();
+            txt_Title.Text = dgvBook.CurrentRow.Cells[3].Value.ToString();
+            txt_Author.Text = dgvBook.CurrentRow.Cells[4].Value.ToString();
+            txt_Publisher.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Publisher).FirstOrDefault();
+            txt_CopyrightYear.Text = dgvBook.CurrentRow.Cells[5].Value.ToString();
+            txt_Edition.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Edition).FirstOrDefault();
+            txt_Volume.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Volume).FirstOrDefault();
+            txt_Pages.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Pages).FirstOrDefault().ToString();
+            txt_Remarks.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Remarks).FirstOrDefault();
 
             lbl_NumCopies.Visible = true;
             lbl_NumCopies.Text = "Total No. of Copies : " +db.sp_TotalBookCopy(txt_BookIDNum.Text).Count().ToString();
@@ -120,7 +124,6 @@ namespace QRCodeBasedLMS
 
         public void DisableTextboxes()
         {
-            txt_BookIDNum.Enabled = false;
             cmbBookType.Enabled = false;
             txt_ISBN.Enabled = false;
             txt_CallNumber.Enabled = false;
@@ -139,7 +142,6 @@ namespace QRCodeBasedLMS
 
         public void EnableTextboxes()
         {
-            txt_BookIDNum.Enabled = true;
             cmbBookType.Enabled = true;
             txt_ISBN.Enabled = true;
             txt_CallNumber.Enabled = true;
@@ -158,6 +160,7 @@ namespace QRCodeBasedLMS
 
         private void txt_BookIDNum_OnValueChanged(object sender, EventArgs e)
         {
+            
             MessagingToolkit.QRCode.Codec.QRCodeEncoder encode = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
             encode.QRCodeScale = 6;
             Bitmap bmp = encode.Encode(txt_BookIDNum.Text);
@@ -166,7 +169,6 @@ namespace QRCodeBasedLMS
 
         public void ClearText()
         {
-            txt_BookIDNum.Text = "";
             txt_ISBN.Text = "";
             txt_AccessionNumber.Text = "";
             txt_CallNumber.Text = "";
@@ -182,7 +184,36 @@ namespace QRCodeBasedLMS
             btnAddOrUpdate.Text = "ADD";
         }
 
+<<<<<<< HEAD
         private void txt_Search_OnValueChanged(object sender, EventArgs e)
+=======
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            EnableTextboxes();
+            txt_BookIDNum.Text = bk.GenerateBookIDNum();
+            cmbBookType.Text = "References";
+            gb_Copy.Visible = true;
+            lbl_NumCopies.Visible = false;
+            dgvBook.DataSource = db.sp_ViewBook();
+        }
+
+        private void cmb_SearchCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmb_SearchCategory.Text == "QR Code")
+            {
+                Link_Scan.Visible = true;
+                txt_Search.Visible = false;
+            }
+            else
+            {
+                txt_Search.Visible = true;
+                Link_Scan.Visible = false;
+            }
+        }
+
+        private void txt_Search_TextChanged(object sender, EventArgs e)
+>>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
         {
             dgvBook.DataSource = db.sp_SearchBook(cmb_SearchCategory.Text, txt_Search.Text);
         }
@@ -252,6 +283,7 @@ namespace QRCodeBasedLMS
         // since bunifu dont support direct maxlength control
         private void SetMaximumLength(Bunifu.Framework.UI.BunifuMetroTextbox metroTextbox, int maximumLength)
         {
+<<<<<<< HEAD
             foreach (Control ctl in metroTextbox.Controls)
             {
                 if (ctl.GetType() == typeof(TextBox))
@@ -276,8 +308,16 @@ namespace QRCodeBasedLMS
                 txt_Search.Visible = true;
                 Link_Scan.Visible = false;
             }
+=======
+            ScanQRCode scan = new ScanQRCode("book","");
+            scan.Show();
+            this.Close();
+>>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
         }
 
-        
+        private void dgvBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -3,6 +3,12 @@ use dbLibraryManagement
 ---*STORED PROCEDURES*----
 
 ----FOR tblBook----
+CREATE PROCEDURE sp_BookIDnumber
+AS
+DECLARE @ID int
+SELECT @ID=IDENT_CURRENT('tblBook')
+RETURN @ID;
+
 CREATE PROCEDURE sp_AddBook
 @BookNum varchar(50),
 @BookType varchar(50),
@@ -42,11 +48,11 @@ END
 CREATE PROCEDURE sp_ViewBook
 AS
 BEGIN
-	SELECT dbo.tblBook.book_BookNum as BookIDNumber, dbo.tblBook.book_BookType as BookType, dbo.tblBook.book_ISBN as ISBN, dbo.tblBook.book_CallNum as CallNumber, 
-		dbo.tblBook.book_Title as Title, dbo.tblBook.book_Author as Author, dbo.tblBook.book_Publisher as Publisher, 
-		dbo.tblBook.book_CopyrightYear as CopyrightYear, dbo.tblBook.book_Edition as Edition, 
-		dbo.tblBook.book_Volume as Volume, dbo.tblBook.book_Pages as Pages, dbo.tblBook.book_Remarks as Remarks
-FROM            dbo.tblBook
+	SELECT dbo.tblBook.book_BookNum as BookIDNumber, dbo.tblBook.book_BookType as BookType, dbo.tblBook.book_CallNum as CallNumber, 
+		dbo.tblBook.book_Title as Title, dbo.tblBook.book_Author as Author, 
+		dbo.tblBook.book_CopyrightYear as CopyrightYear
+	FROM dbo.tblBook
+	ORDER BY dbo.tblBook.book_BookID DESC
 END
 
 CREATE PROCEDURE sp_ViewBookCopy

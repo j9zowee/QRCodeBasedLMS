@@ -7,48 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using AForge;
-using AForge.Video;
-using AForge.Video.DirectShow;
-using ZXing;
-using ZXing.QrCode;
 
 namespace QRCodeBasedLMS
 {
     public partial class AttendanceMonitoring : Form
     {
-        public AttendanceMonitoring()
+        private string qrcode;
+        public AttendanceMonitoring(string qr)
         {
             InitializeComponent();
+            qrcode = qr;
         }
-        private FilterInfoCollection CaptureDevice;
-        private VideoCaptureDevice FinalFrame;
+    
         dcLMSDataContext db = new dcLMSDataContext();
         
         private void AttendanceMonitoring_Load(object sender, EventArgs e)
         {
-            CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo Device in CaptureDevice)
+            if (qrcode != "")
             {
-                cmbDevice.Items.Add(Device.Name);
+                txt_SchoolID.Text = qrcode;
             }
-            cmbDevice.SelectedIndex = 0;
-            FinalFrame = new VideoCaptureDevice();
-            btnCamera.Visible = false;
-
-            if (FinalFrame.IsRunning == true)
-            {
-                FinalFrame.Stop();
-            }
-            FinalFrame = new VideoCaptureDevice(CaptureDevice[cmbDevice.SelectedIndex].MonikerString);
-            FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
-            FinalFrame.Start();
         }
-        private void FinalFrame_NewFrame(Object sender, NewFrameEventArgs eventArgs)
-        {
-            pb_ScanQR.Image = (Image)eventArgs.Frame.Clone();
-        }
+        
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -69,6 +49,14 @@ namespace QRCodeBasedLMS
             }
         }
 
+        
+        private void link_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            IndexForm index = new IndexForm();
+            index.Show();
+            this.Close();
+        }
+        
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
@@ -76,73 +64,12 @@ namespace QRCodeBasedLMS
             txt_SchoolID.Clear();
             txt_Name.Clear();
         }
-        private void link_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            IndexForm index = new IndexForm();
-            index.Show();
-            this.Close();
-        }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void link_ScanQR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            BarcodeReader Reader = new BarcodeReader();
-            Result result = Reader.Decode((Bitmap)pb_ScanQR.Image);
-            try
-            {
-                string decoded = result.ToString().Trim();
-                if (decoded != "")
-                {
-                    timer.Stop();
-                    txt_SchoolID.Text = decoded;
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
+            ScanQRCode scan = new ScanQRCode("attendance","");
+            scan.Show();
+            this.Hide();
         }
-
-        private void btnScan_Click(object sender, EventArgs e)
-        {
-            timer.Enabled = true;
-            timer.Start();
-        }
-
-        private void AttendanceMonitoring_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (FinalFrame.IsRunning == true)
-            {
-                FinalFrame.Stop();
-            }
-        }
-
-        private void cmbDevice_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (FinalFrame.IsRunning == true)
-            {
-                FinalFrame.Stop();
-            }
-            FinalFrame = new VideoCaptureDevice(CaptureDevice[cmbDevice.SelectedIndex].MonikerString);
-            FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
-            FinalFrame.Start();
-        }
-
-        private void btnCamera_Click(object sender, EventArgs e)
-        {
-            if (FinalFrame.IsRunning == true)
-            {
-                FinalFrame.Stop();
-            }
-            FinalFrame = new VideoCaptureDevice(CaptureDevice[cmbDevice.SelectedIndex].MonikerString);
-            FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
-            FinalFrame.Start();
-            btnCamera.Visible = false;
-        }
-
-        private void cmbDevice_TextChanged(object sender, EventArgs e)
-        {
-            btnCamera.Visible = true;
-        }
-    
     }
 }

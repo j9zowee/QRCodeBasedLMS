@@ -108,6 +108,12 @@
     <Compile Include="Borrower.Designer.cs">
       <DependentUpon>Borrower.cs</DependentUpon>
     </Compile>
+    <Compile Include="BorrowerInfoForLibraryCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowerInfoForLibraryCard.Designer.cs">
+      <DependentUpon>BorrowerInfoForLibraryCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="clsBook.cs" />
     <Compile Include="clsBorrower.cs" />
     <Compile Include="clsLibrary.cs" />
@@ -152,6 +158,12 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Return.Designer.cs">
+      <DependentUpon>Return.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScanQRCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,11 +203,17 @@
     <EmbeddedResource Include="Borrower.resx">
       <DependentUpon>Borrower.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BorrowerInfoForLibraryCard.resx">
+      <DependentUpon>BorrowerInfoForLibraryCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IndexForm.resx">
       <DependentUpon>IndexForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LibraryUserMasterlist.resx">
       <DependentUpon>LibraryUserMasterlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return.resx">
+      <DependentUpon>Return.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScanQRCode.resx">
       <DependentUpon>ScanQRCode.cs</DependentUpon>
@@ -236,6 +254,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\clsBorrow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

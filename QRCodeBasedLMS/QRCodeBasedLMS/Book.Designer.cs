@@ -116,10 +116,24 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "*Title :";
             // 
+<<<<<<< HEAD
+=======
+            // txt_BookIDNum
+            // 
+            this.txt_BookIDNum.Enabled = false;
+            this.txt_BookIDNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_BookIDNum.Location = new System.Drawing.Point(287, 9);
+            this.txt_BookIDNum.Name = "txt_BookIDNum";
+            this.txt_BookIDNum.Size = new System.Drawing.Size(119, 22);
+            this.txt_BookIDNum.TabIndex = 1;
+            this.txt_BookIDNum.TextChanged += new System.EventHandler(this.txt_BookIDNum_TextChanged);
+            // 
+>>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
             // dgvBook
             // 
             this.dgvBook.AllowUserToAddRows = false;
             this.dgvBook.AllowUserToDeleteRows = false;
+            this.dgvBook.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBook.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvBook.Location = new System.Drawing.Point(57, 271);
@@ -129,6 +143,7 @@
             this.dgvBook.Size = new System.Drawing.Size(884, 269);
             this.dgvBook.TabIndex = 22;
             this.dgvBook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBook_CellClick);
+            this.dgvBook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBook_CellContentClick);
             // 
             // label1
             // 

@@ -116,19 +116,6 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "*Title :";
             // 
-<<<<<<< HEAD
-=======
-            // txt_BookIDNum
-            // 
-            this.txt_BookIDNum.Enabled = false;
-            this.txt_BookIDNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_BookIDNum.Location = new System.Drawing.Point(287, 9);
-            this.txt_BookIDNum.Name = "txt_BookIDNum";
-            this.txt_BookIDNum.Size = new System.Drawing.Size(119, 22);
-            this.txt_BookIDNum.TabIndex = 1;
-            this.txt_BookIDNum.TextChanged += new System.EventHandler(this.txt_BookIDNum_TextChanged);
-            // 
->>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
             // dgvBook
             // 
             this.dgvBook.AllowUserToAddRows = false;
@@ -382,7 +369,7 @@
             this.btnAddOrUpdate.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnAddOrUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddOrUpdate.BorderRadius = 7;
-            this.btnAddOrUpdate.ButtonText = "UPDATE";
+            this.btnAddOrUpdate.ButtonText = "ADD";
             this.btnAddOrUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddOrUpdate.DisabledColor = System.Drawing.Color.Gray;
             this.btnAddOrUpdate.Iconcolor = System.Drawing.Color.Transparent;
@@ -405,7 +392,7 @@
             this.btnAddOrUpdate.selected = false;
             this.btnAddOrUpdate.Size = new System.Drawing.Size(93, 41);
             this.btnAddOrUpdate.TabIndex = 58;
-            this.btnAddOrUpdate.Text = "UPDATE";
+            this.btnAddOrUpdate.Text = "ADD";
             this.btnAddOrUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddOrUpdate.Textcolor = System.Drawing.Color.Black;
             this.btnAddOrUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -509,6 +496,7 @@
             this.txt_BookIDNum.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
             this.txt_BookIDNum.BorderThickness = 1;
             this.txt_BookIDNum.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_BookIDNum.Enabled = false;
             this.txt_BookIDNum.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txt_BookIDNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_BookIDNum.isPassword = false;
@@ -734,7 +722,6 @@
             this.txt_Search.Size = new System.Drawing.Size(119, 22);
             this.txt_Search.TabIndex = 73;
             this.txt_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_Search.OnValueChanged += new System.EventHandler(this.txt_Search_OnValueChanged);
             // 
             // panel3
             // 

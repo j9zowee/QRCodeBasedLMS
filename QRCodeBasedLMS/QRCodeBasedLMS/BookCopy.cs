@@ -41,31 +41,31 @@ namespace QRCodeBasedLMS
 
         private void btnAddOrUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("asd");
-            //if (string.IsNullOrWhiteSpace(txt_AccessionNumber.Text))
-            //{
-            //    MessageBox.Show("Incomplete Data!");
-            //}
-            //else
-            //{
-            //    if(btnAddOrUpdate.Text == "ADD")
-            //    {
-            //        db.sp_AddBookCopy(txt_BookIDNum.Text, int.Parse(txt_AccessionNumber.Text), DateTime.Parse(dtp_DateReceived.Text), cmb_Status.Text);
-            //        dgvBook.DataSource = db.sp_ViewBookCopy(txt_BookIDNum.Text);
-            //        MessageBox.Show("Successfully Added a Copy!");
-            //        txt_AccessionNumber.Text = "";
-            //    }
-            //    else
-            //    {
-            //        //db.sp_UpdateBookCopy(txt_BookIDNum.Text, int.Parse(txt_AccessionNumber.Text), DateTime.Parse(dtp_DateReceived.Text), cmb_Status.Text);
-            //        //dgvBook.DataSource = db.sp_ViewBookCopy(txt_BookIDNum.Text);
-            //        //MessageBox.Show("Successfully Updated a Copy!");
-            //        //txt_AccessionNumber.Text = "";
-            //        //btnAddOrUpdate.Text = "ADD";
-            //    }
-                
-            //}
-            
+
+            if (string.IsNullOrWhiteSpace(txt_AccessionNumber.Text))
+            {
+                MessageBox.Show("Incomplete Data!");
+            }
+            else
+            {
+                if (btnAddOrUpdate.Text == "ADD")
+                {
+                    db.sp_AddBookCopy(txt_BookIDNum.Text, int.Parse(txt_AccessionNumber.Text), DateTime.Parse(dtp_DateReceived.Text), cmb_Status.Text);
+                    dgvBook.DataSource = db.sp_ViewBookCopy(txt_BookIDNum.Text);
+                    MessageBox.Show("Successfully Added a Copy!");
+                    txt_AccessionNumber.Text = "";
+                }
+                else
+                {
+                    //db.sp_UpdateBookCopy(txt_BookIDNum.Text, int.Parse(txt_AccessionNumber.Text), DateTime.Parse(dtp_DateReceived.Text), cmb_Status.Text);
+                    //dgvBook.DataSource = db.sp_ViewBookCopy(txt_BookIDNum.Text);
+                    //MessageBox.Show("Successfully Updated a Copy!");
+                    //txt_AccessionNumber.Text = "";
+                    //btnAddOrUpdate.Text = "ADD";
+                }
+
+            }
+
         }
 
         private void txt_AccessionNumber_KeyPress(object sender, KeyPressEventArgs e)

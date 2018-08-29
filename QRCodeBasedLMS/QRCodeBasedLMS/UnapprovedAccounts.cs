@@ -23,12 +23,12 @@ namespace QRCodeBasedLMS
         dcLMSDataContext db = new dcLMSDataContext();
         private void UnapprovedAccounts_Load(object sender, EventArgs e)
         {
-            dgvAccount.DataSource = db.sp_ViewInactiveAccount();
+            //dgvAccount.DataSource = db.sp_ViewInactiveAccount();
             cmb_SearchCategory.Text = "QR Code";
             if (qrcode != "")
             {
                 MessageBox.Show(qrcode);
-                dgvAccount.DataSource = db.sp_SearchInactiveAccount(cmb_SearchCategory.Text, qrcode);
+                //dgvAccount.DataSource = db.sp_SearchInactiveAccount(cmb_SearchCategory.Text, qrcode);
             }
         }
 
@@ -69,7 +69,7 @@ namespace QRCodeBasedLMS
                 }
             }
             db.sp_UpdateAccountStatus(txt_UserIDNum.Text, cmb_Status.Text);
-            dgvAccount.DataSource = db.sp_ViewInactiveAccount();
+            //dgvAccount.DataSource = db.sp_ViewInactiveAccount();
             MessageBox.Show("Saved!");
             ClearText();
         }
@@ -114,7 +114,7 @@ namespace QRCodeBasedLMS
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
-            dgvAccount.DataSource = db.sp_SearchInactiveAccount(cmb_SearchCategory.Text, txt_Search.Text);
+            //dgvAccount.DataSource = db.sp_SearchInactiveAccount(cmb_SearchCategory.Text, txt_Search.Text);
         }
     }
 }

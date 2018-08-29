@@ -49,11 +49,11 @@
             this.borrowBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
+
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-=======
+
             this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
+
             this.ms_Mainform.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,19 +219,19 @@
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
-<<<<<<< HEAD
+
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
-=======
+
             // returnBookToolStripMenuItem
             // 
             this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
             this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.returnBookToolStripMenuItem.Text = "Return Book";
             this.returnBookToolStripMenuItem.Click += new System.EventHandler(this.returnBookToolStripMenuItem_Click);
->>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
+
             // 
             // MainForm
             // 
@@ -270,13 +270,13 @@
         private System.Windows.Forms.ToolStripMenuItem updateBookInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unapprovedUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem libraryUsersToolStripMenuItem;
-<<<<<<< HEAD
+
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-=======
+
         private System.Windows.Forms.ToolStripMenuItem borrowBookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrowersInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printLibraryCardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnBookToolStripMenuItem;
->>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
+
     }
 }

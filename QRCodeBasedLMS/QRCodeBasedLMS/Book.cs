@@ -184,9 +184,9 @@ namespace QRCodeBasedLMS
             btnAddOrUpdate.Text = "ADD";
         }
 
-<<<<<<< HEAD
-        private void txt_Search_OnValueChanged(object sender, EventArgs e)
-=======
+//<<<<<<< HEAD
+//        private void txt_Search_OnValueChanged(object sender, EventArgs e)
+//=======
         private void btn_Clear_Click(object sender, EventArgs e)
         {
             ClearText();
@@ -212,11 +212,11 @@ namespace QRCodeBasedLMS
             }
         }
 
-        private void txt_Search_TextChanged(object sender, EventArgs e)
->>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
-        {
-            dgvBook.DataSource = db.sp_SearchBook(cmb_SearchCategory.Text, txt_Search.Text);
-        }
+//        private void txt_Search_TextChanged(object sender, EventArgs e)
+//>>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
+//        {
+//            dgvBook.DataSource = db.sp_SearchBook(cmb_SearchCategory.Text, txt_Search.Text);
+//        }
 
         private void txt_AccessionNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -247,7 +247,7 @@ namespace QRCodeBasedLMS
 
         private void Link_Scan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ScanQRCode scan = new ScanQRCode("book");
+            ScanQRCode scan = new ScanQRCode("book","");
             scan.Show();
             this.Close();
         }
@@ -255,19 +255,19 @@ namespace QRCodeBasedLMS
 
         private void link_SignIn_Click(object sender, EventArgs e)
         {
-            ScanQRCode scan = new ScanQRCode("book");
+            ScanQRCode scan = new ScanQRCode("book","");
             scan.Show();
             this.Close();
         }
 
-        private void btn_Clear_Click(object sender, EventArgs e)
-        {
-            ClearText();
-            EnableTextboxes();
-            gb_Copy.Visible = true;
-            lbl_NumCopies.Visible = false;
-            dgvBook.DataSource = db.sp_ViewBook();
-        }
+        //private void btn_Clear_Click(object sender, EventArgs e)
+        //{
+        //    ClearText();
+        //    EnableTextboxes();
+        //    gb_Copy.Visible = true;
+        //    lbl_NumCopies.Visible = false;
+        //    dgvBook.DataSource = db.sp_ViewBook();
+        //}
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
@@ -283,7 +283,7 @@ namespace QRCodeBasedLMS
         // since bunifu dont support direct maxlength control
         private void SetMaximumLength(Bunifu.Framework.UI.BunifuMetroTextbox metroTextbox, int maximumLength)
         {
-<<<<<<< HEAD
+            //<<<<<<< HEAD
             foreach (Control ctl in metroTextbox.Controls)
             {
                 if (ctl.GetType() == typeof(TextBox))
@@ -308,11 +308,10 @@ namespace QRCodeBasedLMS
                 txt_Search.Visible = true;
                 Link_Scan.Visible = false;
             }
-=======
-            ScanQRCode scan = new ScanQRCode("book","");
+                
+                ScanQRCode scan = new ScanQRCode("book","");
             scan.Show();
             this.Close();
->>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
         }
 
         private void dgvBook_CellContentClick(object sender, DataGridViewCellEventArgs e)

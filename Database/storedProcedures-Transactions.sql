@@ -11,8 +11,7 @@ CREATE PROCEDURE sp_BorrowBook
 @SchoolID varchar(50),
 @BookNum varchar(50),
 @BorrowedDate datetime,
-@DueDate datetime
-
+@DueDate date
 AS
 BEGIN
 	DECLARE @libUserID int
@@ -25,7 +24,7 @@ END
 CREATE PROCEDURE sp_SelectBooks
 @BookNum varchar(50),
 @Title varchar(100),
-@DueDate datetime
+@DueDate date
 
 AS
 BEGIN

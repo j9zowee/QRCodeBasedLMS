@@ -74,7 +74,8 @@ CREATE PROCEDURE sp_SearchActiveAccount
 @searchkey varchar(50)
 AS
 BEGIN
-	if @Category = 'QR Code'
+
+	if @Category = 'QR Code'	
 	(SELECT dbo.tblUser.user_UserNum, dbo.tblUser.user_Firstname, dbo.tblUser.user_Lastname, 
 		dbo.tblUser.user_Username, dbo.tblUser.user_Password, dbo.tblUser.user_SecretQuestion, dbo.tblUser.user_SecretAnswer, 
 		 dbo.tblUser.user_UserType as UserType, dbo.tblUser.user_Status as UserStatus
@@ -120,3 +121,5 @@ BEGIN
 	 where tblUser.user_Firstname like '%'+@searchKey+'%' and (dbo.tblUser.user_Status = 'Inactive' or dbo.tblUser.user_Status = 'Deactivate'))
 	
 END
+
+select * from tblAttendance

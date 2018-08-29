@@ -108,7 +108,7 @@ namespace QRCodeBasedLMS
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
             //searching using the lastname and firstname
-            dgvBorrower.DataSource = db.sp_SearchBorrower(cmb_SearchCategory.Text, txt_Search.Text);
+            //dgvBorrower.DataSource = db.sp_SearchBorrower(cmb_SearchCategory.Text, txt_Search.Text);
         }
 
         

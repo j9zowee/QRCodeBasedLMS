@@ -74,7 +74,7 @@ namespace QRCodeBasedLMS
                         }
 
                         MessageBox.Show("Successfully Registered!");
-                        dgvAccount.DataSource = db.sp_ViewActiveAccount();
+                        //dgvAccount.DataSource = db.sp_ViewActiveAccount();
                         ClearText();
                     }
                 }
@@ -83,7 +83,7 @@ namespace QRCodeBasedLMS
                     user.UpdateRecord();
                     ClearText();
                     MessageBox.Show("Successfully Registered!");
-                    dgvAccount.DataSource = db.sp_ViewActiveAccount();
+                    //dgvAccount.DataSource = db.sp_ViewActiveAccount();
                     
                 }
                 
@@ -120,10 +120,10 @@ namespace QRCodeBasedLMS
         {
             txt_UserIDNum.Text = user.GenerateAccountIDNum();
             cmb_SearchCategory.Text = "QR Code";
-            dgvAccount.DataSource = db.sp_ViewActiveAccount();
+            //dgvAccount.DataSource = db.sp_ViewActiveAccount();
             if (qrcode != "")
             {
-                dgvAccount.DataSource = db.sp_SearchActiveAccount(cmb_SearchCategory.Text, qrcode);
+                //dgvAccount.DataSource = db.sp_SearchActiveAccount(cmb_SearchCategory.Text, qrcode);
             }
         }
 
@@ -182,7 +182,7 @@ namespace QRCodeBasedLMS
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
             //searching using lastname or firstname
-            dgvAccount.DataSource = db.sp_SearchActiveAccount(cmb_SearchCategory.Text, txt_Search.Text);
+            //dgvAccount.DataSource = db.sp_SearchActiveAccount(cmb_SearchCategory.Text, txt_Search.Text);
         }
 
         
@@ -207,7 +207,7 @@ namespace QRCodeBasedLMS
         {
             db.sp_UpdateAccountStatus(txt_UserIDNum.Text, "Deactivate");
             MessageBox.Show("Successfully deactivated account!");
-            dgvAccount.DataSource = db.sp_ViewActiveAccount();
+            //dgvAccount.DataSource = db.sp_ViewActiveAccount();
             ClearText();
         }
     }

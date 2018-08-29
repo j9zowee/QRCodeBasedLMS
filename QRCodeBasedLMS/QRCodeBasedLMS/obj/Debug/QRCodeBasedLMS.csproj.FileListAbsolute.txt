@@ -332,3 +332,4 @@ C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.Return.resources
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.csprojResolveAssemblyReference.cache
 >>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
+C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\bin\Debug\Bunifu_UI_v1.5.3.dll

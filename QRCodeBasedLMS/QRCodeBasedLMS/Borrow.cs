@@ -35,25 +35,25 @@ namespace QRCodeBasedLMS
         {
             txt_BorrowerID.Text = Borrowerqrcode;
             txt_BookIDNum.Text = Bookqrcode;
-
+            
             if (txt_BookIDNum.Text != "")
             {
                 DateTime dt = DateTime.Now;
                 DateTime due = dt.AddDays(3);
-                db.sp_SelectBooks(txt_BookIDNum.Text,txt_Title.Text, due);
+                db.sp_SelectBooks(txt_BookIDNum.Text, txt_Title.Text, due);
 
+                dgvBorrow.DataSource = db.sp_ViewSelectedBooks();
+                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
                 
-                
+                btn.Text = "Delete";
+                btn.Name = "Delete";
+                btn.UseColumnTextForButtonValue = true;
+                dgvBorrow.Columns.Add(btn);
+                btnScan.Text = "Scan Another Book";
             }
 
             
-            dgvBorrow.DataSource = db.sp_ViewSelectedBooks();
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            dgvBorrow.Columns.Add(btn);
-            btn.Text = "Delete";
-            btn.Name = "Delete";
-            btn.UseColumnTextForButtonValue = true;
-            btnScan.Text = "Scan Another Book";
+            
         }
 
 
@@ -67,24 +67,15 @@ namespace QRCodeBasedLMS
 
         private void dgvBorrow_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_BookIDNum.Text = dgvBorrow.CurrentRow.Cells[0].Value.ToString();
-            txt_Title.Text = dgvBorrow.CurrentRow.Cells[1].Value.ToString();
+            
+                txt_BookIDNum.Text = dgvBorrow.CurrentRow.Cells[0].Value.ToString();
             DialogResult res = MessageBox.Show("Are you sure you want to delete this?", "", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
-               
+                db.sp_DeleteSelectedBooks(txt_BookIDNum.Text);
                 dgvBorrow.DataSource = db.sp_ViewSelectedBooks();
                 
-                MessageBox.Show(txt_BookIDNum.Text);
-                //db.sp_DeleteSelectedBooks(/*book*/);
-                dgvBorrow.DataSource = db.sp_ViewSelectedBooks();
-                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-                dgvBorrow.Columns.Add(btn);
-                btn.Text = "Delete";
-                btn.Name = "Delete";
-                btn.UseColumnTextForButtonValue = true;
                 btnScan.Text = "Scan Another Book";
-
             }
         }
 
@@ -98,14 +89,14 @@ namespace QRCodeBasedLMS
             {
                 for (int i = 0; i < dgvBorrow.RowCount; i++)
                 {
-                    db.sp_BorrowBook(borrowID, txt_BorrowerID.Text, dgvBorrow.Rows[i].Cells[1].Value.ToString(), dt, DateTime.Parse(dgvBorrow.Rows[i].Cells[2].Value.ToString()));
+                    db.sp_BorrowBook(borrowID, txt_BorrowerID.Text, dgvBorrow.Rows[i].Cells[0].Value.ToString(), dt, DateTime.Parse(dgvBorrow.Rows[i].Cells[2].Value.ToString()));
                 }
                     
                 MessageBox.Show("Successully Borrowed!");
                 for (int i = 0; i < dgvBorrow.RowCount; i++)
                 {
 
-                    db.sp_DeleteSelectedBooks(dgvBorrow.Rows[i].Cells[1].Value.ToString());
+                    db.sp_DeleteSelectedBooks(dgvBorrow.Rows[i].Cells[0].Value.ToString());
                 }
                 txt_BookIDNum.Text = null;
                 txt_BorrowerID.Text = null;
@@ -128,7 +119,7 @@ namespace QRCodeBasedLMS
             {
                 for (int i = 0; i < dgvBorrow.RowCount; i++)
                 {
-                    db.sp_DeleteSelectedBooks(dgvBorrow.Rows[i].Cells[1].Value.ToString());
+                    db.sp_DeleteSelectedBooks(dgvBorrow.Rows[i].Cells[0].Value.ToString());
                 }
                 IndexForm index = new IndexForm();
                 index.Show();

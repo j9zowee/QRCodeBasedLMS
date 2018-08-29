@@ -119,3 +119,5 @@ BEGIN
 	FROM dbo.tblBook INNER JOIN dbo.tblBookCopy ON dbo.tblBook.book_BookID = dbo.tblBookCopy.book_BookID
 	WHERE tblBook.book_BookNum = @BookNum
 END
+
+select * from tblLibraryUser

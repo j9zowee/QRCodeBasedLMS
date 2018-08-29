@@ -19,10 +19,12 @@ namespace QRCodeBasedLMS
     public partial class ScanQRCode : Form
     {
         private string gikan;
-        public ScanQRCode(string ginikanan)
+        private string Z;
+        public ScanQRCode(string ginikanan, string x)
         {
             InitializeComponent();
             gikan = ginikanan;
+            Z = x;
         }
         private FilterInfoCollection CaptureDevice;
         private VideoCaptureDevice FinalFrame;
@@ -67,6 +69,18 @@ namespace QRCodeBasedLMS
 
                         Book bk = new Book(decoded);
                         bk.Show();
+                        this.Close();
+                    }
+                    else if (gikan == "index-borrow")
+                    {
+                        Borrow br = new Borrow(decoded,"");
+                        br.Show();
+                        this.Close();
+                    }
+                    else if (gikan == "borrowform")
+                    {
+                        Borrow br = new Borrow(Z,decoded);
+                        br.Show();
                         this.Close();
                     }
                     else if (gikan == "borrower_bk")

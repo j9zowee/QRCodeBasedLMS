@@ -67,7 +67,7 @@ namespace QRCodeBasedLMS
 
         private void link_ScanQR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ScanQRCode scan = new ScanQRCode("attendance");
+            ScanQRCode scan = new ScanQRCode("attendance","");
             scan.Show();
             this.Hide();
         }

@@ -13,6 +13,7 @@ user_SecretQuestion varchar(100)not null,
 user_SecretAnswer varchar(100)not null,
 user_UserType varchar(20)not null,
 user_Status varchar(10) not null)
+ select * from tblBook
 
 create table tblLibraryUser(
 lib_UserID int identity(1,1) primary key,
@@ -63,6 +64,12 @@ lib_UserID int foreign key references tblLibraryUser(lib_UserID),
 book_BookID int foreign key references tblBook(book_BookID),
 borrow_BorrowedDate date not null,
 borrow_DueDate date not null)
+
+create table tblSelectedBooks(
+sb_BookID int identity(1,1) primary key,
+sb_BookIDNum varchar(50),
+sb_Title varchar(100),
+sb_DueDate date not null)
 
 create table tblReturn(
 return_ReturnID int identity(1,1) primary key,

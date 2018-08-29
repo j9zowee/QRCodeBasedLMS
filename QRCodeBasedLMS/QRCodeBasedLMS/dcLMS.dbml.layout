@@ -26,7 +26,7 @@
         <elementListCompartment Id="390380e6-58ca-41f7-89a0-a58ee63e28bc" absoluteBounds="3.515, 2.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 2.63544840494792); (3.5 : 2.63544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 2.83099609375); (3.5 : 2.83099609375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dcLMSDataContext/tblBook/tblBook_tblBookCopy" />
       <nodes>
         <classShapeMoniker Id="6da9be02-4689-4689-9bcf-d2a7522c2ebd" />
@@ -37,6 +37,12 @@
       <DataClassMoniker Name="/dcLMSDataContext/tblLibraryUser" />
       <nestedChildShapes>
         <elementListCompartment Id="f5a78541-2b68-49b7-8027-bf19534f7734" absoluteBounds="6.015, 4.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4cb75972-e1a1-41eb-b3c8-45b6ea749f28" absoluteBounds="4.625, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcLMSDataContext/tblSelectedBook" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e57f93a-b85c-4583-8b49-6d1d3bce9660" absoluteBounds="4.64, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

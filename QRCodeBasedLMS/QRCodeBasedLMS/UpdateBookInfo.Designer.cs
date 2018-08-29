@@ -356,6 +356,7 @@
             // 
             // txt_BookIDNum
             // 
+            this.txt_BookIDNum.Enabled = false;
             this.txt_BookIDNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_BookIDNum.Location = new System.Drawing.Point(124, 160);
             this.txt_BookIDNum.Name = "txt_BookIDNum";

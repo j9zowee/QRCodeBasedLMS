@@ -273,7 +273,6 @@ C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\bin\
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\bin\Debug\zxing.xml
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\bin\Debug\zxing.presentation.pdb
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\bin\Debug\zxing.presentation.xml
-C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.csprojResolveAssemblyReference.cache
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.AttendanceMonitoring.resources
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.Book.resources
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.BookCopy.resources
@@ -291,3 +290,5 @@ C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.Registration.resources
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.csproj.GenerateResource.Cache
 C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.BorrowerInfoForLibraryCard.resources
+C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.Return.resources
+C:\Users\Dell\Documents\GitHub\QRCodeBasedLMS\QRCodeBasedLMS\QRCodeBasedLMS\obj\Debug\QRCodeBasedLMS.csprojResolveAssemblyReference.cache

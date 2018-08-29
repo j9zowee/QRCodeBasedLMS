@@ -119,12 +119,19 @@ namespace QRCodeBasedLMS
             if (copyrightYear > dt.Year)
             {
                 return false;
-
             }
             else
             {
                 return true;
             }
+        }
+
+        public string GenerateBookIDNum()
+        {
+            DateTime dt = DateTime.Now;
+            int x = db.sp_BookIDnumber()+1;
+            string bookID = "BK-"+x+"-"+dt.Day+dt.Month+dt.Year;
+            return bookID;
         }
         
     }

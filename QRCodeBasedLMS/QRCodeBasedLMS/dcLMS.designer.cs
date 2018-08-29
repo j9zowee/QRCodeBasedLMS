@@ -45,6 +45,9 @@ namespace QRCodeBasedLMS
     partial void InserttblLibraryUser(tblLibraryUser instance);
     partial void UpdatetblLibraryUser(tblLibraryUser instance);
     partial void DeletetblLibraryUser(tblLibraryUser instance);
+    partial void InserttblSelectedBook(tblSelectedBook instance);
+    partial void UpdatetblSelectedBook(tblSelectedBook instance);
+    partial void DeletetblSelectedBook(tblSelectedBook instance);
     #endregion
 		
 		public dcLMSDataContext() : 
@@ -117,6 +120,14 @@ namespace QRCodeBasedLMS
 			}
 		}
 		
+		public System.Data.Linq.Table<tblSelectedBook> tblSelectedBooks
+		{
+			get
+			{
+				return this.GetTable<tblSelectedBook>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AddBook")]
 		public int sp_AddBook([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookNum", DbType="VarChar(50)")] string bookNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookType", DbType="VarChar(50)")] string bookType, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISBN", DbType="VarChar(50)")] string iSBN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AccNum", DbType="Int")] System.Nullable<int> accNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CallNum", DbType="VarChar(50)")] string callNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DateReceived", DbType="Date")] System.Nullable<System.DateTime> dateReceived, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author", DbType="VarChar(50)")] string author, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publisher", DbType="VarChar(100)")] string publisher, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CopyrightYear", DbType="Int")] System.Nullable<int> copyrightYear, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Edition", DbType="VarChar(50)")] string edition, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Volume", DbType="VarChar(50)")] string volume, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Pages", DbType="Int")] System.Nullable<int> pages, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status", DbType="VarChar(20)")] string status, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Remarks", DbType="VarChar(200)")] string remarks)
 		{
@@ -150,13 +161,6 @@ namespace QRCodeBasedLMS
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookNum, bookType, iSBN, callNum, title, author, publisher, copyrightYear, edition, volume, pages, remarks);
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewBook")]
-		public ISingleResult<sp_ViewBookResult> sp_ViewBook()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<sp_ViewBookResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewBookCopy")]
@@ -276,6 +280,55 @@ namespace QRCodeBasedLMS
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), borrowNum, schoolID, bookNum, borrowedDate, dueDate);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookIDnumber")]
+		public int sp_BookIDnumber()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AccountIDnumber")]
+		public int sp_AccountIDnumber()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BorrowIDnumber")]
+		public int sp_BorrowIDnumber()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewBook")]
+		public ISingleResult<sp_ViewBookResult> sp_ViewBook()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_ViewBookResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteSelectedBooks")]
+		public int sp_DeleteSelectedBooks([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookIDNum", DbType="VarChar(50)")] string bookIDNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookIDNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectBooks")]
+		public int sp_SelectBooks([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookNum", DbType="VarChar(50)")] string bookNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(100)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DueDate", DbType="DateTime")] System.Nullable<System.DateTime> dueDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookNum, title, dueDate);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewSelectedBooks")]
+		public ISingleResult<sp_ViewSelectedBooksResult> sp_ViewSelectedBooks()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_ViewSelectedBooksResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1546,6 +1599,140 @@ namespace QRCodeBasedLMS
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblSelectedBooks")]
+	public partial class tblSelectedBook : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _sb_BookID;
+		
+		private string _sb_BookIDNum;
+		
+		private string _sb_Title;
+		
+		private System.DateTime _sb_DueDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onsb_BookIDChanging(int value);
+    partial void Onsb_BookIDChanged();
+    partial void Onsb_BookIDNumChanging(string value);
+    partial void Onsb_BookIDNumChanged();
+    partial void Onsb_TitleChanging(string value);
+    partial void Onsb_TitleChanged();
+    partial void Onsb_DueDateChanging(System.DateTime value);
+    partial void Onsb_DueDateChanged();
+    #endregion
+		
+		public tblSelectedBook()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sb_BookID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int sb_BookID
+		{
+			get
+			{
+				return this._sb_BookID;
+			}
+			set
+			{
+				if ((this._sb_BookID != value))
+				{
+					this.Onsb_BookIDChanging(value);
+					this.SendPropertyChanging();
+					this._sb_BookID = value;
+					this.SendPropertyChanged("sb_BookID");
+					this.Onsb_BookIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sb_BookIDNum", DbType="VarChar(50)")]
+		public string sb_BookIDNum
+		{
+			get
+			{
+				return this._sb_BookIDNum;
+			}
+			set
+			{
+				if ((this._sb_BookIDNum != value))
+				{
+					this.Onsb_BookIDNumChanging(value);
+					this.SendPropertyChanging();
+					this._sb_BookIDNum = value;
+					this.SendPropertyChanged("sb_BookIDNum");
+					this.Onsb_BookIDNumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sb_Title", DbType="VarChar(100)")]
+		public string sb_Title
+		{
+			get
+			{
+				return this._sb_Title;
+			}
+			set
+			{
+				if ((this._sb_Title != value))
+				{
+					this.Onsb_TitleChanging(value);
+					this.SendPropertyChanging();
+					this._sb_Title = value;
+					this.SendPropertyChanged("sb_Title");
+					this.Onsb_TitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sb_DueDate", DbType="Date NOT NULL")]
+		public System.DateTime sb_DueDate
+		{
+			get
+			{
+				return this._sb_DueDate;
+			}
+			set
+			{
+				if ((this._sb_DueDate != value))
+				{
+					this.Onsb_DueDateChanging(value);
+					this.SendPropertyChanging();
+					this._sb_DueDate = value;
+					this.SendPropertyChanged("sb_DueDate");
+					this.Onsb_DueDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class sp_SearchBookResult
 	{
 		
@@ -1791,230 +1978,6 @@ namespace QRCodeBasedLMS
 				if ((this._copy_AccNum != value))
 				{
 					this._copy_AccNum = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_ViewBookResult
-	{
-		
-		private string _BookIDNumber;
-		
-		private string _BookType;
-		
-		private string _ISBN;
-		
-		private string _CallNumber;
-		
-		private string _Title;
-		
-		private string _Author;
-		
-		private string _Publisher;
-		
-		private int _CopyrightYear;
-		
-		private string _Edition;
-		
-		private string _Volume;
-		
-		private System.Nullable<int> _Pages;
-		
-		private string _Remarks;
-		
-		public sp_ViewBookResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookIDNumber", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string BookIDNumber
-		{
-			get
-			{
-				return this._BookIDNumber;
-			}
-			set
-			{
-				if ((this._BookIDNumber != value))
-				{
-					this._BookIDNumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookType", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string BookType
-		{
-			get
-			{
-				return this._BookType;
-			}
-			set
-			{
-				if ((this._BookType != value))
-				{
-					this._BookType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ISBN
-		{
-			get
-			{
-				return this._ISBN;
-			}
-			set
-			{
-				if ((this._ISBN != value))
-				{
-					this._ISBN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CallNumber", DbType="VarChar(50)")]
-		public string CallNumber
-		{
-			get
-			{
-				return this._CallNumber;
-			}
-			set
-			{
-				if ((this._CallNumber != value))
-				{
-					this._CallNumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string Title
-		{
-			get
-			{
-				return this._Title;
-			}
-			set
-			{
-				if ((this._Title != value))
-				{
-					this._Title = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author", DbType="VarChar(50)")]
-		public string Author
-		{
-			get
-			{
-				return this._Author;
-			}
-			set
-			{
-				if ((this._Author != value))
-				{
-					this._Author = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publisher", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Publisher
-		{
-			get
-			{
-				return this._Publisher;
-			}
-			set
-			{
-				if ((this._Publisher != value))
-				{
-					this._Publisher = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CopyrightYear", DbType="Int NOT NULL")]
-		public int CopyrightYear
-		{
-			get
-			{
-				return this._CopyrightYear;
-			}
-			set
-			{
-				if ((this._CopyrightYear != value))
-				{
-					this._CopyrightYear = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Edition", DbType="VarChar(50)")]
-		public string Edition
-		{
-			get
-			{
-				return this._Edition;
-			}
-			set
-			{
-				if ((this._Edition != value))
-				{
-					this._Edition = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Volume", DbType="VarChar(50)")]
-		public string Volume
-		{
-			get
-			{
-				return this._Volume;
-			}
-			set
-			{
-				if ((this._Volume != value))
-				{
-					this._Volume = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pages", DbType="Int")]
-		public System.Nullable<int> Pages
-		{
-			get
-			{
-				return this._Pages;
-			}
-			set
-			{
-				if ((this._Pages != value))
-				{
-					this._Pages = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remarks", DbType="VarChar(200)")]
-		public string Remarks
-		{
-			get
-			{
-				return this._Remarks;
-			}
-			set
-			{
-				if ((this._Remarks != value))
-				{
-					this._Remarks = value;
 				}
 			}
 		}
@@ -3159,6 +3122,184 @@ namespace QRCodeBasedLMS
 				if ((this._lib_SchoolYear != value))
 				{
 					this._lib_SchoolYear = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ViewBookResult
+	{
+		
+		private string _BookIDNumber;
+		
+		private string _BookType;
+		
+		private string _CallNumber;
+		
+		private string _Title;
+		
+		private string _Author;
+		
+		private int _CopyrightYear;
+		
+		public sp_ViewBookResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookIDNumber", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string BookIDNumber
+		{
+			get
+			{
+				return this._BookIDNumber;
+			}
+			set
+			{
+				if ((this._BookIDNumber != value))
+				{
+					this._BookIDNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookType", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string BookType
+		{
+			get
+			{
+				return this._BookType;
+			}
+			set
+			{
+				if ((this._BookType != value))
+				{
+					this._BookType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CallNumber", DbType="VarChar(50)")]
+		public string CallNumber
+		{
+			get
+			{
+				return this._CallNumber;
+			}
+			set
+			{
+				if ((this._CallNumber != value))
+				{
+					this._CallNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author", DbType="VarChar(50)")]
+		public string Author
+		{
+			get
+			{
+				return this._Author;
+			}
+			set
+			{
+				if ((this._Author != value))
+				{
+					this._Author = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CopyrightYear", DbType="Int NOT NULL")]
+		public int CopyrightYear
+		{
+			get
+			{
+				return this._CopyrightYear;
+			}
+			set
+			{
+				if ((this._CopyrightYear != value))
+				{
+					this._CopyrightYear = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ViewSelectedBooksResult
+	{
+		
+		private string _BookIDNum;
+		
+		private string _Title;
+		
+		private System.DateTime _DueDate;
+		
+		public sp_ViewSelectedBooksResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookIDNum", DbType="VarChar(50)")]
+		public string BookIDNum
+		{
+			get
+			{
+				return this._BookIDNum;
+			}
+			set
+			{
+				if ((this._BookIDNum != value))
+				{
+					this._BookIDNum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(100)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DueDate", DbType="Date NOT NULL")]
+		public System.DateTime DueDate
+		{
+			get
+			{
+				return this._DueDate;
+			}
+			set
+			{
+				if ((this._DueDate != value))
+				{
+					this._DueDate = value;
 				}
 			}
 		}

@@ -82,6 +82,9 @@ namespace QRCodeBasedLMS
             this.Hide();
         }
 
-        
+        private void Registration_Load(object sender, EventArgs e)
+        {
+            txt_UserIDNum.Text = user.GenerateAccountIDNum();
+        }
     }
 }

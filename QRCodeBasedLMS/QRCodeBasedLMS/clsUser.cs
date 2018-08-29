@@ -78,7 +78,13 @@ namespace QRCodeBasedLMS
         {
             db.sp_UpdateAccount(userIDNumber, firstname, lastname, username, password, secretQuestion, secretAnswer, usertype, status);
         }
-        
+        public string GenerateAccountIDNum()
+        {
+            DateTime dt = DateTime.Now;
+            int x = db.sp_AccountIDnumber()+1;
+            string accID = "Acct-" + x + "-" + dt.Day + dt.Month + dt.Year;
+            return accID;
+        }
 
     }
 }

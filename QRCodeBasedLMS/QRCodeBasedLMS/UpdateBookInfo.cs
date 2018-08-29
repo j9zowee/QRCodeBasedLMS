@@ -53,6 +53,7 @@ namespace QRCodeBasedLMS
                     ClearText();
                     DisableTextboxes();
                     btnUpdate.Enabled = false;
+                   
                 }
 
             }
@@ -87,21 +88,20 @@ namespace QRCodeBasedLMS
             btnUpdate.Enabled = true;
             txt_BookIDNum.Text = dgvBook.CurrentRow.Cells[0].Value.ToString();
             cmbBookType.Text = dgvBook.CurrentRow.Cells[1].Value.ToString();
-            txt_ISBN.Text = dgvBook.CurrentRow.Cells[2].Value.ToString();
-            txt_CallNumber.Text = dgvBook.CurrentRow.Cells[3].Value.ToString();
-            txt_Title.Text = dgvBook.CurrentRow.Cells[4].Value.ToString();
-            txt_Author.Text = dgvBook.CurrentRow.Cells[5].Value.ToString();
-            txt_Publisher.Text = dgvBook.CurrentRow.Cells[6].Value.ToString();
-            txt_CopyrightYear.Text = dgvBook.CurrentRow.Cells[7].Value.ToString();
-            txt_Edition.Text = dgvBook.CurrentRow.Cells[8].Value.ToString();
-            txt_Volume.Text = dgvBook.CurrentRow.Cells[9].Value.ToString();
-            txt_Pages.Text = dgvBook.CurrentRow.Cells[10].Value.ToString();
-            txt_Remarks.Text = dgvBook.CurrentRow.Cells[11].Value.ToString();
-            
+            txt_ISBN.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_ISBN).FirstOrDefault();
+            txt_CallNumber.Text = dgvBook.CurrentRow.Cells[2].Value.ToString();
+            txt_Title.Text = dgvBook.CurrentRow.Cells[3].Value.ToString();
+            txt_Author.Text = dgvBook.CurrentRow.Cells[4].Value.ToString();
+            txt_Publisher.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Publisher).FirstOrDefault();
+            txt_CopyrightYear.Text = dgvBook.CurrentRow.Cells[5].Value.ToString();
+            txt_Edition.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Edition).FirstOrDefault();
+            txt_Volume.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Volume).FirstOrDefault();
+            txt_Pages.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Pages).FirstOrDefault().ToString();
+            txt_Remarks.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Remarks).FirstOrDefault();
+
         }
         public void DisableTextboxes()
         {
-            txt_BookIDNum.Enabled = false;
             cmbBookType.Enabled = false;
             txt_ISBN.Enabled = false;
             txt_CallNumber.Enabled = false;
@@ -116,7 +116,6 @@ namespace QRCodeBasedLMS
         }
         public void EnableTextboxes()
         {
-            txt_BookIDNum.Enabled = true;
             cmbBookType.Enabled = true;
             txt_ISBN.Enabled = true;
             txt_CallNumber.Enabled = true;

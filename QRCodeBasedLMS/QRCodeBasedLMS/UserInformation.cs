@@ -118,6 +118,7 @@ namespace QRCodeBasedLMS
 
         private void UserInformation_Load(object sender, EventArgs e)
         {
+            txt_UserIDNum.Text = user.GenerateAccountIDNum();
             cmb_SearchCategory.Text = "QR Code";
             dgvAccount.DataSource = db.sp_ViewActiveAccount();
             if (qrcode != "")
@@ -197,7 +198,7 @@ namespace QRCodeBasedLMS
         private void Link_ScanQR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //searching using qr code
-            ScanQRCode scan = new ScanQRCode("userinfo");
+            ScanQRCode scan = new ScanQRCode("userinfo","");
             scan.Show();
             this.Close();
         }

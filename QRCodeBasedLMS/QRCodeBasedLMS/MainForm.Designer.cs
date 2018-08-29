@@ -34,6 +34,8 @@
             this.addUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateBookInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrowersInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printLibraryCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nonReadingMaterialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libraryUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSERACCOUNTSMANAGERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,11 +45,10 @@
             this.otherUserAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unapprovedUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACTIONSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrowBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrowBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrowersInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printLibraryCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_Mainform.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,6 +109,20 @@
             this.borrowersToolStripMenuItem.Name = "borrowersToolStripMenuItem";
             this.borrowersToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.borrowersToolStripMenuItem.Text = "Borrowers";
+            // 
+            // borrowersInformationToolStripMenuItem
+            // 
+            this.borrowersInformationToolStripMenuItem.Name = "borrowersInformationToolStripMenuItem";
+            this.borrowersInformationToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.borrowersInformationToolStripMenuItem.Text = "Borrower\'s Information";
+            this.borrowersInformationToolStripMenuItem.Click += new System.EventHandler(this.borrowersInformationToolStripMenuItem_Click);
+            // 
+            // printLibraryCardToolStripMenuItem
+            // 
+            this.printLibraryCardToolStripMenuItem.Name = "printLibraryCardToolStripMenuItem";
+            this.printLibraryCardToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.printLibraryCardToolStripMenuItem.Text = "Print Library Card";
+            this.printLibraryCardToolStripMenuItem.Click += new System.EventHandler(this.printLibraryCardToolStripMenuItem_Click);
             // 
             // nonReadingMaterialsToolStripMenuItem
             // 
@@ -171,10 +186,18 @@
             // tRANSACTIONSToolStripMenuItem
             // 
             this.tRANSACTIONSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.borrowBookToolStripMenuItem});
+            this.borrowBookToolStripMenuItem,
+            this.returnBookToolStripMenuItem});
             this.tRANSACTIONSToolStripMenuItem.Name = "tRANSACTIONSToolStripMenuItem";
             this.tRANSACTIONSToolStripMenuItem.Size = new System.Drawing.Size(118, 21);
             this.tRANSACTIONSToolStripMenuItem.Text = "TRANSACTIONS";
+            // 
+            // borrowBookToolStripMenuItem
+            // 
+            this.borrowBookToolStripMenuItem.Name = "borrowBookToolStripMenuItem";
+            this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.borrowBookToolStripMenuItem.Text = "Borrow Book";
+            this.borrowBookToolStripMenuItem.Click += new System.EventHandler(this.borrowBookToolStripMenuItem_Click);
             // 
             // rEPORTSToolStripMenuItem
             // 
@@ -189,26 +212,12 @@
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
-            // borrowBookToolStripMenuItem
+            // returnBookToolStripMenuItem
             // 
-            this.borrowBookToolStripMenuItem.Name = "borrowBookToolStripMenuItem";
-            this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.borrowBookToolStripMenuItem.Text = "Borrow Book";
-            this.borrowBookToolStripMenuItem.Click += new System.EventHandler(this.borrowBookToolStripMenuItem_Click);
-            // 
-            // borrowersInformationToolStripMenuItem
-            // 
-            this.borrowersInformationToolStripMenuItem.Name = "borrowersInformationToolStripMenuItem";
-            this.borrowersInformationToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.borrowersInformationToolStripMenuItem.Text = "Borrower\'s Information";
-            this.borrowersInformationToolStripMenuItem.Click += new System.EventHandler(this.borrowersInformationToolStripMenuItem_Click);
-            // 
-            // printLibraryCardToolStripMenuItem
-            // 
-            this.printLibraryCardToolStripMenuItem.Name = "printLibraryCardToolStripMenuItem";
-            this.printLibraryCardToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.printLibraryCardToolStripMenuItem.Text = "Print Library Card";
-            this.printLibraryCardToolStripMenuItem.Click += new System.EventHandler(this.printLibraryCardToolStripMenuItem_Click);
+            this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
+            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.returnBookToolStripMenuItem.Text = "Return Book";
+            this.returnBookToolStripMenuItem.Click += new System.EventHandler(this.returnBookToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -248,5 +257,6 @@
         private System.Windows.Forms.ToolStripMenuItem borrowBookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrowersInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printLibraryCardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem returnBookToolStripMenuItem;
     }
 }

@@ -1,5 +1,11 @@
 use dbLibraryManagement
 ----for tblUser---
+CREATE PROCEDURE sp_AccountIDnumber
+AS
+DECLARE @ID int
+SELECT @ID=IDENT_CURRENT('tblUserAccount')
+RETURN @ID;
+
 create procedure sp_AddAccount
 @UserNum varchar(50),
 @Firstname varchar(100),
@@ -21,7 +27,7 @@ BEGIN
 	SELECT dbo.tblUser.user_UserNum, dbo.tblUser.user_Firstname, dbo.tblUser.user_Lastname, 
 		dbo.tblUser.user_Username, dbo.tblUser.user_Password, dbo.tblUser.user_SecretQuestion, dbo.tblUser.user_SecretAnswer, 
 		 dbo.tblUser.user_UserType, dbo.tblUser.user_Status as UserStatus
-	FROM dbo.tblUser
+	FROM dbo.tblUserAccount
 	where dbo.tblUser.user_Status = 'Active'
 END
 

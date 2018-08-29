@@ -64,6 +64,14 @@
       <Column Name="lib_WithCard" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tblSelectedBooks" Member="tblSelectedBooks">
+    <Type Name="tblSelectedBook">
+      <Column Name="sb_BookID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sb_BookIDNum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sb_Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="sb_DueDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.sp_AddBook" Method="sp_AddBook">
     <Parameter Name="BookNum" Parameter="bookNum" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="BookType" Parameter="bookType" Type="System.String" DbType="VarChar(50)" />
@@ -127,22 +135,6 @@
     <Parameter Name="Pages" Parameter="pages" Type="System.Int32" DbType="Int" />
     <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(200)" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_ViewBook" Method="sp_ViewBook">
-    <ElementType Name="sp_ViewBookResult">
-      <Column Name="BookIDNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="BookType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ISBN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CallNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Publisher" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="CopyrightYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Edition" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Volume" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Pages" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Remarks" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.sp_ViewBookCopy" Method="sp_ViewBookCopy">
     <Parameter Name="BookNum" Parameter="bookNum" Type="System.String" DbType="VarChar(50)" />
@@ -331,5 +323,41 @@
     <Parameter Name="BorrowedDate" Parameter="borrowedDate" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="DueDate" Parameter="dueDate" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_BookIDnumber" Method="sp_BookIDnumber">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_AccountIDnumber" Method="sp_AccountIDnumber">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_BorrowIDnumber" Method="sp_BorrowIDnumber">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ViewBook" Method="sp_ViewBook">
+    <ElementType Name="sp_ViewBookResult">
+      <Column Name="BookIDNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BookType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CallNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CopyrightYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_DeleteSelectedBooks" Method="sp_DeleteSelectedBooks">
+    <Parameter Name="BookIDNum" Parameter="bookIDNum" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SelectBooks" Method="sp_SelectBooks">
+    <Parameter Name="BookNum" Parameter="bookNum" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="DueDate" Parameter="dueDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ViewSelectedBooks" Method="sp_ViewSelectedBooks">
+    <ElementType Name="sp_ViewSelectedBooksResult">
+      <Column Name="BookIDNum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

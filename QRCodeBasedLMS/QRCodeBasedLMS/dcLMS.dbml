@@ -89,7 +89,7 @@
   <Function Name="dbo.sp_AccountIDnumber" Method="sp_AccountIDnumber">
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_AddAccount" Method="sp_AddAccount">
+  <Function Name="dbo.sp_AddAccount" Method="sp_AddAccount" IsComposable="true">
     <Parameter Name="UserNum" Parameter="userNum" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="Lastname" Parameter="lastname" Type="System.String" DbType="VarChar(100)" />
@@ -99,6 +99,7 @@
     <Parameter Name="SecretAnswer" Parameter="secretAnswer" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="UserType" Parameter="userType" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.sp_AddBook" Method="sp_AddBook">
     <Parameter Name="BookNum" Parameter="bookNum" Type="System.String" DbType="VarChar(50)" />
@@ -125,7 +126,7 @@
     <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(20)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_AddBorrower" Method="sp_AddBorrower">
+  <Function Name="dbo.sp_AddBorrower" Method="sp_AddBorrower" IsComposable="true">
     <Parameter Name="BorrowerNum" Parameter="borrowerNum" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="SchoolID" Parameter="schoolID" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="VarChar(100)" />
@@ -134,6 +135,7 @@
     <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="ContactNumber" Parameter="contactNumber" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.sp_AddLibraryUser" Method="sp_AddLibraryUser">
     <Parameter Name="SchoolID" Parameter="schoolID" Type="System.String" DbType="VarChar(50)" />
@@ -159,9 +161,10 @@
   <Function Name="dbo.sp_BorrowIDnumber" Method="sp_BorrowIDnumber">
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_SearchActiveAccount" Method="sp_SearchActiveAccount">
+  <Function Name="dbo.sp_SearchActiveAccount" Method="sp_SearchActiveAccount" IsComposable="true">
     <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="searchkey" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.sp_SearchBook" Method="sp_SearchBook">
     <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(50)" />
@@ -181,13 +184,15 @@
       <Column Name="Remarks" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_SearchBorrower" Method="sp_SearchBorrower">
+  <Function Name="dbo.sp_SearchBorrower" Method="sp_SearchBorrower" IsComposable="true">
     <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="searchkey" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="object" />
   </Function>
-  <Function Name="dbo.sp_SearchInactiveAccount" Method="sp_SearchInactiveAccount">
+  <Function Name="dbo.sp_SearchInactiveAccount" Method="sp_SearchInactiveAccount" IsComposable="true">
     <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="searchkey" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.sp_TotalBookCopy" Method="sp_TotalBookCopy">
     <Parameter Name="BookNum" Parameter="bookNum" Type="System.String" DbType="VarChar(50)" />
@@ -195,7 +200,7 @@
       <Column Name="copy_AccNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_UpdateAccount" Method="sp_UpdateAccount">
+  <Function Name="dbo.sp_UpdateAccount" Method="sp_UpdateAccount" IsComposable="true">
     <Parameter Name="UserNum" Parameter="userNum" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="Lastname" Parameter="lastname" Type="System.String" DbType="VarChar(100)" />
@@ -205,10 +210,12 @@
     <Parameter Name="SecretAnswer" Parameter="secretAnswer" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="UserType" Parameter="userType" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="object" />
   </Function>
-  <Function Name="dbo.sp_UpdateAccountStatus" Method="sp_UpdateAccountStatus">
+  <Function Name="dbo.sp_UpdateAccountStatus" Method="sp_UpdateAccountStatus" IsComposable="true">
     <Parameter Name="UserNum" Parameter="userNum" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.sp_UpdateBook" Method="sp_UpdateBook">
     <Parameter Name="BookNum" Parameter="bookNum" Type="System.String" DbType="VarChar(50)" />
@@ -225,7 +232,7 @@
     <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(200)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_UpdateBorrower" Method="sp_UpdateBorrower">
+  <Function Name="dbo.sp_UpdateBorrower" Method="sp_UpdateBorrower" IsComposable="true">
     <Parameter Name="BorrowerNum" Parameter="borrowerNum" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="SchoolID" Parameter="schoolID" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="VarChar(100)" />
@@ -234,6 +241,7 @@
     <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="ContactNumber" Parameter="contactNumber" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.sp_UpdateLibraryUser" Method="sp_UpdateLibraryUser">
     <Parameter Name="SchoolID" Parameter="schoolID" Type="System.String" DbType="VarChar(50)" />
@@ -246,7 +254,9 @@
     <Parameter Name="WithLibraryCard" Parameter="withLibraryCard" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_ViewActiveAccount" Method="sp_ViewActiveAccount" />
+  <Function Name="dbo.sp_ViewActiveAccount" Method="sp_ViewActiveAccount" IsComposable="true">
+    <Return Type="object" />
+  </Function>
   <Function Name="dbo.sp_ViewBook" Method="sp_ViewBook">
     <ElementType Name="sp_ViewBookResult">
       <Column Name="BookIDNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -266,8 +276,12 @@
       <Column Name="Status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_ViewBorrower" Method="sp_ViewBorrower" />
-  <Function Name="dbo.sp_ViewInactiveAccount" Method="sp_ViewInactiveAccount" />
+  <Function Name="dbo.sp_ViewBorrower" Method="sp_ViewBorrower" IsComposable="true">
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.sp_ViewInactiveAccount" Method="sp_ViewInactiveAccount" IsComposable="true">
+    <Return Type="object" />
+  </Function>
   <Function Name="dbo.sp_ViewLibraryUser" Method="sp_ViewLibraryUser">
     <Parameter Name="SchoolYear" Parameter="schoolYear" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="sp_ViewLibraryUserResult">

@@ -100,13 +100,36 @@ namespace QRCodeBasedLMS
             }
         }
 
+        public int getBookType(string booktype)
+        {
+            //            References
+            //Filipiniana
+            //General Reference
+            //Fiction
+            int bookIndex;
+            if (booktype == "References")
+            {
+                bookIndex = 0;
+            } else if (booktype == "Filipiniana")
+            {
+                bookIndex = 1;
+            } else if (booktype == "General Reference")
+            {
+                bookIndex = 2;
+            } else
+            {
+                bookIndex = 3;
+            }
+            return bookIndex;
+        }
+
         private void dgvBook_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnAddOrUpdate.Text = "ADD COPY";
             DisableTextboxes();
             gb_Copy.Visible = false;
             txt_BookIDNum.Text = dgvBook.CurrentRow.Cells[0].Value.ToString();
-            cmbBookType.Text = dgvBook.CurrentRow.Cells[1].Value.ToString();
+            cmbBookType.selectedIndex = getBookType(dgvBook.CurrentRow.Cells[1].Value.ToString());
             txt_ISBN.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_ISBN).FirstOrDefault();
             txt_CallNumber.Text = dgvBook.CurrentRow.Cells[2].Value.ToString();
             txt_Title.Text = dgvBook.CurrentRow.Cells[3].Value.ToString();
@@ -184,9 +207,6 @@ namespace QRCodeBasedLMS
             btnAddOrUpdate.Text = "ADD";
         }
 
-//<<<<<<< HEAD
-//        private void txt_Search_OnValueChanged(object sender, EventArgs e)
-//=======
         private void btn_Clear_Click(object sender, EventArgs e)
         {
             ClearText();
@@ -211,12 +231,6 @@ namespace QRCodeBasedLMS
                 Link_Scan.Visible = false;
             }
         }
-
-//        private void txt_Search_TextChanged(object sender, EventArgs e)
-//>>>>>>> da4873f47a5114589849518fcdb724f6f9d83ca4
-//        {
-//            dgvBook.DataSource = db.sp_SearchBook(cmb_SearchCategory.Text, txt_Search.Text);
-//        }
 
         private void txt_AccessionNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -283,7 +297,6 @@ namespace QRCodeBasedLMS
         // since bunifu dont support direct maxlength control
         private void SetMaximumLength(Bunifu.Framework.UI.BunifuMetroTextbox metroTextbox, int maximumLength)
         {
-            //<<<<<<< HEAD
             foreach (Control ctl in metroTextbox.Controls)
             {
                 if (ctl.GetType() == typeof(TextBox))
@@ -308,10 +321,6 @@ namespace QRCodeBasedLMS
                 txt_Search.Visible = true;
                 Link_Scan.Visible = false;
             }
-                
-                ScanQRCode scan = new ScanQRCode("book","");
-            scan.Show();
-            this.Close();
         }
 
         private void dgvBook_CellContentClick(object sender, DataGridViewCellEventArgs e)

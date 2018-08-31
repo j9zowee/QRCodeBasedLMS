@@ -93,6 +93,9 @@
             // 
             this.cmbLibraryUser.FormattingEnabled = true;
             this.cmbLibraryUser.ItemHeight = 13;
+            this.cmbLibraryUser.Items.AddRange(new object[] {
+            "Student",
+            "Teacher"});
             this.cmbLibraryUser.Location = new System.Drawing.Point(136, 10);
             this.cmbLibraryUser.Name = "cmbLibraryUser";
             this.cmbLibraryUser.Size = new System.Drawing.Size(144, 21);

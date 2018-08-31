@@ -146,10 +146,10 @@ namespace QRCodeBasedLMS
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AddAccount")]
-		public void sp_AddAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNum", DbType="VarChar(50)")] string userNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Firstname", DbType="VarChar(100)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lastname", DbType="VarChar(100)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SecretQuestion", DbType="VarChar(100)")] string secretQuestion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SecretAnswer", DbType="VarChar(100)")] string secretAnswer, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserType", DbType="VarChar(20)")] string userType, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status", DbType="VarChar(10)")] string status)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AddAccount", IsComposable=true)]
+		public object sp_AddAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNum", DbType="VarChar(50)")] string userNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Firstname", DbType="VarChar(100)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lastname", DbType="VarChar(100)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SecretQuestion", DbType="VarChar(100)")] string secretQuestion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SecretAnswer", DbType="VarChar(100)")] string secretAnswer, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserType", DbType="VarChar(20)")] string userType, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status", DbType="VarChar(10)")] string status)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userNum, firstname, lastname, username, password, secretQuestion, secretAnswer, userType, status);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userNum, firstname, lastname, username, password, secretQuestion, secretAnswer, userType, status).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AddBook")]
@@ -166,10 +166,10 @@ namespace QRCodeBasedLMS
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AddBorrower")]
-		public void sp_AddBorrower([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BorrowerNum", DbType="VarChar(50)")] string borrowerNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SchoolID", DbType="VarChar(20)")] string schoolID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Firstname", DbType="VarChar(100)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lastname", DbType="VarChar(100)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Section", DbType="VarChar(50)")] string section, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gender", DbType="VarChar(10)")] string gender, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="VarChar(100)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContactNumber", DbType="VarChar(50)")] string contactNumber)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AddBorrower", IsComposable=true)]
+		public object sp_AddBorrower([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BorrowerNum", DbType="VarChar(50)")] string borrowerNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SchoolID", DbType="VarChar(20)")] string schoolID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Firstname", DbType="VarChar(100)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lastname", DbType="VarChar(100)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Section", DbType="VarChar(50)")] string section, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gender", DbType="VarChar(10)")] string gender, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="VarChar(100)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContactNumber", DbType="VarChar(50)")] string contactNumber)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), borrowerNum, schoolID, firstname, lastname, section, gender, address, contactNumber);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), borrowerNum, schoolID, firstname, lastname, section, gender, address, contactNumber).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AddLibraryUser")]
@@ -200,10 +200,10 @@ namespace QRCodeBasedLMS
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SearchActiveAccount")]
-		public void sp_SearchActiveAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string searchkey)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SearchActiveAccount", IsComposable=true)]
+		public object sp_SearchActiveAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string searchkey)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), category, searchkey);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), category, searchkey).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SearchBook")]
@@ -213,16 +213,16 @@ namespace QRCodeBasedLMS
 			return ((ISingleResult<sp_SearchBookResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SearchBorrower")]
-		public void sp_SearchBorrower([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string searchkey)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SearchBorrower", IsComposable=true)]
+		public object sp_SearchBorrower([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string searchkey)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), category, searchkey);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), category, searchkey).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SearchInactiveAccount")]
-		public void sp_SearchInactiveAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string searchkey)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SearchInactiveAccount", IsComposable=true)]
+		public object sp_SearchInactiveAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string searchkey)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), category, searchkey);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), category, searchkey).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_TotalBookCopy")]
@@ -232,16 +232,16 @@ namespace QRCodeBasedLMS
 			return ((ISingleResult<sp_TotalBookCopyResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateAccount")]
-		public void sp_UpdateAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNum", DbType="VarChar(50)")] string userNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Firstname", DbType="VarChar(100)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lastname", DbType="VarChar(100)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SecretQuestion", DbType="VarChar(100)")] string secretQuestion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SecretAnswer", DbType="VarChar(100)")] string secretAnswer, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserType", DbType="VarChar(20)")] string userType, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status", DbType="VarChar(10)")] string status)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateAccount", IsComposable=true)]
+		public object sp_UpdateAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNum", DbType="VarChar(50)")] string userNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Firstname", DbType="VarChar(100)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lastname", DbType="VarChar(100)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SecretQuestion", DbType="VarChar(100)")] string secretQuestion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SecretAnswer", DbType="VarChar(100)")] string secretAnswer, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserType", DbType="VarChar(20)")] string userType, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status", DbType="VarChar(10)")] string status)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userNum, firstname, lastname, username, password, secretQuestion, secretAnswer, userType, status);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userNum, firstname, lastname, username, password, secretQuestion, secretAnswer, userType, status).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateAccountStatus")]
-		public void sp_UpdateAccountStatus([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNum", DbType="VarChar(50)")] string userNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status", DbType="VarChar(10)")] string status)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateAccountStatus", IsComposable=true)]
+		public object sp_UpdateAccountStatus([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNum", DbType="VarChar(50)")] string userNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status", DbType="VarChar(10)")] string status)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userNum, status);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userNum, status).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateBook")]
@@ -251,10 +251,10 @@ namespace QRCodeBasedLMS
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateBorrower")]
-		public void sp_UpdateBorrower([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BorrowerNum", DbType="VarChar(50)")] string borrowerNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SchoolID", DbType="VarChar(20)")] string schoolID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Firstname", DbType="VarChar(100)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lastname", DbType="VarChar(100)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Section", DbType="VarChar(50)")] string section, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gender", DbType="VarChar(10)")] string gender, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="VarChar(100)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContactNumber", DbType="VarChar(50)")] string contactNumber)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateBorrower", IsComposable=true)]
+		public object sp_UpdateBorrower([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BorrowerNum", DbType="VarChar(50)")] string borrowerNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SchoolID", DbType="VarChar(20)")] string schoolID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Firstname", DbType="VarChar(100)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lastname", DbType="VarChar(100)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Section", DbType="VarChar(50)")] string section, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gender", DbType="VarChar(10)")] string gender, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="VarChar(100)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContactNumber", DbType="VarChar(50)")] string contactNumber)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), borrowerNum, schoolID, firstname, lastname, section, gender, address, contactNumber);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), borrowerNum, schoolID, firstname, lastname, section, gender, address, contactNumber).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateLibraryUser")]
@@ -264,10 +264,10 @@ namespace QRCodeBasedLMS
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewActiveAccount")]
-		public void sp_ViewActiveAccount()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewActiveAccount", IsComposable=true)]
+		public object sp_ViewActiveAccount()
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewBook")]
@@ -284,16 +284,16 @@ namespace QRCodeBasedLMS
 			return ((ISingleResult<sp_ViewBookCopyResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewBorrower")]
-		public void sp_ViewBorrower()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewBorrower", IsComposable=true)]
+		public object sp_ViewBorrower()
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewInactiveAccount")]
-		public void sp_ViewInactiveAccount()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewInactiveAccount", IsComposable=true)]
+		public object sp_ViewInactiveAccount()
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewLibraryUser")]

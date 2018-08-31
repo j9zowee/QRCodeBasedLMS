@@ -59,7 +59,6 @@
             this.btnAddOrUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Clear = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Exit = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.cmbBookType = new Bunifu.Framework.UI.BunifuDropdown();
             this.txt_BookIDNum = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_ISBN = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -76,6 +75,7 @@
             this.cmb_SearchCategory = new Bunifu.Framework.UI.BunifuDropdown();
             this.txt_Search = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cmbBookType = new Bunifu.Framework.UI.BunifuDropdown();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QRBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.gb_Copy.SuspendLayout();
@@ -96,10 +96,10 @@
             // 
             // txt_Title
             // 
-            this.txt_Title.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
             this.txt_Title.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Title.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_Title.ForeColor = System.Drawing.Color.Black;
+            this.txt_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_Title.Location = new System.Drawing.Point(1, 1);
             this.txt_Title.Multiline = true;
             this.txt_Title.Name = "txt_Title";
@@ -275,6 +275,8 @@
             // 
             // dtp_DateReceived
             // 
+            this.dtp_DateReceived.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
+            this.dtp_DateReceived.CalendarMonthBackground = System.Drawing.Color.Transparent;
             this.dtp_DateReceived.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_DateReceived.Location = new System.Drawing.Point(119, 50);
             this.dtp_DateReceived.Name = "dtp_DateReceived";
@@ -298,13 +300,13 @@
             // 
             // txt_AccessionNumber
             // 
-            this.txt_AccessionNumber.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_AccessionNumber.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_AccessionNumber.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_AccessionNumber.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_AccessionNumber.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_AccessionNumber.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_AccessionNumber.BorderThickness = 1;
             this.txt_AccessionNumber.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_AccessionNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_AccessionNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_AccessionNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_AccessionNumber.isPassword = false;
             this.txt_AccessionNumber.Location = new System.Drawing.Point(119, 20);
             this.txt_AccessionNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -318,17 +320,18 @@
             // 
             this.cmb_Status.BackColor = System.Drawing.Color.Transparent;
             this.cmb_Status.BorderRadius = 3;
+            this.cmb_Status.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.cmb_Status.DisabledColor = System.Drawing.Color.Gray;
             this.cmb_Status.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.cmb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.cmb_Status.Items = new string[] {
         "On Shelf",
         "Damaged"};
             this.cmb_Status.Location = new System.Drawing.Point(119, 77);
             this.cmb_Status.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmb_Status.Name = "cmb_Status";
-            this.cmb_Status.NomalColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_Status.onHoverColor = System.Drawing.Color.RoyalBlue;
+            this.cmb_Status.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.cmb_Status.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.cmb_Status.selectedIndex = -1;
             this.cmb_Status.Size = new System.Drawing.Size(137, 22);
             this.cmb_Status.TabIndex = 71;
@@ -365,8 +368,8 @@
             // 
             // btnAddOrUpdate
             // 
-            this.btnAddOrUpdate.Activecolor = System.Drawing.Color.MidnightBlue;
-            this.btnAddOrUpdate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddOrUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnAddOrUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.btnAddOrUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddOrUpdate.BorderRadius = 7;
             this.btnAddOrUpdate.ButtonText = "ADD";
@@ -381,27 +384,27 @@
             this.btnAddOrUpdate.IconMarginRight = 0;
             this.btnAddOrUpdate.IconRightVisible = false;
             this.btnAddOrUpdate.IconRightZoom = 0D;
-            this.btnAddOrUpdate.IconVisible = false;
-            this.btnAddOrUpdate.IconZoom = 110D;
+            this.btnAddOrUpdate.IconVisible = true;
+            this.btnAddOrUpdate.IconZoom = 80D;
             this.btnAddOrUpdate.IsTab = false;
-            this.btnAddOrUpdate.Location = new System.Drawing.Point(650, 224);
+            this.btnAddOrUpdate.Location = new System.Drawing.Point(599, 224);
             this.btnAddOrUpdate.Name = "btnAddOrUpdate";
-            this.btnAddOrUpdate.Normalcolor = System.Drawing.Color.CornflowerBlue;
-            this.btnAddOrUpdate.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnAddOrUpdate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.btnAddOrUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.btnAddOrUpdate.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAddOrUpdate.selected = false;
-            this.btnAddOrUpdate.Size = new System.Drawing.Size(93, 41);
+            this.btnAddOrUpdate.Size = new System.Drawing.Size(110, 41);
             this.btnAddOrUpdate.TabIndex = 58;
             this.btnAddOrUpdate.Text = "ADD";
             this.btnAddOrUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAddOrUpdate.Textcolor = System.Drawing.Color.Black;
+            this.btnAddOrUpdate.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.btnAddOrUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdate_Click);
             // 
             // btn_Clear
             // 
-            this.btn_Clear.Activecolor = System.Drawing.Color.MidnightBlue;
-            this.btn_Clear.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Clear.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btn_Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.btn_Clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Clear.BorderRadius = 7;
             this.btn_Clear.ButtonText = "CLEAR";
@@ -416,27 +419,27 @@
             this.btn_Clear.IconMarginRight = 0;
             this.btn_Clear.IconRightVisible = false;
             this.btn_Clear.IconRightZoom = 0D;
-            this.btn_Clear.IconVisible = false;
-            this.btn_Clear.IconZoom = 110D;
+            this.btn_Clear.IconVisible = true;
+            this.btn_Clear.IconZoom = 80D;
             this.btn_Clear.IsTab = false;
-            this.btn_Clear.Location = new System.Drawing.Point(749, 224);
+            this.btn_Clear.Location = new System.Drawing.Point(715, 224);
             this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Normalcolor = System.Drawing.Color.CornflowerBlue;
-            this.btn_Clear.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btn_Clear.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.btn_Clear.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.btn_Clear.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_Clear.selected = false;
-            this.btn_Clear.Size = new System.Drawing.Size(93, 41);
+            this.btn_Clear.Size = new System.Drawing.Size(110, 41);
             this.btn_Clear.TabIndex = 59;
             this.btn_Clear.Text = "CLEAR";
             this.btn_Clear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Clear.Textcolor = System.Drawing.Color.Black;
+            this.btn_Clear.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.btn_Clear.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Activecolor = System.Drawing.Color.MidnightBlue;
-            this.btn_Exit.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Exit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btn_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Exit.BorderRadius = 7;
             this.btn_Exit.ButtonText = "EXIT";
@@ -451,54 +454,33 @@
             this.btn_Exit.IconMarginRight = 0;
             this.btn_Exit.IconRightVisible = false;
             this.btn_Exit.IconRightZoom = 0D;
-            this.btn_Exit.IconVisible = false;
-            this.btn_Exit.IconZoom = 110D;
+            this.btn_Exit.IconVisible = true;
+            this.btn_Exit.IconZoom = 80D;
             this.btn_Exit.IsTab = false;
-            this.btn_Exit.Location = new System.Drawing.Point(848, 224);
+            this.btn_Exit.Location = new System.Drawing.Point(831, 224);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Normalcolor = System.Drawing.Color.CornflowerBlue;
-            this.btn_Exit.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btn_Exit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.btn_Exit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.btn_Exit.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_Exit.selected = false;
-            this.btn_Exit.Size = new System.Drawing.Size(93, 41);
+            this.btn_Exit.Size = new System.Drawing.Size(110, 41);
             this.btn_Exit.TabIndex = 60;
             this.btn_Exit.Text = "EXIT";
             this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Exit.Textcolor = System.Drawing.Color.Black;
+            this.btn_Exit.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.btn_Exit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // cmbBookType
-            // 
-            this.cmbBookType.BackColor = System.Drawing.Color.Transparent;
-            this.cmbBookType.BorderRadius = 3;
-            this.cmbBookType.DisabledColor = System.Drawing.Color.Gray;
-            this.cmbBookType.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.cmbBookType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbBookType.Items = new string[] {
-        "References",
-        "Filipiniana",
-        "General Reference",
-        "Fiction"};
-            this.cmbBookType.Location = new System.Drawing.Point(276, 43);
-            this.cmbBookType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbBookType.Name = "cmbBookType";
-            this.cmbBookType.NomalColor = System.Drawing.Color.CornflowerBlue;
-            this.cmbBookType.onHoverColor = System.Drawing.Color.RoyalBlue;
-            this.cmbBookType.selectedIndex = -1;
-            this.cmbBookType.Size = new System.Drawing.Size(189, 24);
-            this.cmbBookType.TabIndex = 61;
-            // 
             // txt_BookIDNum
             // 
-            this.txt_BookIDNum.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_BookIDNum.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_BookIDNum.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_BookIDNum.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_BookIDNum.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_BookIDNum.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_BookIDNum.BorderThickness = 1;
             this.txt_BookIDNum.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_BookIDNum.Enabled = false;
             this.txt_BookIDNum.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_BookIDNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_BookIDNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_BookIDNum.isPassword = false;
             this.txt_BookIDNum.Location = new System.Drawing.Point(276, 12);
             this.txt_BookIDNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -520,13 +502,13 @@
             // 
             // txt_ISBN
             // 
-            this.txt_ISBN.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_ISBN.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_ISBN.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_ISBN.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_ISBN.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_ISBN.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_ISBN.BorderThickness = 1;
             this.txt_ISBN.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_ISBN.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_ISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_ISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_ISBN.isPassword = false;
             this.txt_ISBN.Location = new System.Drawing.Point(276, 76);
             this.txt_ISBN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -537,13 +519,13 @@
             // 
             // txt_CallNumber
             // 
-            this.txt_CallNumber.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_CallNumber.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_CallNumber.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_CallNumber.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_CallNumber.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_CallNumber.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_CallNumber.BorderThickness = 1;
             this.txt_CallNumber.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_CallNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_CallNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_CallNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_CallNumber.isPassword = false;
             this.txt_CallNumber.Location = new System.Drawing.Point(276, 108);
             this.txt_CallNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -554,7 +536,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.panel1.Controls.Add(this.txt_Title);
             this.panel1.Location = new System.Drawing.Point(276, 138);
             this.panel1.Name = "panel1";
@@ -563,13 +545,13 @@
             // 
             // txt_Author
             // 
-            this.txt_Author.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_Author.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_Author.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Author.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_Author.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_Author.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_Author.BorderThickness = 1;
             this.txt_Author.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_Author.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_Author.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Author.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_Author.isPassword = false;
             this.txt_Author.Location = new System.Drawing.Point(276, 190);
             this.txt_Author.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -580,13 +562,13 @@
             // 
             // txt_Publisher
             // 
-            this.txt_Publisher.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_Publisher.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_Publisher.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Publisher.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_Publisher.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_Publisher.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_Publisher.BorderThickness = 1;
             this.txt_Publisher.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_Publisher.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_Publisher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Publisher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_Publisher.isPassword = false;
             this.txt_Publisher.Location = new System.Drawing.Point(578, 12);
             this.txt_Publisher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -597,13 +579,13 @@
             // 
             // txt_CopyrightYear
             // 
-            this.txt_CopyrightYear.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_CopyrightYear.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_CopyrightYear.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_CopyrightYear.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_CopyrightYear.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_CopyrightYear.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_CopyrightYear.BorderThickness = 1;
             this.txt_CopyrightYear.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_CopyrightYear.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_CopyrightYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_CopyrightYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_CopyrightYear.isPassword = false;
             this.txt_CopyrightYear.Location = new System.Drawing.Point(578, 44);
             this.txt_CopyrightYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -615,13 +597,13 @@
             // 
             // txt_Edition
             // 
-            this.txt_Edition.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_Edition.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_Edition.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Edition.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_Edition.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_Edition.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_Edition.BorderThickness = 1;
             this.txt_Edition.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_Edition.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_Edition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Edition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_Edition.isPassword = false;
             this.txt_Edition.Location = new System.Drawing.Point(578, 76);
             this.txt_Edition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -632,13 +614,13 @@
             // 
             // txt_Volume
             // 
-            this.txt_Volume.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_Volume.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_Volume.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Volume.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_Volume.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_Volume.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_Volume.BorderThickness = 1;
             this.txt_Volume.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_Volume.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_Volume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Volume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_Volume.isPassword = false;
             this.txt_Volume.Location = new System.Drawing.Point(578, 108);
             this.txt_Volume.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -649,13 +631,13 @@
             // 
             // txt_Pages
             // 
-            this.txt_Pages.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_Pages.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_Pages.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Pages.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_Pages.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_Pages.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_Pages.BorderThickness = 1;
             this.txt_Pages.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_Pages.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_Pages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Pages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_Pages.isPassword = false;
             this.txt_Pages.Location = new System.Drawing.Point(578, 140);
             this.txt_Pages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -667,7 +649,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.panel2.Controls.Add(this.txt_Remarks);
             this.panel2.Location = new System.Drawing.Point(578, 170);
             this.panel2.Name = "panel2";
@@ -676,10 +658,10 @@
             // 
             // txt_Remarks
             // 
-            this.txt_Remarks.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_Remarks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
             this.txt_Remarks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Remarks.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_Remarks.ForeColor = System.Drawing.Color.Black;
+            this.txt_Remarks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_Remarks.Location = new System.Drawing.Point(1, 1);
             this.txt_Remarks.Multiline = true;
             this.txt_Remarks.Name = "txt_Remarks";
@@ -690,17 +672,18 @@
             // 
             this.cmb_SearchCategory.BackColor = System.Drawing.Color.Transparent;
             this.cmb_SearchCategory.BorderRadius = 3;
+            this.cmb_SearchCategory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.cmb_SearchCategory.DisabledColor = System.Drawing.Color.Gray;
             this.cmb_SearchCategory.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.cmb_SearchCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmb_SearchCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.cmb_SearchCategory.Items = new string[] {
         "QR Code",
         "Title"};
             this.cmb_SearchCategory.Location = new System.Drawing.Point(78, 244);
             this.cmb_SearchCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmb_SearchCategory.Name = "cmb_SearchCategory";
-            this.cmb_SearchCategory.NomalColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_SearchCategory.onHoverColor = System.Drawing.Color.RoyalBlue;
+            this.cmb_SearchCategory.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.cmb_SearchCategory.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.cmb_SearchCategory.selectedIndex = -1;
             this.cmb_SearchCategory.Size = new System.Drawing.Size(121, 21);
             this.cmb_SearchCategory.TabIndex = 72;
@@ -708,13 +691,13 @@
             // 
             // txt_Search
             // 
-            this.txt_Search.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_Search.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_Search.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_Search.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_Search.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_Search.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_Search.BorderThickness = 1;
             this.txt_Search.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_Search.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_Search.isPassword = false;
             this.txt_Search.Location = new System.Drawing.Point(211, 243);
             this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -725,19 +708,43 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.panel3.Controls.Add(this.pb_QRBook);
             this.panel3.Location = new System.Drawing.Point(11, 11);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(132, 132);
             this.panel3.TabIndex = 65;
             // 
+            // cmbBookType
+            // 
+            this.cmbBookType.BackColor = System.Drawing.Color.Transparent;
+            this.cmbBookType.BorderRadius = 3;
+            this.cmbBookType.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cmbBookType.DisabledColor = System.Drawing.Color.Gray;
+            this.cmbBookType.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cmbBookType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
+            this.cmbBookType.Items = new string[] {
+        "References",
+        "Filipiniana",
+        "General Reference",
+        "Fiction"};
+            this.cmbBookType.Location = new System.Drawing.Point(275, 43);
+            this.cmbBookType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBookType.Name = "cmbBookType";
+            this.cmbBookType.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.cmbBookType.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.cmbBookType.selectedIndex = -1;
+            this.cmbBookType.Size = new System.Drawing.Size(189, 24);
+            this.cmbBookType.TabIndex = 61;
+            // 
             // Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1056, 552);
+            this.Controls.Add(this.cmbBookType);
             this.Controls.Add(this.cmb_SearchCategory);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txt_Pages);
@@ -769,7 +776,6 @@
             this.Controls.Add(this.btn_Clear);
             this.Controls.Add(this.dgvBook);
             this.Controls.Add(this.txt_BookIDNum);
-            this.Controls.Add(this.cmbBookType);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.panel3);
@@ -826,7 +832,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnAddOrUpdate;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Clear;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
-        private Bunifu.Framework.UI.BunifuDropdown cmbBookType;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuMetroTextbox txt_BookIDNum;
         private Bunifu.Framework.UI.BunifuMetroTextbox txt_ISBN;
@@ -845,5 +850,6 @@
         private Bunifu.Framework.UI.BunifuDropdown cmb_SearchCategory;
         private Bunifu.Framework.UI.BunifuMetroTextbox txt_Search;
         private System.Windows.Forms.Panel panel3;
+        private Bunifu.Framework.UI.BunifuDropdown cmbBookType;
     }
 }

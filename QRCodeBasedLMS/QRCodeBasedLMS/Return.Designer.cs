@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Title = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,15 +38,10 @@
             this.txt_BorrowerID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_BookIDNum = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_NoOfDaysUnreturned = new System.Windows.Forms.TextBox();
-            this.txt_DueDate = new System.Windows.Forms.TextBox();
             this.btnScan = new System.Windows.Forms.Button();
-            this.pb_QRCode = new System.Windows.Forms.PictureBox();
-            this.txt_PenaltyFee = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvReturn = new System.Windows.Forms.DataGridView();
+            this.clsReturnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.link_Back = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -57,11 +53,22 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_QRCode)).BeginInit();
+            this.cmbDevice = new System.Windows.Forms.ComboBox();
+            this.btnCamera = new System.Windows.Forms.Button();
+            this.pb_ScanQR = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bookTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noOfDaysUnreturnedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.penaltyFeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotalFee = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clsReturnBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ScanQR)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -82,7 +89,6 @@
             this.txt_Title.Name = "txt_Title";
             this.txt_Title.Size = new System.Drawing.Size(247, 22);
             this.txt_Title.TabIndex = 49;
-            this.txt_Title.TextChanged += new System.EventHandler(this.txt_Title_TextChanged);
             // 
             // label3
             // 
@@ -105,7 +111,7 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(742, 316);
+            this.btnReturn.Location = new System.Drawing.Point(628, 316);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(90, 34);
             this.btnReturn.TabIndex = 46;
@@ -151,105 +157,63 @@
             this.txt_BookIDNum.TabIndex = 39;
             this.txt_BookIDNum.TextChanged += new System.EventHandler(this.txt_BookIDNum_TextChanged);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 16);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "Number of Days Unreturned :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 16);
-            this.label5.TabIndex = 54;
-            this.label5.Text = "Due Date:";
-            // 
-            // txt_NoOfDaysUnreturned
-            // 
-            this.txt_NoOfDaysUnreturned.Enabled = false;
-            this.txt_NoOfDaysUnreturned.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NoOfDaysUnreturned.Location = new System.Drawing.Point(192, 47);
-            this.txt_NoOfDaysUnreturned.Name = "txt_NoOfDaysUnreturned";
-            this.txt_NoOfDaysUnreturned.Size = new System.Drawing.Size(101, 22);
-            this.txt_NoOfDaysUnreturned.TabIndex = 56;
-            // 
-            // txt_DueDate
-            // 
-            this.txt_DueDate.Enabled = false;
-            this.txt_DueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DueDate.Location = new System.Drawing.Point(80, 17);
-            this.txt_DueDate.Name = "txt_DueDate";
-            this.txt_DueDate.Size = new System.Drawing.Size(213, 22);
-            this.txt_DueDate.TabIndex = 57;
-            // 
             // btnScan
             // 
-            this.btnScan.Location = new System.Drawing.Point(646, 316);
+            this.btnScan.Location = new System.Drawing.Point(532, 316);
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(90, 34);
             this.btnScan.TabIndex = 43;
-            this.btnScan.Text = "SCAN BOOK";
+            this.btnScan.Text = "SCAN BORROWER";
             this.btnScan.UseVisualStyleBackColor = true;
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
-            // 
-            // pb_QRCode
-            // 
-            this.pb_QRCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_QRCode.Location = new System.Drawing.Point(106, 12);
-            this.pb_QRCode.Name = "pb_QRCode";
-            this.pb_QRCode.Size = new System.Drawing.Size(130, 130);
-            this.pb_QRCode.TabIndex = 58;
-            this.pb_QRCode.TabStop = false;
-            // 
-            // txt_PenaltyFee
-            // 
-            this.txt_PenaltyFee.Enabled = false;
-            this.txt_PenaltyFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PenaltyFee.Location = new System.Drawing.Point(101, 75);
-            this.txt_PenaltyFee.Name = "txt_PenaltyFee";
-            this.txt_PenaltyFee.Size = new System.Drawing.Size(192, 22);
-            this.txt_PenaltyFee.TabIndex = 60;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 79);
+            this.label7.Location = new System.Drawing.Point(6, 23);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 16);
+            this.label7.Size = new System.Drawing.Size(120, 16);
             this.label7.TabIndex = 59;
-            this.label7.Text = "Penalty Fee : ";
+            this.label7.Text = "Total Penalty Fee :";
             // 
             // dgvReturn
             // 
             this.dgvReturn.AllowUserToAddRows = false;
+            this.dgvReturn.AutoGenerateColumns = false;
             this.dgvReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReturn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Delete,
+            this.bookTitleDataGridViewTextBoxColumn,
+            this.dueDateDataGridViewTextBoxColumn,
+            this.noOfDaysUnreturnedDataGridViewTextBoxColumn,
+            this.penaltyFeeDataGridViewTextBoxColumn});
+            this.dgvReturn.DataSource = this.clsReturnBindingSource;
             this.dgvReturn.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvReturn.Location = new System.Drawing.Point(334, 43);
+            this.dgvReturn.Location = new System.Drawing.Point(12, 356);
             this.dgvReturn.MultiSelect = false;
             this.dgvReturn.Name = "dgvReturn";
             this.dgvReturn.ReadOnly = true;
             this.dgvReturn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReturn.Size = new System.Drawing.Size(498, 257);
+            this.dgvReturn.Size = new System.Drawing.Size(714, 215);
             this.dgvReturn.TabIndex = 61;
+            this.dgvReturn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReturn_CellContentClick);
+            // 
+            // clsReturnBindingSource
+            // 
+            this.clsReturnBindingSource.DataSource = typeof(QRCodeBasedLMS.clsReturn);
             // 
             // link_Back
             // 
             this.link_Back.AutoSize = true;
             this.link_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.link_Back.Location = new System.Drawing.Point(772, 12);
+            this.link_Back.Location = new System.Drawing.Point(658, 9);
             this.link_Back.Name = "link_Back";
             this.link_Back.Size = new System.Drawing.Size(60, 16);
             this.link_Back.TabIndex = 62;
             this.link_Back.TabStop = true;
             this.link_Back.Text = "Go Back";
+            this.link_Back.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_Back_LinkClicked);
             // 
             // groupBox1
             // 
@@ -257,7 +221,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_Name);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(18, 148);
+            this.groupBox1.Location = new System.Drawing.Point(425, 68);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(301, 74);
             this.groupBox1.TabIndex = 63;
@@ -269,7 +233,7 @@
             this.groupBox2.Controls.Add(this.txt_BookIDNum);
             this.groupBox2.Controls.Add(this.txt_Title);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(18, 245);
+            this.groupBox2.Location = new System.Drawing.Point(425, 160);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(301, 77);
             this.groupBox2.TabIndex = 64;
@@ -277,15 +241,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.txt_NoOfDaysUnreturned);
-            this.groupBox3.Controls.Add(this.txt_DueDate);
+            this.groupBox3.Controls.Add(this.lblTotalFee);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.txt_PenaltyFee);
-            this.groupBox3.Location = new System.Drawing.Point(18, 341);
+            this.groupBox3.Location = new System.Drawing.Point(425, 243);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(301, 110);
+            this.groupBox3.Size = new System.Drawing.Size(301, 59);
             this.groupBox3.TabIndex = 65;
             this.groupBox3.TabStop = false;
             // 
@@ -298,7 +258,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(111, 44);
             this.textBox4.TabIndex = 65;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // radioButton3
             // 
@@ -362,32 +321,115 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(218, 44);
             this.textBox5.TabIndex = 67;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // cmbDevice
+            // 
+            this.cmbDevice.FormattingEnabled = true;
+            this.cmbDevice.Location = new System.Drawing.Point(12, 17);
+            this.cmbDevice.Name = "cmbDevice";
+            this.cmbDevice.Size = new System.Drawing.Size(298, 21);
+            this.cmbDevice.TabIndex = 66;
+            this.cmbDevice.SelectedIndexChanged += new System.EventHandler(this.cmbDevice_SelectedIndexChanged);
+            // 
+            // btnCamera
+            // 
+            this.btnCamera.Location = new System.Drawing.Point(329, 12);
+            this.btnCamera.Name = "btnCamera";
+            this.btnCamera.Size = new System.Drawing.Size(90, 29);
+            this.btnCamera.TabIndex = 68;
+            this.btnCamera.Text = "Start Camera";
+            this.btnCamera.UseVisualStyleBackColor = true;
+            this.btnCamera.Visible = false;
+            this.btnCamera.Click += new System.EventHandler(this.btnCamera_Click);
+            // 
+            // pb_ScanQR
+            // 
+            this.pb_ScanQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb_ScanQR.Location = new System.Drawing.Point(12, 47);
+            this.pb_ScanQR.Name = "pb_ScanQR";
+            this.pb_ScanQR.Size = new System.Drawing.Size(407, 303);
+            this.pb_ScanQR.TabIndex = 67;
+            this.pb_ScanQR.TabStop = false;
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // bookTitleDataGridViewTextBoxColumn
+            // 
+            this.bookTitleDataGridViewTextBoxColumn.DataPropertyName = "BookTitle";
+            this.bookTitleDataGridViewTextBoxColumn.HeaderText = "BookTitle";
+            this.bookTitleDataGridViewTextBoxColumn.Name = "bookTitleDataGridViewTextBoxColumn";
+            this.bookTitleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dueDateDataGridViewTextBoxColumn
+            // 
+            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
+            this.dueDateDataGridViewTextBoxColumn.HeaderText = "DueDate";
+            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
+            this.dueDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // noOfDaysUnreturnedDataGridViewTextBoxColumn
+            // 
+            this.noOfDaysUnreturnedDataGridViewTextBoxColumn.DataPropertyName = "NoOfDaysUnreturned";
+            this.noOfDaysUnreturnedDataGridViewTextBoxColumn.HeaderText = "NoOfDaysUnreturned";
+            this.noOfDaysUnreturnedDataGridViewTextBoxColumn.Name = "noOfDaysUnreturnedDataGridViewTextBoxColumn";
+            this.noOfDaysUnreturnedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // penaltyFeeDataGridViewTextBoxColumn
+            // 
+            this.penaltyFeeDataGridViewTextBoxColumn.DataPropertyName = "PenaltyFee";
+            this.penaltyFeeDataGridViewTextBoxColumn.HeaderText = "PenaltyFee";
+            this.penaltyFeeDataGridViewTextBoxColumn.Name = "penaltyFeeDataGridViewTextBoxColumn";
+            this.penaltyFeeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lblTotalFee
+            // 
+            this.lblTotalFee.AutoSize = true;
+            this.lblTotalFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFee.Location = new System.Drawing.Point(132, 23);
+            this.lblTotalFee.Name = "lblTotalFee";
+            this.lblTotalFee.Size = new System.Drawing.Size(0, 16);
+            this.lblTotalFee.TabIndex = 60;
             // 
             // Return
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 459);
+            this.ClientSize = new System.Drawing.Size(734, 583);
+            this.Controls.Add(this.cmbDevice);
+            this.Controls.Add(this.btnCamera);
+            this.Controls.Add(this.pb_ScanQR);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.link_Back);
             this.Controls.Add(this.dgvReturn);
-            this.Controls.Add(this.pb_QRCode);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnScan);
             this.Name = "Return";
             this.Text = "Return";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Return_FormClosing);
             this.Load += new System.EventHandler(this.Return_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_QRCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clsReturnBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ScanQR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,13 +446,7 @@
         private System.Windows.Forms.TextBox txt_BorrowerID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_BookIDNum;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_NoOfDaysUnreturned;
-        private System.Windows.Forms.TextBox txt_DueDate;
         private System.Windows.Forms.Button btnScan;
-        private System.Windows.Forms.PictureBox pb_QRCode;
-        private System.Windows.Forms.TextBox txt_PenaltyFee;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvReturn;
         private System.Windows.Forms.LinkLabel link_Back;
@@ -424,5 +460,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbDevice;
+        private System.Windows.Forms.Button btnCamera;
+        private System.Windows.Forms.PictureBox pb_ScanQR;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.BindingSource clsReturnBindingSource;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noOfDaysUnreturnedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn penaltyFeeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblTotalFee;
     }
 }

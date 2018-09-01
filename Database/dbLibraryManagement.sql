@@ -75,9 +75,14 @@ create table tblReturn(
 return_ReturnID int identity(1,1) primary key,
 return_ReturnNum varchar(50) not null,
 borrow_BorrowID int foreign key references tblBorrow(borrow_BorrowID),
-return_ReturnDate date not null,
-return_Penalty decimal not null,
-return_PenaltyRemarks varchar(20) not null)
+return_ReturnDate date)
+
+create table tblPenalty(
+penalty_PenaltyID int identity(1,1)primary key,
+penalty_NumOfDaysUnreturned int,
+penalty_Penalty decimal not null,
+penalty_PenaltyRemarks varchar(20),
+return_ReturnID int foreign key references tblReturn(return_ReturnID))
 
 create table tblAttendance(
 attendance_AttendanceID int identity(1,1) primary key,

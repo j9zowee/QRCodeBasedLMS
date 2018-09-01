@@ -64,7 +64,7 @@ namespace QRCodeBasedLMS
         private void libraryUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LibraryUserMasterlist lum = new LibraryUserMasterlist();
-            lum.Show();
+            lum.ShowDialog();
         }
 
         private void borrowBookToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,9 +91,10 @@ namespace QRCodeBasedLMS
 
         private void returnBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ScanQRCode scan = new ScanQRCode("return","");
-            scan.Show();
+            Return r = new Return();
+            r.Show();
             this.Hide();
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)

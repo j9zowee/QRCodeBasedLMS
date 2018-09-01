@@ -71,7 +71,7 @@ namespace QRCodeBasedLMS
                         bk.Show();
                         this.Close();
                     }
-                    else if (gikan == "borrow")
+                    else if (gikan == "index-borrow")
                     {
                         Borrow br = new Borrow(decoded,"");
                         br.Show();
@@ -85,16 +85,11 @@ namespace QRCodeBasedLMS
                     }
                     else if (gikan == "return")
                     {
-                        Return r = new Return(decoded, "");
-                        r.Show();
-                        this.Close();
+                        //Return r = new Return(decoded);
+                        //r.Show();
+                        //this.Close();
                     }
-                    else if (gikan == "returnform")
-                    {
-                        Return r = new Return(Z, decoded);
-                        r.Show();
-                        this.Close();
-                    }
+
                     else if (gikan == "borrower_bk")
                     {
                         Borrower br = new Borrower(decoded, "borrower_bk");

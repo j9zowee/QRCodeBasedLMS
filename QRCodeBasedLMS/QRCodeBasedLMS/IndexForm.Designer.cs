@@ -39,8 +39,8 @@
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Activecolor = System.Drawing.Color.MidnightBlue;
-            this.btnBorrow.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnBorrow.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnBorrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.btnBorrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBorrow.BorderRadius = 7;
             this.btnBorrow.ButtonText = "BORROW";
@@ -55,20 +55,20 @@
             this.btnBorrow.IconMarginRight = 0;
             this.btnBorrow.IconRightVisible = false;
             this.btnBorrow.IconRightZoom = 0D;
-            this.btnBorrow.IconVisible = false;
-            this.btnBorrow.IconZoom = 110D;
+            this.btnBorrow.IconVisible = true;
+            this.btnBorrow.IconZoom = 80D;
             this.btnBorrow.IsTab = false;
-            this.btnBorrow.Location = new System.Drawing.Point(38, 70);
+            this.btnBorrow.Location = new System.Drawing.Point(34, 80);
             this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Normalcolor = System.Drawing.Color.CornflowerBlue;
-            this.btnBorrow.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnBorrow.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.btnBorrow.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.btnBorrow.OnHoverTextColor = System.Drawing.Color.White;
             this.btnBorrow.selected = false;
-            this.btnBorrow.Size = new System.Drawing.Size(162, 65);
+            this.btnBorrow.Size = new System.Drawing.Size(215, 65);
             this.btnBorrow.TabIndex = 4;
             this.btnBorrow.Text = "BORROW";
             this.btnBorrow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnBorrow.Textcolor = System.Drawing.Color.Black;
+            this.btnBorrow.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.btnBorrow.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
             // 
@@ -79,8 +79,8 @@
             // 
             // btnInquiry
             // 
-            this.btnInquiry.Activecolor = System.Drawing.Color.MidnightBlue;
-            this.btnInquiry.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnInquiry.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnInquiry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.btnInquiry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInquiry.BorderRadius = 7;
             this.btnInquiry.ButtonText = "INQUIRY";
@@ -95,25 +95,25 @@
             this.btnInquiry.IconMarginRight = 0;
             this.btnInquiry.IconRightVisible = false;
             this.btnInquiry.IconRightZoom = 0D;
-            this.btnInquiry.IconVisible = false;
-            this.btnInquiry.IconZoom = 110D;
+            this.btnInquiry.IconVisible = true;
+            this.btnInquiry.IconZoom = 80D;
             this.btnInquiry.IsTab = false;
-            this.btnInquiry.Location = new System.Drawing.Point(230, 70);
+            this.btnInquiry.Location = new System.Drawing.Point(288, 80);
             this.btnInquiry.Name = "btnInquiry";
-            this.btnInquiry.Normalcolor = System.Drawing.Color.CornflowerBlue;
-            this.btnInquiry.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnInquiry.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.btnInquiry.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.btnInquiry.OnHoverTextColor = System.Drawing.Color.White;
             this.btnInquiry.selected = false;
-            this.btnInquiry.Size = new System.Drawing.Size(162, 65);
+            this.btnInquiry.Size = new System.Drawing.Size(215, 65);
             this.btnInquiry.TabIndex = 5;
             this.btnInquiry.Text = "INQUIRY";
             this.btnInquiry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnInquiry.Textcolor = System.Drawing.Color.Black;
+            this.btnInquiry.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.btnInquiry.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             // 
             // link_SignIn
             // 
-            this.link_SignIn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.link_SignIn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.link_SignIn.BackColor = System.Drawing.Color.Transparent;
             this.link_SignIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.link_SignIn.BorderRadius = 7;
@@ -132,23 +132,23 @@
             this.link_SignIn.IconVisible = false;
             this.link_SignIn.IconZoom = 110D;
             this.link_SignIn.IsTab = false;
-            this.link_SignIn.Location = new System.Drawing.Point(361, 12);
+            this.link_SignIn.Location = new System.Drawing.Point(462, 12);
             this.link_SignIn.Name = "link_SignIn";
             this.link_SignIn.Normalcolor = System.Drawing.Color.Transparent;
-            this.link_SignIn.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.link_SignIn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.link_SignIn.OnHoverTextColor = System.Drawing.Color.White;
             this.link_SignIn.selected = false;
             this.link_SignIn.Size = new System.Drawing.Size(62, 22);
             this.link_SignIn.TabIndex = 6;
             this.link_SignIn.Text = "Sign In";
             this.link_SignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.link_SignIn.Textcolor = System.Drawing.Color.RoyalBlue;
+            this.link_SignIn.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.link_SignIn.TextFont = new System.Drawing.Font("Century Gothic", 9.75F);
             this.link_SignIn.Click += new System.EventHandler(this.link_SignIn_Click);
             // 
             // link_Attendance
             // 
-            this.link_Attendance.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.link_Attendance.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.link_Attendance.BackColor = System.Drawing.Color.Transparent;
             this.link_Attendance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.link_Attendance.BorderRadius = 7;
@@ -167,17 +167,17 @@
             this.link_Attendance.IconVisible = false;
             this.link_Attendance.IconZoom = 110D;
             this.link_Attendance.IsTab = false;
-            this.link_Attendance.Location = new System.Drawing.Point(250, 12);
+            this.link_Attendance.Location = new System.Drawing.Point(351, 12);
             this.link_Attendance.Name = "link_Attendance";
             this.link_Attendance.Normalcolor = System.Drawing.Color.Transparent;
-            this.link_Attendance.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.link_Attendance.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.link_Attendance.OnHoverTextColor = System.Drawing.Color.White;
             this.link_Attendance.selected = false;
             this.link_Attendance.Size = new System.Drawing.Size(105, 22);
             this.link_Attendance.TabIndex = 7;
             this.link_Attendance.Text = "Attendance";
             this.link_Attendance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.link_Attendance.Textcolor = System.Drawing.Color.RoyalBlue;
+            this.link_Attendance.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.link_Attendance.TextFont = new System.Drawing.Font("Century Gothic", 9.75F);
             this.link_Attendance.Click += new System.EventHandler(this.link_Attendance_Click);
             // 
@@ -185,8 +185,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(435, 184);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.ClientSize = new System.Drawing.Size(536, 199);
             this.Controls.Add(this.link_Attendance);
             this.Controls.Add(this.link_SignIn);
             this.Controls.Add(this.btnBorrow);

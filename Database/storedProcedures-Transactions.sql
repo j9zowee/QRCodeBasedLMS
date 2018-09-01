@@ -59,6 +59,21 @@ BEGIN
 	insert into tblAttendance values(@StudentID,@Firstname,@Lastname,@LoginTime)
 END
 
-select * from tblAttendance
+CREATE PROCEDURE sp_ReturnBook
+@ReturnNum varchar(50),
+@SchoolID varchar(50),
+@BookNum varchar(50),
+@ReturnDate date,
+@Penalty decimal,
+@PenaltyRemarks varchar(20)
+AS
+BEGIN
+	DECLARE @libUserID int
+	Declare @bookID int
+	Declare @borrowID int
+	select @libUserID = dbo.tblLibraryUser.lib_UserID FROM  dbo.tblLibraryUser where dbo.tblLibraryUser.lib_SchoolID = @SchoolID
+	select @bookID = dbo.tblBook.book_BookID FROM dbo.tblBook where tblBook.book_BookNum = @BookNum
+	select @borrowID=tblBorrow.borrow_BorrowID from tblBorrow where tblBorrow.lib_UserID = @libUserID and tblBorrow.book_BookID = @bookID
 
-select * from tblBorrow
+	insert into tblReturn values(@ReturnNum,@borrowID,@ReturnDate,@Penalty,@PenaltyRemarks)
+END

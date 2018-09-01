@@ -76,8 +76,8 @@ namespace QRCodeBasedLMS
 
         private void borrowersInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Borrower b = new Borrower("","");
-            b.Show();
+            ScanQRCode scan = new ScanQRCode("borrow", "");
+            scan.Show();
             this.Hide();
 
         }
@@ -91,9 +91,14 @@ namespace QRCodeBasedLMS
 
         private void returnBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Borrow br = new Borrow("return","");
-            br.Show();
+            ScanQRCode scan = new ScanQRCode("return","");
+            scan.Show();
             this.Hide();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

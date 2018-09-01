@@ -114,7 +114,7 @@ namespace QRCodeBasedLMS
 
         private void link_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DialogResult res = MessageBox.Show("Do you want to cancel?", "Cancel Borrowing of Book", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Do you want to cancel?", "Cancel Returning of Book", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
                 for (int i = 0; i < dgvBorrow.RowCount; i++)

@@ -24,13 +24,25 @@ namespace QRCodeBasedLMS
         dcLMSDataContext db = new dcLMSDataContext();
         private void Return_Load(object sender, EventArgs e)
         {
+            txt_BorrowerID.Text = Borrowerqrcode;
+            txt_BookIDNum.Text = Bookqrcode;
+            if (txt_BookIDNum.Text != "")
+            {
+                DateTime dt = DateTime.Now;
+                DateTime due = dt.AddDays(3);
+                db.sp_SelectBooks(txt_BookIDNum.Text, txt_Title.Text, due);
 
+                dgvReturn.DataSource = db.sp_ViewSelectedBooks();
+                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                btn.Text = "Delete";
+                btn.Name = "Delete";
+                btn.UseColumnTextForButtonValue = true;
+                dgvReturn.Columns.Add(btn);
+                btnScan.Text = "Scan Another Book";
+            }
         }
 
-        private void dgvBorrow_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void txt_BorrowerID_TextChanged(object sender, EventArgs e)
         {
@@ -54,6 +66,26 @@ namespace QRCodeBasedLMS
         private void txt_BookIDNum_TextChanged(object sender, EventArgs e)
         {
             txt_Title.Text = (from s in db.tblBooks where s.book_BookNum == txt_BookIDNum.Text select s.book_Title).FirstOrDefault();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Title_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

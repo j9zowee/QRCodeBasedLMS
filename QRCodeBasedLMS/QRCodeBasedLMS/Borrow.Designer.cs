@@ -41,13 +41,17 @@
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Title = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QRCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnScan
             // 
-            this.btnScan.Location = new System.Drawing.Point(122, 303);
+            this.btnScan.Location = new System.Drawing.Point(130, 389);
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(90, 34);
             this.btnScan.TabIndex = 28;
@@ -59,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 172);
+            this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 16);
             this.label1.TabIndex = 26;
@@ -67,11 +71,10 @@
             // 
             // txt_BorrowerID
             // 
-            this.txt_BorrowerID.Enabled = false;
             this.txt_BorrowerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_BorrowerID.Location = new System.Drawing.Point(157, 169);
+            this.txt_BorrowerID.Location = new System.Drawing.Point(142, 26);
             this.txt_BorrowerID.Name = "txt_BorrowerID";
-            this.txt_BorrowerID.Size = new System.Drawing.Size(155, 22);
+            this.txt_BorrowerID.Size = new System.Drawing.Size(151, 22);
             this.txt_BorrowerID.TabIndex = 25;
             this.txt_BorrowerID.TextChanged += new System.EventHandler(this.txt_BorrowerID_TextChanged);
             // 
@@ -79,7 +82,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 239);
+            this.label2.Location = new System.Drawing.Point(8, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 16);
             this.label2.TabIndex = 24;
@@ -87,9 +90,8 @@
             // 
             // txt_BookIDNum
             // 
-            this.txt_BookIDNum.Enabled = false;
             this.txt_BookIDNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_BookIDNum.Location = new System.Drawing.Point(140, 236);
+            this.txt_BookIDNum.Location = new System.Drawing.Point(127, 28);
             this.txt_BookIDNum.Name = "txt_BookIDNum";
             this.txt_BookIDNum.Size = new System.Drawing.Size(168, 22);
             this.txt_BookIDNum.TabIndex = 23;
@@ -98,7 +100,7 @@
             // pb_QRCode
             // 
             this.pb_QRCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_QRCode.Location = new System.Drawing.Point(95, 12);
+            this.pb_QRCode.Location = new System.Drawing.Point(90, 25);
             this.pb_QRCode.Name = "pb_QRCode";
             this.pb_QRCode.Size = new System.Drawing.Size(130, 130);
             this.pb_QRCode.TabIndex = 29;
@@ -106,7 +108,7 @@
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(218, 303);
+            this.btnBorrow.Location = new System.Drawing.Point(226, 389);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(90, 34);
             this.btnBorrow.TabIndex = 33;
@@ -124,7 +126,7 @@
             this.dgvBorrow.Name = "dgvBorrow";
             this.dgvBorrow.ReadOnly = true;
             this.dgvBorrow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBorrow.Size = new System.Drawing.Size(428, 301);
+            this.dgvBorrow.Size = new System.Drawing.Size(428, 381);
             this.dgvBorrow.TabIndex = 32;
             this.dgvBorrow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrow_CellContentClick);
             // 
@@ -144,7 +146,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 200);
+            this.label3.Location = new System.Drawing.Point(6, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 36;
@@ -154,7 +156,7 @@
             // 
             this.txt_Name.Enabled = false;
             this.txt_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Name.Location = new System.Drawing.Point(81, 197);
+            this.txt_Name.Location = new System.Drawing.Point(66, 54);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(227, 22);
             this.txt_Name.TabIndex = 35;
@@ -163,7 +165,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 271);
+            this.label4.Location = new System.Drawing.Point(8, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 16);
             this.label4.TabIndex = 38;
@@ -173,34 +175,56 @@
             // 
             this.txt_Title.Enabled = false;
             this.txt_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Title.Location = new System.Drawing.Point(61, 268);
+            this.txt_Title.Location = new System.Drawing.Point(48, 60);
             this.txt_Title.Name = "txt_Title";
             this.txt_Title.Size = new System.Drawing.Size(247, 22);
             this.txt_Title.TabIndex = 37;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txt_BorrowerID);
+            this.groupBox1.Controls.Add(this.txt_Name);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(12, 161);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(304, 100);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txt_BookIDNum);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txt_Title);
+            this.groupBox2.Location = new System.Drawing.Point(12, 267);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(304, 100);
+            this.groupBox2.TabIndex = 40;
+            this.groupBox2.TabStop = false;
             // 
             // Borrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 349);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_Title);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_Name);
+            this.ClientSize = new System.Drawing.Size(782, 437);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.link_Back);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.dgvBorrow);
             this.Controls.Add(this.btnScan);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_BorrowerID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_BookIDNum);
             this.Controls.Add(this.pb_QRCode);
             this.Name = "Borrow";
             this.Text = "Borrow";
             this.Load += new System.EventHandler(this.Borrow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_QRCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +245,7 @@
         private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Title;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

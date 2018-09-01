@@ -51,6 +51,12 @@ namespace QRCodeBasedLMS
     partial void InserttblSelectedBook(tblSelectedBook instance);
     partial void UpdatetblSelectedBook(tblSelectedBook instance);
     partial void DeletetblSelectedBook(tblSelectedBook instance);
+    partial void InserttblReturn(tblReturn instance);
+    partial void UpdatetblReturn(tblReturn instance);
+    partial void DeletetblReturn(tblReturn instance);
+    partial void InserttblSelectedBook1(tblSelectedBook1 instance);
+    partial void UpdatetblSelectedBook1(tblSelectedBook1 instance);
+    partial void DeletetblSelectedBook1(tblSelectedBook1 instance);
     #endregion
 		
 		public dcLMSDataContext() : 
@@ -136,6 +142,22 @@ namespace QRCodeBasedLMS
 			get
 			{
 				return this.GetTable<tblSelectedBook>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblReturn> tblReturns
+		{
+			get
+			{
+				return this.GetTable<tblReturn>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblSelectedBook1> tblSelectedBook1s
+		{
+			get
+			{
+				return this.GetTable<tblSelectedBook1>();
 			}
 		}
 		
@@ -328,6 +350,13 @@ namespace QRCodeBasedLMS
 		public int sp_SelectBooks([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookNum", DbType="VarChar(50)")] string bookNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(100)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DueDate", DbType="Date")] System.Nullable<System.DateTime> dueDate)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookNum, title, dueDate);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ReturnBook")]
+		public int sp_ReturnBook([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReturnNum", DbType="VarChar(50)")] string returnNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SchoolID", DbType="VarChar(50)")] string schoolID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookNum", DbType="VarChar(50)")] string bookNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReturnDate", DbType="Date")] System.Nullable<System.DateTime> returnDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Penalty", DbType="Decimal(18,0)")] System.Nullable<decimal> penalty, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PenaltyRemarks", DbType="VarChar(20)")] string penaltyRemarks)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), returnNum, schoolID, bookNum, returnDate, penalty, penaltyRemarks);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -1367,6 +1396,8 @@ namespace QRCodeBasedLMS
 		
 		private System.DateTime _borrow_DueDate;
 		
+		private EntitySet<tblReturn> _tblReturns;
+		
 		private EntityRef<tblBook> _tblBook;
 		
 		private EntityRef<tblLibraryUser> _tblLibraryUser;
@@ -1391,6 +1422,7 @@ namespace QRCodeBasedLMS
 		
 		public tblBorrow()
 		{
+			this._tblReturns = new EntitySet<tblReturn>(new Action<tblReturn>(this.attach_tblReturns), new Action<tblReturn>(this.detach_tblReturns));
 			this._tblBook = default(EntityRef<tblBook>);
 			this._tblLibraryUser = default(EntityRef<tblLibraryUser>);
 			OnCreated();
@@ -1524,6 +1556,19 @@ namespace QRCodeBasedLMS
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblBorrow_tblReturn", Storage="_tblReturns", ThisKey="borrow_BorrowID", OtherKey="borrow_BorrowID")]
+		public EntitySet<tblReturn> tblReturns
+		{
+			get
+			{
+				return this._tblReturns;
+			}
+			set
+			{
+				this._tblReturns.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblBook_tblBorrow", Storage="_tblBook", ThisKey="book_BookID", OtherKey="book_BookID", IsForeignKey=true)]
 		public tblBook tblBook
 		{
@@ -1610,6 +1655,18 @@ namespace QRCodeBasedLMS
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_tblReturns(tblReturn entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblBorrow = this;
+		}
+		
+		private void detach_tblReturns(tblReturn entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblBorrow = null;
 		}
 	}
 	
@@ -1948,6 +2005,363 @@ namespace QRCodeBasedLMS
     #endregion
 		
 		public tblSelectedBook()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sb_BookID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int sb_BookID
+		{
+			get
+			{
+				return this._sb_BookID;
+			}
+			set
+			{
+				if ((this._sb_BookID != value))
+				{
+					this.Onsb_BookIDChanging(value);
+					this.SendPropertyChanging();
+					this._sb_BookID = value;
+					this.SendPropertyChanged("sb_BookID");
+					this.Onsb_BookIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sb_BookIDNum", DbType="VarChar(50)")]
+		public string sb_BookIDNum
+		{
+			get
+			{
+				return this._sb_BookIDNum;
+			}
+			set
+			{
+				if ((this._sb_BookIDNum != value))
+				{
+					this.Onsb_BookIDNumChanging(value);
+					this.SendPropertyChanging();
+					this._sb_BookIDNum = value;
+					this.SendPropertyChanged("sb_BookIDNum");
+					this.Onsb_BookIDNumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sb_Title", DbType="VarChar(100)")]
+		public string sb_Title
+		{
+			get
+			{
+				return this._sb_Title;
+			}
+			set
+			{
+				if ((this._sb_Title != value))
+				{
+					this.Onsb_TitleChanging(value);
+					this.SendPropertyChanging();
+					this._sb_Title = value;
+					this.SendPropertyChanged("sb_Title");
+					this.Onsb_TitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sb_DueDate", DbType="Date NOT NULL")]
+		public System.DateTime sb_DueDate
+		{
+			get
+			{
+				return this._sb_DueDate;
+			}
+			set
+			{
+				if ((this._sb_DueDate != value))
+				{
+					this.Onsb_DueDateChanging(value);
+					this.SendPropertyChanging();
+					this._sb_DueDate = value;
+					this.SendPropertyChanged("sb_DueDate");
+					this.Onsb_DueDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblReturn")]
+	public partial class tblReturn : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _return_ReturnID;
+		
+		private string _return_ReturnNum;
+		
+		private System.Nullable<int> _borrow_BorrowID;
+		
+		private System.DateTime _return_ReturnDate;
+		
+		private decimal _return_Penalty;
+		
+		private string _return_PenaltyRemarks;
+		
+		private EntityRef<tblBorrow> _tblBorrow;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onreturn_ReturnIDChanging(int value);
+    partial void Onreturn_ReturnIDChanged();
+    partial void Onreturn_ReturnNumChanging(string value);
+    partial void Onreturn_ReturnNumChanged();
+    partial void Onborrow_BorrowIDChanging(System.Nullable<int> value);
+    partial void Onborrow_BorrowIDChanged();
+    partial void Onreturn_ReturnDateChanging(System.DateTime value);
+    partial void Onreturn_ReturnDateChanged();
+    partial void Onreturn_PenaltyChanging(decimal value);
+    partial void Onreturn_PenaltyChanged();
+    partial void Onreturn_PenaltyRemarksChanging(string value);
+    partial void Onreturn_PenaltyRemarksChanged();
+    #endregion
+		
+		public tblReturn()
+		{
+			this._tblBorrow = default(EntityRef<tblBorrow>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_return_ReturnID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int return_ReturnID
+		{
+			get
+			{
+				return this._return_ReturnID;
+			}
+			set
+			{
+				if ((this._return_ReturnID != value))
+				{
+					this.Onreturn_ReturnIDChanging(value);
+					this.SendPropertyChanging();
+					this._return_ReturnID = value;
+					this.SendPropertyChanged("return_ReturnID");
+					this.Onreturn_ReturnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_return_ReturnNum", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string return_ReturnNum
+		{
+			get
+			{
+				return this._return_ReturnNum;
+			}
+			set
+			{
+				if ((this._return_ReturnNum != value))
+				{
+					this.Onreturn_ReturnNumChanging(value);
+					this.SendPropertyChanging();
+					this._return_ReturnNum = value;
+					this.SendPropertyChanged("return_ReturnNum");
+					this.Onreturn_ReturnNumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_borrow_BorrowID", DbType="Int")]
+		public System.Nullable<int> borrow_BorrowID
+		{
+			get
+			{
+				return this._borrow_BorrowID;
+			}
+			set
+			{
+				if ((this._borrow_BorrowID != value))
+				{
+					if (this._tblBorrow.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onborrow_BorrowIDChanging(value);
+					this.SendPropertyChanging();
+					this._borrow_BorrowID = value;
+					this.SendPropertyChanged("borrow_BorrowID");
+					this.Onborrow_BorrowIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_return_ReturnDate", DbType="Date NOT NULL")]
+		public System.DateTime return_ReturnDate
+		{
+			get
+			{
+				return this._return_ReturnDate;
+			}
+			set
+			{
+				if ((this._return_ReturnDate != value))
+				{
+					this.Onreturn_ReturnDateChanging(value);
+					this.SendPropertyChanging();
+					this._return_ReturnDate = value;
+					this.SendPropertyChanged("return_ReturnDate");
+					this.Onreturn_ReturnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_return_Penalty", DbType="Decimal(18,0) NOT NULL")]
+		public decimal return_Penalty
+		{
+			get
+			{
+				return this._return_Penalty;
+			}
+			set
+			{
+				if ((this._return_Penalty != value))
+				{
+					this.Onreturn_PenaltyChanging(value);
+					this.SendPropertyChanging();
+					this._return_Penalty = value;
+					this.SendPropertyChanged("return_Penalty");
+					this.Onreturn_PenaltyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_return_PenaltyRemarks", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string return_PenaltyRemarks
+		{
+			get
+			{
+				return this._return_PenaltyRemarks;
+			}
+			set
+			{
+				if ((this._return_PenaltyRemarks != value))
+				{
+					this.Onreturn_PenaltyRemarksChanging(value);
+					this.SendPropertyChanging();
+					this._return_PenaltyRemarks = value;
+					this.SendPropertyChanged("return_PenaltyRemarks");
+					this.Onreturn_PenaltyRemarksChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblBorrow_tblReturn", Storage="_tblBorrow", ThisKey="borrow_BorrowID", OtherKey="borrow_BorrowID", IsForeignKey=true)]
+		public tblBorrow tblBorrow
+		{
+			get
+			{
+				return this._tblBorrow.Entity;
+			}
+			set
+			{
+				tblBorrow previousValue = this._tblBorrow.Entity;
+				if (((previousValue != value) 
+							|| (this._tblBorrow.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblBorrow.Entity = null;
+						previousValue.tblReturns.Remove(this);
+					}
+					this._tblBorrow.Entity = value;
+					if ((value != null))
+					{
+						value.tblReturns.Add(this);
+						this._borrow_BorrowID = value.borrow_BorrowID;
+					}
+					else
+					{
+						this._borrow_BorrowID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tblBorrow");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblSelectedBooks")]
+	public partial class tblSelectedBook1 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _sb_BookID;
+		
+		private string _sb_BookIDNum;
+		
+		private string _sb_Title;
+		
+		private System.DateTime _sb_DueDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onsb_BookIDChanging(int value);
+    partial void Onsb_BookIDChanged();
+    partial void Onsb_BookIDNumChanging(string value);
+    partial void Onsb_BookIDNumChanged();
+    partial void Onsb_TitleChanging(string value);
+    partial void Onsb_TitleChanged();
+    partial void Onsb_DueDateChanging(System.DateTime value);
+    partial void Onsb_DueDateChanged();
+    #endregion
+		
+		public tblSelectedBook1()
 		{
 			OnCreated();
 		}

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.25" name="dcLMS">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.5" name="dcLMS">
   <DataContextMoniker Name="/dcLMSDataContext" />
   <nestedChildShapes>
     <classShape Id="a0b37b35-e6be-4808-8937-72922d8e0bc3" absoluteBounds="3.75, 7.25, 2, 1.5785953776041657">
@@ -38,7 +38,7 @@
         <elementListCompartment Id="f1e4f892-02d8-49d4-9a2b-f482beb871ae" absoluteBounds="0.765, 7.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 4.76044840494792); (3.04166666666667 : 4.76044840494792 : JumpStart); (3.20833333333333 : 4.76044840494792 : JumpEnd); (3.5 : 4.76044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 4.76044840494792); (2.85416416666667 : 4.76044840494792 : JumpStart); (3.02083083333333 : 4.76044840494792 : JumpEnd); (3.04166666666667 : 4.76044840494792 : JumpStart); (3.20833333333333 : 4.76044840494792 : JumpEnd); (3.5 : 4.76044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dcLMSDataContext/tblBook/tblBook_tblBookCopy" />
       <nodes>
         <classShapeMoniker Id="597547af-b97e-456e-bf0d-55dbb1fdc7d5" />
@@ -52,18 +52,37 @@
         <classShapeMoniker Id="4b5ac07a-70e2-463d-b5b6-1197ca9a1a46" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.25153746153846); (3.125 : 6.87653746153846); (3.125 : 2.8381982421875); (3.5 : 2.8381982421875); (3.125 : 2.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 7.25153746153846); (2.87857193490112 : 7.12296552663734 : JumpStart); (2.99642306509888 : 7.00511439643958 : JumpEnd); (3.125 : 6.87653746153846); (3.125 : 2.8381982421875); (3.5 : 2.8381982421875); (3.125 : 2.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dcLMSDataContext/tblLibraryUser/tblLibraryUser_tblBorrow" />
       <nodes>
         <classShapeMoniker Id="dfda33ce-e336-4e8a-ae61-2e42598f684e" />
         <classShapeMoniker Id="4b5ac07a-70e2-463d-b5b6-1197ca9a1a46" />
       </nodes>
     </associationConnector>
-    <classShape Id="229d6571-fede-4eac-9847-b4d200c18967" absoluteBounds="8, 7.125, 2, 1.5785953776041666">
+    <classShape Id="229d6571-fede-4eac-9847-b4d200c18967" absoluteBounds="6.25, 7.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/dcLMSDataContext/tblSelectedBook" />
       <nestedChildShapes>
-        <elementListCompartment Id="30d6dd39-896a-4196-9d60-5fda1a841473" absoluteBounds="8.015, 7.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="30d6dd39-896a-4196-9d60-5fda1a841473" absoluteBounds="6.2650000000000006, 7.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="3e6363ba-3bb3-472e-a201-0e236ae89805" absoluteBounds="3.875, 10.25, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/dcLMSDataContext/tblReturn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a04a2df-62e1-4283-8076-325c9cc32ba6" absoluteBounds="3.89, 10.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c518b879-fffc-43bc-8db3-6fb13bbbfb25" absoluteBounds="6.375, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcLMSDataContext/tblSelectedBook1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15fd3b94-05dd-4ea6-adc2-60babf6b2d3d" absoluteBounds="6.39, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.9374975 : 2.4631982421875); (2.9374975 : 11.2315991210937); (3.875 : 11.2315991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcLMSDataContext/tblBorrow/tblBorrow_tblReturn" />
+      <nodes>
+        <classShapeMoniker Id="4b5ac07a-70e2-463d-b5b6-1197ca9a1a46" />
+        <classShapeMoniker Id="3e6363ba-3bb3-472e-a201-0e236ae89805" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

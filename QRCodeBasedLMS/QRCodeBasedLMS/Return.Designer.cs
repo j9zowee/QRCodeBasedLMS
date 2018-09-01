@@ -32,31 +32,43 @@
             this.txt_Title = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Name = new System.Windows.Forms.TextBox();
-            this.btnBorrow = new System.Windows.Forms.Button();
-            this.dgvBorrow = new System.Windows.Forms.DataGridView();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_BorrowerID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_BookIDNum = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_NoOfDaysUnreturned = new System.Windows.Forms.TextBox();
+            this.txt_DueDate = new System.Windows.Forms.TextBox();
             this.btnScan = new System.Windows.Forms.Button();
             this.pb_QRCode = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_PenaltyFee = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).BeginInit();
+            this.dgvReturn = new System.Windows.Forms.DataGridView();
+            this.link_Back = new System.Windows.Forms.LinkLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QRCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReturn)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 272);
+            this.label4.Location = new System.Drawing.Point(6, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 16);
             this.label4.TabIndex = 50;
@@ -66,16 +78,17 @@
             // 
             this.txt_Title.Enabled = false;
             this.txt_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Title.Location = new System.Drawing.Point(72, 269);
+            this.txt_Title.Location = new System.Drawing.Point(46, 43);
             this.txt_Title.Name = "txt_Title";
             this.txt_Title.Size = new System.Drawing.Size(247, 22);
             this.txt_Title.TabIndex = 49;
+            this.txt_Title.TextChanged += new System.EventHandler(this.txt_Title_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 186);
+            this.label3.Location = new System.Drawing.Point(6, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 48;
@@ -85,39 +98,26 @@
             // 
             this.txt_Name.Enabled = false;
             this.txt_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Name.Location = new System.Drawing.Point(88, 183);
+            this.txt_Name.Location = new System.Drawing.Point(66, 41);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(227, 22);
             this.txt_Name.TabIndex = 47;
             // 
-            // btnBorrow
+            // btnReturn
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(229, 412);
-            this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(90, 34);
-            this.btnBorrow.TabIndex = 46;
-            this.btnBorrow.Text = "RETURN";
-            this.btnBorrow.UseVisualStyleBackColor = true;
-            // 
-            // dgvBorrow
-            // 
-            this.dgvBorrow.AllowUserToAddRows = false;
-            this.dgvBorrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBorrow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBorrow.Location = new System.Drawing.Point(338, 12);
-            this.dgvBorrow.MultiSelect = false;
-            this.dgvBorrow.Name = "dgvBorrow";
-            this.dgvBorrow.ReadOnly = true;
-            this.dgvBorrow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBorrow.Size = new System.Drawing.Size(461, 193);
-            this.dgvBorrow.TabIndex = 45;
-            this.dgvBorrow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrow_CellContentClick);
+            this.btnReturn.Location = new System.Drawing.Point(742, 316);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(90, 34);
+            this.btnReturn.TabIndex = 46;
+            this.btnReturn.Text = "RETURN";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 158);
+            this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 16);
             this.label1.TabIndex = 42;
@@ -126,7 +126,7 @@
             // txt_BorrowerID
             // 
             this.txt_BorrowerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_BorrowerID.Location = new System.Drawing.Point(164, 155);
+            this.txt_BorrowerID.Location = new System.Drawing.Point(142, 13);
             this.txt_BorrowerID.Name = "txt_BorrowerID";
             this.txt_BorrowerID.Size = new System.Drawing.Size(155, 22);
             this.txt_BorrowerID.TabIndex = 41;
@@ -136,7 +136,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 240);
+            this.label2.Location = new System.Drawing.Point(6, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 16);
             this.label2.TabIndex = 40;
@@ -145,7 +145,7 @@
             // txt_BookIDNum
             // 
             this.txt_BookIDNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_BookIDNum.Location = new System.Drawing.Point(151, 237);
+            this.txt_BookIDNum.Location = new System.Drawing.Point(125, 11);
             this.txt_BookIDNum.Name = "txt_BookIDNum";
             this.txt_BookIDNum.Size = new System.Drawing.Size(168, 22);
             this.txt_BookIDNum.TabIndex = 39;
@@ -155,7 +155,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(32, 349);
+            this.label6.Location = new System.Drawing.Point(6, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(180, 16);
             this.label6.TabIndex = 52;
@@ -165,33 +165,33 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 317);
+            this.label5.Location = new System.Drawing.Point(6, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 16);
             this.label5.TabIndex = 54;
             this.label5.Text = "Due Date:";
             // 
-            // textBox2
+            // txt_NoOfDaysUnreturned
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(218, 345);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 22);
-            this.textBox2.TabIndex = 56;
+            this.txt_NoOfDaysUnreturned.Enabled = false;
+            this.txt_NoOfDaysUnreturned.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NoOfDaysUnreturned.Location = new System.Drawing.Point(192, 47);
+            this.txt_NoOfDaysUnreturned.Name = "txt_NoOfDaysUnreturned";
+            this.txt_NoOfDaysUnreturned.Size = new System.Drawing.Size(101, 22);
+            this.txt_NoOfDaysUnreturned.TabIndex = 56;
             // 
-            // textBox1
+            // txt_DueDate
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(106, 315);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 22);
-            this.textBox1.TabIndex = 57;
+            this.txt_DueDate.Enabled = false;
+            this.txt_DueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DueDate.Location = new System.Drawing.Point(80, 17);
+            this.txt_DueDate.Name = "txt_DueDate";
+            this.txt_DueDate.Size = new System.Drawing.Size(213, 22);
+            this.txt_DueDate.TabIndex = 57;
             // 
             // btnScan
             // 
-            this.btnScan.Location = new System.Drawing.Point(133, 412);
+            this.btnScan.Location = new System.Drawing.Point(646, 316);
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(90, 34);
             this.btnScan.TabIndex = 43;
@@ -208,68 +208,186 @@
             this.pb_QRCode.TabIndex = 58;
             this.pb_QRCode.TabStop = false;
             // 
-            // textBox3
+            // txt_PenaltyFee
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(127, 373);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 22);
-            this.textBox3.TabIndex = 60;
+            this.txt_PenaltyFee.Enabled = false;
+            this.txt_PenaltyFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PenaltyFee.Location = new System.Drawing.Point(101, 75);
+            this.txt_PenaltyFee.Name = "txt_PenaltyFee";
+            this.txt_PenaltyFee.Size = new System.Drawing.Size(192, 22);
+            this.txt_PenaltyFee.TabIndex = 60;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(32, 377);
+            this.label7.Location = new System.Drawing.Point(6, 79);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 16);
             this.label7.TabIndex = 59;
             this.label7.Text = "Penalty Fee : ";
             // 
-            // dataGridView1
+            // dgvReturn
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(338, 256);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(461, 190);
-            this.dataGridView1.TabIndex = 61;
+            this.dgvReturn.AllowUserToAddRows = false;
+            this.dgvReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReturn.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvReturn.Location = new System.Drawing.Point(334, 43);
+            this.dgvReturn.MultiSelect = false;
+            this.dgvReturn.Name = "dgvReturn";
+            this.dgvReturn.ReadOnly = true;
+            this.dgvReturn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvReturn.Size = new System.Drawing.Size(498, 257);
+            this.dgvReturn.TabIndex = 61;
+            // 
+            // link_Back
+            // 
+            this.link_Back.AutoSize = true;
+            this.link_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_Back.Location = new System.Drawing.Point(772, 12);
+            this.link_Back.Name = "link_Back";
+            this.link_Back.Size = new System.Drawing.Size(60, 16);
+            this.link_Back.TabIndex = 62;
+            this.link_Back.TabStop = true;
+            this.link_Back.Text = "Go Back";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_BorrowerID);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txt_Name);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(18, 148);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(301, 74);
+            this.groupBox1.TabIndex = 63;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txt_BookIDNum);
+            this.groupBox2.Controls.Add(this.txt_Title);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(18, 245);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(301, 77);
+            this.groupBox2.TabIndex = 64;
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.txt_NoOfDaysUnreturned);
+            this.groupBox3.Controls.Add(this.txt_DueDate);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.txt_PenaltyFee);
+            this.groupBox3.Location = new System.Drawing.Point(18, 341);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(301, 110);
+            this.groupBox3.TabIndex = 65;
+            this.groupBox3.TabStop = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(182, 45);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(111, 44);
+            this.textBox4.TabIndex = 65;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(125, 48);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(62, 17);
+            this.radioButton3.TabIndex = 64;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Others :";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(182, 22);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(99, 17);
+            this.radioButton2.TabIndex = 63;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Damaged Book";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(125, 22);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(51, 17);
+            this.radioButton1.TabIndex = 62;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "None";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 16);
+            this.label8.TabIndex = 61;
+            this.label8.Text = "Other Penalties :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 16);
+            this.label9.TabIndex = 66;
+            this.label9.Text = "Sanction :";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(75, 92);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(218, 44);
+            this.textBox5.TabIndex = 67;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // Return
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 458);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(849, 459);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.link_Back);
+            this.Controls.Add(this.dgvReturn);
             this.Controls.Add(this.pb_QRCode);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_Title);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_Name);
-            this.Controls.Add(this.btnBorrow);
-            this.Controls.Add(this.dgvBorrow);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnScan);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_BorrowerID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_BookIDNum);
             this.Name = "Return";
             this.Text = "Return";
             this.Load += new System.EventHandler(this.Return_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QRCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReturn)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,20 +399,30 @@
         private System.Windows.Forms.TextBox txt_Title;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_Name;
-        private System.Windows.Forms.Button btnBorrow;
-        private System.Windows.Forms.DataGridView dgvBorrow;
+        private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_BorrowerID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_BookIDNum;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_NoOfDaysUnreturned;
+        private System.Windows.Forms.TextBox txt_DueDate;
         private System.Windows.Forms.Button btnScan;
         private System.Windows.Forms.PictureBox pb_QRCode;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_PenaltyFee;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvReturn;
+        private System.Windows.Forms.LinkLabel link_Back;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -323,7 +323,10 @@
             this.cmb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmb_Status.Items = new string[] {
         "On Shelf",
-        "Damaged"};
+        "Unavailable",
+        "Borrowed",
+        "Damaged",
+        "Lost"};
             this.cmb_Status.Location = new System.Drawing.Point(119, 77);
             this.cmb_Status.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmb_Status.Name = "cmb_Status";

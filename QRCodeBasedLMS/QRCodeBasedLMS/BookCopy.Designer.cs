@@ -51,7 +51,7 @@
             // 
             // pb_QRBook
             // 
-            this.pb_QRBook.BackColor = System.Drawing.SystemColors.Control;
+            this.pb_QRBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
             this.pb_QRBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_QRBook.Location = new System.Drawing.Point(1, 1);
             this.pb_QRBook.Name = "pb_QRBook";
@@ -71,6 +71,7 @@
             // 
             // dtp_DateReceived
             // 
+            this.dtp_DateReceived.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.dtp_DateReceived.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_DateReceived.Location = new System.Drawing.Point(272, 85);
             this.dtp_DateReceived.Name = "dtp_DateReceived";
@@ -101,6 +102,8 @@
             // 
             this.dgvBook.AllowUserToAddRows = false;
             this.dgvBook.AllowUserToDeleteRows = false;
+            this.dgvBook.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.dgvBook.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBook.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvBook.Location = new System.Drawing.Point(26, 216);
@@ -130,25 +133,26 @@
             // 
             this.cmb_Status.BackColor = System.Drawing.Color.Transparent;
             this.cmb_Status.BorderRadius = 3;
+            this.cmb_Status.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.cmb_Status.DisabledColor = System.Drawing.Color.Gray;
             this.cmb_Status.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.cmb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.cmb_Status.Items = new string[] {
         "On Shelf",
         "Borrowed"};
             this.cmb_Status.Location = new System.Drawing.Point(272, 112);
             this.cmb_Status.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmb_Status.Name = "cmb_Status";
-            this.cmb_Status.NomalColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_Status.onHoverColor = System.Drawing.Color.RoyalBlue;
+            this.cmb_Status.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.cmb_Status.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.cmb_Status.selectedIndex = -1;
             this.cmb_Status.Size = new System.Drawing.Size(145, 21);
             this.cmb_Status.TabIndex = 4;
             // 
             // btnAddOrUpdate
             // 
-            this.btnAddOrUpdate.Activecolor = System.Drawing.Color.MidnightBlue;
-            this.btnAddOrUpdate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddOrUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnAddOrUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.btnAddOrUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddOrUpdate.BorderRadius = 7;
             this.btnAddOrUpdate.ButtonText = "ADD";
@@ -163,32 +167,33 @@
             this.btnAddOrUpdate.IconMarginRight = 0;
             this.btnAddOrUpdate.IconRightVisible = false;
             this.btnAddOrUpdate.IconRightZoom = 0D;
-            this.btnAddOrUpdate.IconVisible = false;
-            this.btnAddOrUpdate.IconZoom = 110D;
+            this.btnAddOrUpdate.IconVisible = true;
+            this.btnAddOrUpdate.IconZoom = 80D;
             this.btnAddOrUpdate.IsTab = false;
-            this.btnAddOrUpdate.Location = new System.Drawing.Point(190, 160);
+            this.btnAddOrUpdate.Location = new System.Drawing.Point(177, 160);
             this.btnAddOrUpdate.Name = "btnAddOrUpdate";
-            this.btnAddOrUpdate.Normalcolor = System.Drawing.Color.CornflowerBlue;
-            this.btnAddOrUpdate.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnAddOrUpdate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.btnAddOrUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.btnAddOrUpdate.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAddOrUpdate.selected = false;
-            this.btnAddOrUpdate.Size = new System.Drawing.Size(93, 41);
+            this.btnAddOrUpdate.Size = new System.Drawing.Size(110, 41);
             this.btnAddOrUpdate.TabIndex = 74;
             this.btnAddOrUpdate.Text = "ADD";
             this.btnAddOrUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAddOrUpdate.Textcolor = System.Drawing.Color.Black;
+            this.btnAddOrUpdate.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.btnAddOrUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdate_Click);
             // 
             // txt_BookIDNum
             // 
-            this.txt_BookIDNum.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_BookIDNum.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_BookIDNum.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_BookIDNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.txt_BookIDNum.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_BookIDNum.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_BookIDNum.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_BookIDNum.BorderThickness = 1;
             this.txt_BookIDNum.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_BookIDNum.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_BookIDNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_BookIDNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_BookIDNum.isPassword = false;
             this.txt_BookIDNum.Location = new System.Drawing.Point(272, 23);
             this.txt_BookIDNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -200,13 +205,14 @@
             // 
             // txt_AccessionNumber
             // 
-            this.txt_AccessionNumber.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
-            this.txt_AccessionNumber.BorderColorIdle = System.Drawing.Color.RoyalBlue;
-            this.txt_AccessionNumber.BorderColorMouseHover = System.Drawing.Color.CornflowerBlue;
+            this.txt_AccessionNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.txt_AccessionNumber.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.txt_AccessionNumber.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.txt_AccessionNumber.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.txt_AccessionNumber.BorderThickness = 1;
             this.txt_AccessionNumber.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_AccessionNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_AccessionNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_AccessionNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_AccessionNumber.isPassword = false;
             this.txt_AccessionNumber.Location = new System.Drawing.Point(272, 55);
             this.txt_AccessionNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -218,8 +224,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Activecolor = System.Drawing.Color.MidnightBlue;
-            this.btnExit.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnExit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.BorderRadius = 7;
             this.btnExit.ButtonText = "EXIT";
@@ -234,26 +240,26 @@
             this.btnExit.IconMarginRight = 0;
             this.btnExit.IconRightVisible = false;
             this.btnExit.IconRightZoom = 0D;
-            this.btnExit.IconVisible = false;
-            this.btnExit.IconZoom = 110D;
+            this.btnExit.IconVisible = true;
+            this.btnExit.IconZoom = 80D;
             this.btnExit.IsTab = false;
-            this.btnExit.Location = new System.Drawing.Point(289, 160);
+            this.btnExit.Location = new System.Drawing.Point(293, 160);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Normalcolor = System.Drawing.Color.CornflowerBlue;
-            this.btnExit.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnExit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(134)))), ((int)(((byte)(247)))));
+            this.btnExit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.btnExit.OnHoverTextColor = System.Drawing.Color.White;
             this.btnExit.selected = false;
-            this.btnExit.Size = new System.Drawing.Size(93, 41);
+            this.btnExit.Size = new System.Drawing.Size(110, 41);
             this.btnExit.TabIndex = 75;
             this.btnExit.Text = "EXIT";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnExit.Textcolor = System.Drawing.Color.Black;
+            this.btnExit.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.btnExit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.panel3.Controls.Add(this.pb_QRBook);
             this.panel3.Location = new System.Drawing.Point(12, 12);
             this.panel3.Name = "panel3";
@@ -264,6 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(430, 450);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAddOrUpdate);

@@ -76,6 +76,7 @@
             this.txt_Search = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cmbBookType = new Bunifu.Framework.UI.BunifuDropdown();
+            this.link_Scans = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QRBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.gb_Copy.SuspendLayout();
@@ -86,7 +87,7 @@
             // 
             // pb_QRBook
             // 
-            this.pb_QRBook.BackColor = System.Drawing.SystemColors.Control;
+            this.pb_QRBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
             this.pb_QRBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_QRBook.Location = new System.Drawing.Point(1, 1);
             this.pb_QRBook.Name = "pb_QRBook";
@@ -120,6 +121,8 @@
             // 
             this.dgvBook.AllowUserToAddRows = false;
             this.dgvBook.AllowUserToDeleteRows = false;
+            this.dgvBook.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.dgvBook.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvBook.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBook.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -235,7 +238,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 248);
+            this.label14.Location = new System.Drawing.Point(54, 243);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 13);
             this.label14.TabIndex = 47;
@@ -244,7 +247,7 @@
             // Link_Scan
             // 
             this.Link_Scan.AutoSize = true;
-            this.Link_Scan.Location = new System.Drawing.Point(232, 248);
+            this.Link_Scan.Location = new System.Drawing.Point(278, 243);
             this.Link_Scan.Name = "Link_Scan";
             this.Link_Scan.Size = new System.Drawing.Size(79, 13);
             this.Link_Scan.TabIndex = 20;
@@ -679,7 +682,7 @@
             this.cmb_SearchCategory.Items = new string[] {
         "QR Code",
         "Title"};
-            this.cmb_SearchCategory.Location = new System.Drawing.Point(78, 244);
+            this.cmb_SearchCategory.Location = new System.Drawing.Point(124, 239);
             this.cmb_SearchCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmb_SearchCategory.Name = "cmb_SearchCategory";
             this.cmb_SearchCategory.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
@@ -699,7 +702,7 @@
             this.txt_Search.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
             this.txt_Search.isPassword = false;
-            this.txt_Search.Location = new System.Drawing.Point(211, 243);
+            this.txt_Search.Location = new System.Drawing.Point(257, 238);
             this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(119, 22);
@@ -737,6 +740,40 @@
             this.cmbBookType.Size = new System.Drawing.Size(189, 24);
             this.cmbBookType.TabIndex = 61;
             // 
+            // link_Scans
+            // 
+            this.link_Scans.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.link_Scans.BackColor = System.Drawing.Color.Transparent;
+            this.link_Scans.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.link_Scans.BorderRadius = 7;
+            this.link_Scans.ButtonText = "Change \"Scan QR Code\"";
+            this.link_Scans.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.link_Scans.DisabledColor = System.Drawing.Color.Gray;
+            this.link_Scans.Iconcolor = System.Drawing.Color.Transparent;
+            this.link_Scans.Iconimage = ((System.Drawing.Image)(resources.GetObject("link_Scans.Iconimage")));
+            this.link_Scans.Iconimage_right = null;
+            this.link_Scans.Iconimage_right_Selected = null;
+            this.link_Scans.Iconimage_Selected = null;
+            this.link_Scans.IconMarginLeft = 0;
+            this.link_Scans.IconMarginRight = 0;
+            this.link_Scans.IconRightVisible = false;
+            this.link_Scans.IconRightZoom = 0D;
+            this.link_Scans.IconVisible = false;
+            this.link_Scans.IconZoom = 110D;
+            this.link_Scans.IsTab = false;
+            this.link_Scans.Location = new System.Drawing.Point(368, 238);
+            this.link_Scans.Name = "link_Scans";
+            this.link_Scans.Normalcolor = System.Drawing.Color.Transparent;
+            this.link_Scans.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.link_Scans.OnHoverTextColor = System.Drawing.Color.White;
+            this.link_Scans.selected = false;
+            this.link_Scans.Size = new System.Drawing.Size(176, 22);
+            this.link_Scans.TabIndex = 74;
+            this.link_Scans.Text = "Change \"Scan QR Code\"";
+            this.link_Scans.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.link_Scans.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
+            this.link_Scans.TextFont = new System.Drawing.Font("Century Gothic", 9.75F);
+            // 
             // Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -744,6 +781,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1056, 552);
+            this.Controls.Add(this.link_Scans);
             this.Controls.Add(this.cmbBookType);
             this.Controls.Add(this.cmb_SearchCategory);
             this.Controls.Add(this.panel2);
@@ -851,5 +889,6 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txt_Search;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuDropdown cmbBookType;
+        private Bunifu.Framework.UI.BunifuFlatButton link_Scans;
     }
 }

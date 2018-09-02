@@ -330,6 +330,27 @@ namespace QRCodeBasedLMS
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookNum, title, dueDate);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetBorrowIDForReturn")]
+		public int sp_GetBorrowIDForReturn([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SchoolID", DbType="VarChar(50)")] string schoolID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookNum", DbType="VarChar(50)")] string bookNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), schoolID, bookNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ReturnIDnumber")]
+		public int sp_ReturnIDnumber()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ReturnBook")]
+		public int sp_ReturnBook([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReturnNum", DbType="VarChar(50)")] string returnNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SchoolID", DbType="VarChar(50)")] string schoolID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookNum", DbType="VarChar(50)")] string bookNum, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReturnDate", DbType="Date")] System.Nullable<System.DateTime> returnDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumOfDaysUnreturned", DbType="Int")] System.Nullable<int> numOfDaysUnreturned, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Penalty", DbType="Decimal(18,0)")] System.Nullable<decimal> penalty, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PenaltyRemarks", DbType="VarChar(20)")] string penaltyRemarks)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), returnNum, schoolID, bookNum, returnDate, numOfDaysUnreturned, penalty, penaltyRemarks);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblAttendance")]

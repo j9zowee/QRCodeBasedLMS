@@ -83,6 +83,13 @@ namespace QRCodeBasedLMS
                         br.Show();
                         this.Close();
                     }
+                    else if (gikan == "return")
+                    {
+                        //Return r = new Return(decoded);
+                        //r.Show();
+                        //this.Close();
+                    }
+
                     else if (gikan == "borrower_bk")
                     {
                         Borrower br = new Borrower(decoded, "borrower_bk");

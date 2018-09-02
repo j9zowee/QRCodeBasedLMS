@@ -322,4 +322,22 @@
     <Parameter Name="DueDate" Parameter="dueDate" Type="System.DateTime" DbType="Date" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_GetBorrowIDForReturn" Method="sp_GetBorrowIDForReturn">
+    <Parameter Name="SchoolID" Parameter="schoolID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BookNum" Parameter="bookNum" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ReturnIDnumber" Method="sp_ReturnIDnumber">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ReturnBook" Method="sp_ReturnBook">
+    <Parameter Name="ReturnNum" Parameter="returnNum" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SchoolID" Parameter="schoolID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BookNum" Parameter="bookNum" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReturnDate" Parameter="returnDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NumOfDaysUnreturned" Parameter="numOfDaysUnreturned" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Penalty" Parameter="penalty" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="PenaltyRemarks" Parameter="penaltyRemarks" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

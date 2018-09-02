@@ -41,10 +41,8 @@ namespace QRCodeBasedLMS
                 DateTime dt = DateTime.Now;
                 DateTime due = dt.AddDays(3);
                 db.sp_SelectBooks(txt_BookIDNum.Text, txt_Title.Text, due);
-
                 dgvBorrow.DataSource = db.sp_ViewSelectedBooks();
                 DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-                
                 btn.Text = "Delete";
                 btn.Name = "Delete";
                 btn.UseColumnTextForButtonValue = true;
@@ -68,7 +66,7 @@ namespace QRCodeBasedLMS
         private void dgvBorrow_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-                txt_BookIDNum.Text = dgvBorrow.CurrentRow.Cells[0].Value.ToString();
+            txt_BookIDNum.Text = dgvBorrow.CurrentRow.Cells[0].Value.ToString();
             DialogResult res = MessageBox.Show("Are you sure you want to delete this?", "", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
@@ -114,7 +112,7 @@ namespace QRCodeBasedLMS
 
         private void link_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DialogResult res = MessageBox.Show("Do you want to cancel?", "Cancel Borrowing of Book", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Do you want to cancel?", "Cancel Returning of Book", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
                 for (int i = 0; i < dgvBorrow.RowCount; i++)

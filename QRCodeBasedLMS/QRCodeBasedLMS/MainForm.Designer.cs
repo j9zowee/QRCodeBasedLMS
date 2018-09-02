@@ -47,13 +47,10 @@
             this.unapprovedUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRANSACTIONSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-
-            this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
             this.ms_Mainform.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,6 +203,13 @@
             this.borrowBookToolStripMenuItem.Text = "Borrow Book";
             this.borrowBookToolStripMenuItem.Click += new System.EventHandler(this.borrowBookToolStripMenuItem_Click);
             // 
+            // returnBookToolStripMenuItem
+            // 
+            this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
+            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.returnBookToolStripMenuItem.Text = "Return Book";
+            this.returnBookToolStripMenuItem.Click += new System.EventHandler(this.returnBookToolStripMenuItem_Click);
+            // 
             // rEPORTSToolStripMenuItem
             // 
             this.rEPORTSToolStripMenuItem.Name = "rEPORTSToolStripMenuItem";
@@ -219,19 +223,10 @@
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
-
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
-
-            // returnBookToolStripMenuItem
-            // 
-            this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
-            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.returnBookToolStripMenuItem.Text = "Return Book";
-            this.returnBookToolStripMenuItem.Click += new System.EventHandler(this.returnBookToolStripMenuItem_Click);
-
             // 
             // MainForm
             // 
@@ -244,6 +239,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ms_Mainform.ResumeLayout(false);
             this.ms_Mainform.PerformLayout();
             this.ResumeLayout(false);
